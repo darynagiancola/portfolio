@@ -27,14 +27,15 @@ export const projectCards: ProjectCardData[] = [
   {
     slug: 'aurelia',
     title: 'AURELIA',
-    subtitle: 'Hospitality OS for modern cafés',
+    subtitle: 'AI-powered hospitality operating system',
     description:
-      'A connected hospitality platform bringing customer ordering, reservations, payments and restaurant operations into one system.',
-    tags: [
-      'Product Design',
-      'Vibe Coding',
-      'Realtime Systems',
-      'AI-Assisted Development',
+      'A connected multi-interface platform aligning customer ordering, staff workflows, management visibility, and kitchen operations in one product ecosystem.',
+    tags: ['AI-assisted product build', 'Realtime workflows', 'Multi-interface UX'],
+    metadata: [
+      {
+        label: 'Product Areas',
+        value: 'Customer · Staff · Admin · Kitchen',
+      },
     ],
     ctaLabel: 'View Case Study',
     href: '/projects/aurelia',
@@ -49,11 +50,11 @@ export const projectCards: ProjectCardData[] = [
   },
   {
     slug: 'case-study-2',
-    title: 'Next Project',
+    title: 'Next Product Case Study',
     subtitle: 'Case study in progress',
     description:
-      'A new product case study will be published here. Structure is ready for future additions.',
-    tags: ['Product', 'Automation'],
+      'Reserved for the next product narrative and implementation walkthrough.',
+    tags: ['Case study in progress'],
     ctaLabel: 'Case study in progress',
     href: '#',
     status: 'placeholder',
@@ -65,11 +66,11 @@ export const projectCards: ProjectCardData[] = [
   },
   {
     slug: 'case-study-3',
-    title: 'Future Build',
+    title: 'Future System Build',
     subtitle: 'Case study in progress',
     description:
-      'Reserved slot for an upcoming AI-assisted product build with narrative documentation.',
-    tags: ['UX/UI', 'AI Workflow'],
+      'Space for an upcoming AI-assisted product system focused on operations and UX.',
+    tags: ['Case study in progress'],
     ctaLabel: 'Case study in progress',
     href: '#',
     status: 'placeholder',
@@ -81,11 +82,11 @@ export const projectCards: ProjectCardData[] = [
   },
   {
     slug: 'case-study-4',
-    title: 'Operational Interface',
+    title: 'Additional Work',
     subtitle: 'Case study in progress',
     description:
-      'Planned case study slot focused on operational systems and role-based experiences.',
-    tags: ['Operations', 'Systems'],
+      'An expandable slot for another real-world product case study.',
+    tags: ['Case study in progress'],
     ctaLabel: 'Case study in progress',
     href: '#',
     status: 'placeholder',

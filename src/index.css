@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --portfolio-bg: #f8f4ec;
-  --portfolio-surface: #fdf9f2;
-  --portfolio-surface-alt: #f1ebdf;
-  --portfolio-text: #272b26;
-  --portfolio-text-muted: #5f685f;
-  --portfolio-border: #d9d3c6;
-  --portfolio-accent: #74826d;
-  --portfolio-accent-soft: #e1e5dd;
-  --portfolio-secondary: #aea3b7;
-  --portfolio-secondary-soft: #ece6f1;
+  --portfolio-bg: #f8f3ea;
+  --portfolio-surface: #fcf8f0;
+  --portfolio-surface-alt: #f3ecde;
+  --portfolio-text: #292d28;
+  --portfolio-text-muted: #5a645d;
+  --portfolio-border: #d8d0c2;
+  --portfolio-accent: #727f6c;
+  --portfolio-accent-soft: #dee3d9;
+  --portfolio-secondary: #afa5b9;
+  --portfolio-secondary-soft: #ece7f1;
   --portfolio-dark: #20241f;
   --portfolio-dark-border: #4d5848;
   --portfolio-shadow: 0 18px 44px -30px rgba(35, 40, 34, 0.45);
   --portfolio-shadow-soft: 0 14px 30px -24px rgba(35, 40, 34, 0.32);
-  --portfolio-radius-card: 1.2rem;
-  --portfolio-radius-panel: 1.8rem;
+  --portfolio-radius-card: 0.95rem;
+  --portfolio-radius-panel: 1.45rem;
   --portfolio-max-content: 76rem;
   --portfolio-max-narrative: 66rem;
 }
@@ -85,10 +85,10 @@
 @layer components {
   .site-canvas {
     background:
-      radial-gradient(circle at 8% 14%, rgba(116, 130, 109, 0.12), transparent 22rem),
-      radial-gradient(circle at 86% 20%, rgba(174, 163, 183, 0.13), transparent 24rem),
-      radial-gradient(circle at 30% 88%, rgba(116, 130, 109, 0.08), transparent 20rem),
-      linear-gradient(to bottom, #faf6ee, #f8f4ec 35%, #f6f1e7);
+      radial-gradient(circle at 8% 14%, rgba(114, 127, 108, 0.08), transparent 22rem),
+      radial-gradient(circle at 86% 20%, rgba(174, 163, 183, 0.11), transparent 24rem),
+      radial-gradient(circle at 30% 88%, rgba(114, 127, 108, 0.06), transparent 20rem),
+      linear-gradient(to bottom, #f9f4eb, #f8f3ea 35%, #f6f0e6);
   }
 
   .content-wrap {
@@ -102,6 +102,6 @@
   }
 
   .eyebrow {
-    @apply mb-3 inline-block text-xs tracking-[0.22em] text-accent uppercase;
+    @apply mb-3 inline-block text-[0.7rem] tracking-[0.23em] text-accent uppercase;
   }
 }
