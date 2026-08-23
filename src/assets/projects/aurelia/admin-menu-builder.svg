@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">AURELIA admin menu builder placeholder</title>
+  <desc id="desc">Temporary placeholder for the admin menu builder screenshot.</desc>
+  <rect width="1600" height="1000" fill="#efe4d7" />
+  <rect x="70" y="70" width="1460" height="860" rx="30" fill="#fffaf4" stroke="#b99478" stroke-width="5" />
+  <text x="800" y="500" text-anchor="middle" fill="#4b3528" font-size="66" font-family="Inter, sans-serif">admin menu builder</text>
+  <text x="800" y="580" text-anchor="middle" fill="#7a5d4d" font-size="34" font-family="Inter, sans-serif">placeholder screenshot</text>
+</svg>
