@@ -30,12 +30,12 @@ export function HomePage() {
             </p>
           </div>
 
-          <div className="relative min-h-[30.5rem] sm:min-h-[33.6rem] md:min-h-[35.8rem] lg:min-h-[39rem]">
+          <div className="relative min-h-[32.5rem] sm:min-h-[35.5rem] md:min-h-[38rem] lg:min-h-[39rem]">
             <p className="hero-display relative z-10 ml-0 w-full max-w-full text-[clamp(3.5rem,17.8vw,4.92rem)] leading-[0.76] text-[#1f2522] uppercase sm:-ml-1 sm:text-[clamp(5.35rem,15.5vw,8.25rem)] md:ml-0 md:text-[clamp(6.7rem,13.8vw,10rem)] lg:w-max lg:max-w-none lg:text-[clamp(8.8rem,16.5vw,13.4rem)]">
               {heroContent.portfolioWord}
             </p>
 
-            <figure className="pointer-events-none absolute right-[-4.1rem] top-[1.45rem] z-30 h-[23rem] w-[20.5rem] sm:right-[-3rem] sm:top-[1.4rem] sm:h-[28.5rem] sm:w-[25.4rem] md:right-[-1.6rem] md:top-[1.15rem] md:h-[33rem] md:w-[29.4rem] lg:right-[0.3%] lg:top-[-2.2rem] lg:h-[45rem] lg:w-[40rem]">
+            <figure className="pointer-events-none absolute right-[-5.1rem] top-[0.6rem] z-30 h-[27rem] w-[24rem] sm:right-[-3.7rem] sm:top-[0.6rem] sm:h-[32rem] sm:w-[28.5rem] md:right-[-2.2rem] md:top-[0.35rem] md:h-[36.5rem] md:w-[32.5rem] lg:right-[-0.8%] lg:top-[-3.1rem] lg:h-[50rem] lg:w-[44rem]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into editorial homepage hero composition."
@@ -44,7 +44,7 @@ export function HomePage() {
               />
             </figure>
 
-            <div className="relative z-40 mt-[12.1rem] max-w-[34rem] space-y-5 sm:mt-[15.2rem] md:mt-[17rem] lg:mt-[10.2rem]">
+            <div className="relative z-40 mt-[9.4rem] max-w-[72%] space-y-5 sm:mt-[11.6rem] sm:max-w-[66%] md:mt-[13.2rem] md:max-w-[62%] lg:mt-[8.4rem] lg:max-w-[34rem]">
               <h1 className="max-w-[30rem] font-sans text-4xl leading-[1.03] text-[#232926] sm:text-5xl lg:text-[3.65rem]">
                 {heroContent.title}
               </h1>
