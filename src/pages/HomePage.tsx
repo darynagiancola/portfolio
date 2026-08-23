@@ -50,11 +50,11 @@ export function HomePage() {
               {heroContent.portfolioWord}
             </p>
 
-            <figure className="relative z-20 mt-4 h-[20rem] w-full overflow-hidden sm:h-[26rem] lg:absolute lg:right-0 lg:top-[-2.25rem] lg:mt-0 lg:h-[39rem] lg:w-[43%]">
+            <figure className="pointer-events-none relative z-20 mt-4 h-[20rem] w-full sm:h-[26rem] lg:absolute lg:right-0 lg:top-[-2.25rem] lg:mt-0 lg:h-[39rem] lg:w-[43%]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into editorial homepage hero composition."
-                className="h-full w-full object-cover object-[79%_22%]"
+                className="h-full w-full object-contain object-[82%_20%]"
                 loading="eager"
               />
             </figure>
