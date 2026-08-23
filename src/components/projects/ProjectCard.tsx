@@ -10,8 +10,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <article
-      className={`group rounded-panel border bg-surface shadow-card transition duration-300 ${
-        project.dominant ? 'border-accent/40 p-6 sm:p-8' : 'border-border p-5 sm:p-6'
+      className={`group rounded-panel border transition duration-300 ${
+        isPlaceholder
+          ? 'border-border/65 bg-surface/70 p-5 sm:p-6'
+          : project.dominant
+            ? 'border-accent/35 bg-surface p-6 shadow-card sm:p-8'
+            : 'border-border bg-surface p-5 shadow-soft sm:p-6'
       }`}
       aria-label={project.title}
     >
@@ -31,23 +35,29 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </span>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3.5">
         <div className="space-y-2">
           <h3 className={`${project.dominant ? 'text-3xl' : 'text-2xl'}`}>{project.title}</h3>
           <p className="text-base text-text">{project.subtitle}</p>
-          <p>{project.description}</p>
+          <p className="text-sm sm:text-base">{project.description}</p>
         </div>
 
-        <ul className="flex flex-wrap gap-2" aria-label={`${project.title} tags`}>
-          {project.tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full border border-border bg-bg px-3 py-1 text-xs tracking-[0.08em] text-muted uppercase"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
+        {isPlaceholder ? (
+          <p className="text-xs tracking-[0.15em] text-muted uppercase">
+            {project.tags.join(' · ')}
+          </p>
+        ) : (
+          <ul className="flex flex-wrap gap-2" aria-label={`${project.title} tags`}>
+            {project.tags.map((tag) => (
+              <li
+                key={tag}
+                className="rounded-full border border-border bg-bg px-3 py-1 text-xs tracking-[0.08em] text-muted uppercase"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
 
         {isPlaceholder ? (
           <p className="text-sm text-muted">{project.ctaLabel}</p>

@@ -1,18 +1,19 @@
 import type { NavigationLink } from '../types/portfolio'
 
 export const navigationLinks: NavigationLink[] = [
-  { label: 'Home', href: '/' },
-  { label: 'Selected Work', href: '#selected-work' },
+  { label: 'Work', href: '#selected-work' },
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ]
 
 export const heroContent = {
-  eyebrow: 'AI-assisted product building',
-  title: 'Designing connected digital products at the intersection of AI, automation, and UX/UI.',
+  eyebrow: 'AI PRODUCTS · AUTOMATION · DIGITAL SYSTEMS',
+  title: 'I design intelligent systems that make work simpler.',
   intro:
-    'I craft product experiences that move from idea to interface to implementation — combining design thinking, vibe coding, and system-level product execution.',
-  primaryCta: { label: 'Explore selected work', href: '#selected-work' },
-  secondaryCta: { label: 'Open AURELIA case study', href: '/projects/aurelia' },
+    'AI-powered products, automation and digital experiences built around real business needs.',
+  primaryCta: { label: 'View my work', href: '#selected-work' },
+  secondaryCta: { label: 'About me', href: '#about' },
 }
 
 export const experienceBlocks = [

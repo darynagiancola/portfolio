@@ -18,6 +18,7 @@ export interface ProjectCardData {
   subtitle: string
   description: string
   tags: string[]
+  metadata?: MetadataItem[]
   ctaLabel: string
   href: string
   status: ProjectStatus
