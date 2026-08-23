@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { navigationLinks } from '../../content/site'
+import { buildInPageHref } from '../../utils/runtimeBasePath'
 
 export function Navigation() {
   const location = useLocation()
@@ -20,7 +21,7 @@ export function Navigation() {
             {navigationLinks.map((item) => {
               const isCurrent = location.pathname === '/' && item.href === '/'
               const isHash = item.href.startsWith('#')
-              const hashHref = `${import.meta.env.BASE_URL}${item.href}`
+              const hashHref = buildInPageHref(item.href)
 
               return (
                 <li key={item.label}>
