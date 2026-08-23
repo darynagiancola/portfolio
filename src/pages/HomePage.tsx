@@ -9,7 +9,6 @@ import {
   howIWorkSteps,
   whatIWorkWith,
 } from '../content/site'
-import { buildInPageHref } from '../utils/runtimeBasePath'
 
 export function HomePage() {
   const [featuredProject, ...futureProjects] = projectCards
@@ -67,13 +66,13 @@ export function HomePage() {
               <p className="max-w-xl text-base sm:text-lg">{heroContent.intro}</p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href={buildInPageHref(heroContent.primaryCta.href)}
+                  href={`${import.meta.env.BASE_URL}${heroContent.primaryCta.href}`}
                   className="rounded-full border border-accent bg-accent px-5 py-2.5 text-sm tracking-[0.1em] text-bg uppercase transition hover:-translate-y-0.5"
                 >
                   {heroContent.primaryCta.label}
                 </a>
                 <a
-                  href={buildInPageHref(heroContent.secondaryCta.href)}
+                  href={`${import.meta.env.BASE_URL}${heroContent.secondaryCta.href}`}
                   className="rounded-full border border-border bg-surface/92 px-5 py-2.5 text-sm tracking-[0.1em] text-text uppercase transition hover:border-accent/50"
                 >
                   {heroContent.secondaryCta.label}

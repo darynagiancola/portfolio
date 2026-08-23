@@ -1,13 +1,10 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { AureliaCaseStudyPage } from './pages/AureliaCaseStudyPage'
 import { HomePage } from './pages/HomePage'
-import { getRuntimeBasePath } from './utils/runtimeBasePath'
 
 export default function App() {
-  const runtimeBasePath = getRuntimeBasePath()
-
   return (
-    <BrowserRouter basename={runtimeBasePath}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects/aurelia" element={<AureliaCaseStudyPage />} />
