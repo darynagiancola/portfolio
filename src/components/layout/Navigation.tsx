@@ -9,7 +9,7 @@ export function Navigation() {
       <div className="content-wrap flex items-center justify-between gap-8 py-5">
         <Link
           to="/"
-          className="font-serif text-[0.95rem] tracking-[0.14em] text-text uppercase"
+          className="font-sans text-[0.95rem] tracking-[0.16em] text-text uppercase"
           aria-label="Go to homepage"
         >
           Portfolio

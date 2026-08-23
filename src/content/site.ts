@@ -15,6 +15,7 @@ export const heroContent = {
     'AI-powered products, automation and digital experiences built around real business needs.',
   primaryCta: { label: 'View my work', href: '#selected-work' },
   secondaryCta: { label: 'About me', href: '#about' },
+  locationNote: 'Remote-first · Open to focused collaborations',
 }
 
 export const whatIWorkWith = [
@@ -22,53 +23,60 @@ export const whatIWorkWith = [
     id: '01',
     title: 'AI Products',
     description:
-      'Shaping practical AI experiences from concept framing to interface behavior.',
+      'Designing practical AI features with clear user value and operational intent.',
   },
   {
     id: '02',
-    title: 'Automation',
+    title: 'Automation & Workflows',
     description:
-      'Designing connected flows that reduce manual steps and improve operational clarity.',
+      'Connecting tools and processes to reduce friction across recurring business tasks.',
   },
   {
     id: '03',
-    title: 'Digital Systems',
+    title: 'Intelligent Digital Experiences',
     description:
-      'Structuring products as linked customer and team workspaces, not isolated screens.',
+      'Building interfaces where clarity, speed, and system logic are equally important.',
   },
   {
     id: '04',
-    title: 'AI-assisted Development',
+    title: 'Business System Architecture',
     description:
-      'Using AI-native build loops to move faster while keeping product quality intentional.',
+      'Structuring products as connected systems across users, teams, and operations.',
   },
+]
+
+export const credibilityStrip = [
+  { label: 'AI Products', icon: '01' },
+  { label: 'Automation Systems', icon: '02' },
+  { label: 'Business Workflows', icon: '03' },
+  { label: 'End-to-end Implementation', icon: '04' },
 ]
 
 export const howIWorkSteps = [
   {
     step: '01',
-    title: 'Understand',
-    description: 'Clarify context, users, and operational needs before interface decisions.',
+    title: 'Discover',
+    description: 'Understand the business, users and friction.',
   },
   {
     step: '02',
-    title: 'Map',
-    description: 'Define flows, dependencies, and system touchpoints across roles.',
+    title: 'Architect',
+    description: 'Define the system, workflow and AI opportunities.',
   },
   {
     step: '03',
     title: 'Build',
-    description: 'Develop product-ready interfaces and implementation structure in parallel.',
+    description: 'Create the product, automation or digital experience.',
   },
   {
     step: '04',
     title: 'Connect',
-    description: 'Align customer journeys and internal workflows into one connected system.',
+    description: 'Integrate tools, data, APIs and workflows.',
   },
   {
     step: '05',
     title: 'Refine',
-    description: 'Iterate details, edge cases, and product behavior for operational clarity.',
+    description: 'Test, simplify and improve the system.',
   },
 ]
 
@@ -91,9 +99,9 @@ export const experienceBlocks = [
 ]
 
 export const contactContent = {
-  title: 'Let’s build something intelligent together.',
+  title: 'LET’S BUILD SOMETHING THAT ACTUALLY WORKS.',
   description:
-    'Open to focused collaborations across AI products, automation, and digital systems.',
+    'If you have a process that should be smarter, let’s design and build a practical system around it.',
   email: 'hello@example.com',
   linkedinUrl: 'https://www.linkedin.com/in/your-profile',
   githubUrl: 'https://github.com/darynagiancola',
