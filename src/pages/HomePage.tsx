@@ -1,11 +1,20 @@
-import { Footer } from '../components/layout/Footer'
 import { Navigation } from '../components/layout/Navigation'
-import { ProjectCard } from '../components/projects/ProjectCard'
-import { SectionHeading } from '../components/ui/SectionHeading'
-import { Link } from 'react-router-dom'
-import portfolioHero from '../assets/portfolio-hero.png'
+import { CapabilityRail } from '../components/home/CapabilityRail'
+import { ClosingBlock } from '../components/home/ClosingBlock'
+import { ExperienceRow } from '../components/home/ExperienceRow'
+import { InformationBand } from '../components/home/InformationBand'
+import { ProjectIndexRow } from '../components/home/ProjectIndexRow'
+import { ProjectSpread } from '../components/home/ProjectSpread'
+import { SectionHead } from '../components/home/SectionHead'
+import heroPortrait from '../assets/hero-portrait.png'
 import { kdsReliabilityAssets, projectCards } from '../content/projects'
-import { contactContent, experienceBlocks, heroContent } from '../content/site'
+import {
+  aboutContent,
+  capabilityRail,
+  experienceContent,
+  heroContent,
+  workContent,
+} from '../content/site'
 
 export function HomePage() {
   const [featuredProject, ...futureProjects] = projectCards
@@ -17,184 +26,150 @@ export function HomePage() {
       </a>
       <Navigation />
 
-      <main id="main-content">
-        <section className="content-wrap relative pb-18 pt-14 sm:pb-24 sm:pt-18 lg:pb-28 lg:pt-24">
-          <div
-            className="pointer-events-none absolute -left-3 top-4 hidden h-24 w-44 text-border/70 lg:block"
-            aria-hidden="true"
-          >
-            <svg viewBox="0 0 180 90" className="h-full w-full">
-              <path
-                d="M2 45 H86 C104 45 104 18 122 18 H178"
-                stroke="currentColor"
-                strokeWidth="1.1"
-                fill="none"
-              />
-              <circle cx="86" cy="45" r="3.8" fill="#74826d" />
-              <circle cx="122" cy="18" r="3.8" fill="#aea3b7" />
-            </svg>
-          </div>
+      <main id="main-content" className="overflow-x-clip">
+        <section className="content-wrap relative pb-10 pt-8 sm:pb-12 sm:pt-10 lg:pb-14 lg:pt-12">
+          <p className="pb-4 pt-2 text-[clamp(0.86rem,1.2vw,0.96rem)] font-semibold tracking-[0.11em] text-accent uppercase sm:pb-5 sm:pt-3">
+            {heroContent.eyebrow}
+          </p>
 
-          <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-end">
-            <div className="space-y-7">
-              <p className="eyebrow">{heroContent.eyebrow}</p>
-              <h1 className="max-w-xl text-4xl leading-[1.04] sm:text-5xl lg:text-[4.5rem]">
-                {heroContent.title}
-              </h1>
-              <p className="max-w-lg text-base sm:text-lg">{heroContent.intro}</p>
-              <div className="flex flex-wrap gap-3 pt-1">
-                <a
-                  href={`${import.meta.env.BASE_URL}${heroContent.primaryCta.href}`}
-                  className="rounded-full border border-accent bg-accent px-5 py-2.5 text-sm tracking-[0.1em] text-bg uppercase transition hover:-translate-y-0.5"
-                >
-                  {heroContent.primaryCta.label}
-                </a>
-                <a
-                  href={`${import.meta.env.BASE_URL}${heroContent.secondaryCta.href}`}
-                  className="rounded-full border border-border bg-surface/90 px-5 py-2.5 text-sm tracking-[0.1em] text-text uppercase transition hover:border-accent/50"
-                >
-                  {heroContent.secondaryCta.label}
-                </a>
-              </div>
+          <div className="relative min-[360px]:max-sm:overflow-x-clip">
+            <div className="relative z-10">
+              <p className="hero-display w-full max-w-full text-[clamp(3.4rem,17vw,4.9rem)] leading-[0.76] text-[#1f2522] uppercase sm:text-[clamp(5.1rem,14.8vw,8.2rem)] md:pr-[6%] md:text-[clamp(6.2rem,12.8vw,10.1rem)] lg:pr-[4%] lg:text-[clamp(8.7rem,15.4vw,13.3rem)]">
+                {heroContent.portfolioWord}
+              </p>
             </div>
 
-            <div className="relative">
-              <div
-                className="pointer-events-none absolute -inset-3 hidden rounded-[2rem] border border-border/60 lg:block"
-                aria-hidden="true"
-              ></div>
-              <figure className="relative overflow-hidden rounded-panel border border-border/70 bg-surface shadow-soft">
-                <img
-                  src={portfolioHero}
-                  alt="Editorial hero visual with warm ivory palette, organic forms, and AI/automation motifs."
-                  className="block h-auto w-full"
-                  loading="eager"
-                />
-              </figure>
+            <figure className="pointer-events-none relative z-20 -mt-[clamp(2.9rem,12vw,4.1rem)] ml-auto w-[clamp(18.5rem,74vw,22.2rem)] min-[360px]:max-sm:float-right min-[360px]:max-sm:-mr-[1.875rem] min-[360px]:max-sm:-ml-[clamp(5.7rem,22vw,8.3rem)] sm:absolute sm:right-[0.35rem] sm:top-[clamp(2.35rem,8vw,4.2rem)] sm:mt-0 sm:w-[clamp(20.5rem,60vw,27rem)] md:right-[-0.6rem] md:top-[clamp(1.8rem,4.5vw,3.3rem)] md:w-[clamp(32rem,55vw,43rem)] lg:right-[-0.95rem] lg:top-[clamp(2rem,3.6vw,4rem)] lg:w-[clamp(42rem,52vw,58rem)]">
+              <img
+                src={heroPortrait}
+                alt="Portrait integrated into editorial homepage hero composition."
+                className="h-auto w-full object-contain object-top"
+                loading="eager"
+              />
+            </figure>
+
+            <div className="hero-tone-step" aria-hidden="true"></div>
+
+            <div className="relative z-10 mt-4 grid grid-cols-1 gap-y-4 min-[360px]:max-sm:mt-12 min-[360px]:max-sm:block sm:mt-[clamp(6rem,16vw,8rem)] md:mt-[clamp(5.4rem,8.6vw,7rem)] md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:mt-[clamp(1.2rem,3.2vw,2.2rem)] lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
+              <div className="space-y-5 md:pr-4 lg:pr-8">
+                <h1 className="max-w-full font-sans text-[clamp(2.5rem,11vw,3.2rem)] leading-[1.03] text-[#232926] min-[360px]:max-sm:text-[clamp(1.6rem,7.3vw,2.55rem)] min-[360px]:max-sm:[text-wrap:pretty] md:max-w-[31rem] md:text-[clamp(2.65rem,10.8vw,3.15rem)] lg:text-[clamp(2.65rem,10.8vw,3.65rem)]">
+                  {heroContent.title}
+                </h1>
+                <p className="max-w-xl text-[clamp(1.1rem,1.8vw,1.18rem)] text-[#4f5852] min-[360px]:max-sm:clear-right">
+                  {heroContent.intro}
+                </p>
+                <div className="pt-1">
+                  <a
+                    href={`${import.meta.env.BASE_URL}${heroContent.primaryCta.href}`}
+                    className="inline-flex items-center gap-2 text-[0.72rem] tracking-[0.21em] text-accent uppercase transition hover:text-text"
+                  >
+                    {heroContent.primaryCta.label}
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="selected-work" className="content-wrap border-t border-border/60 py-16 sm:py-24">
-          <SectionHeading
-            eyebrow="Selected work"
-            title="A curated body of AI-powered product systems."
-            description="Each project is documented as product thinking, interaction design, and implementation strategy — not a gallery of disconnected screens."
+        <InformationBand />
+
+        <section
+          id="selected-work"
+          aria-labelledby="selected-work-heading"
+          className="content-wrap py-14 sm:py-20 lg:py-28"
+        >
+          <SectionHead
+            headingId="selected-work-heading"
+            label={workContent.label}
+            statement={workContent.statement}
+            aside="Case studies"
           />
 
-          <article className="mt-12 rounded-panel border border-border/70 bg-surface/92 p-6 shadow-soft sm:p-8 lg:p-10">
-            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-              <div className="relative order-2 space-y-4 lg:order-1">
-                <figure className="overflow-hidden rounded-card border border-border/75 bg-bg shadow-soft">
-                  <img
-                    src={featuredProject.thumbnail.src}
-                    alt={featuredProject.thumbnail.alt}
-                    className="h-auto w-full"
-                    loading="lazy"
-                  />
-                </figure>
-                <figure className="ml-auto w-[76%] overflow-hidden rounded-card border border-border/75 bg-bg shadow-soft">
-                  <img
-                    src={kdsReliabilityAssets[0].src}
-                    alt={kdsReliabilityAssets[0].alt}
-                    className="h-auto w-full"
-                    loading="lazy"
-                  />
-                </figure>
-              </div>
-
-              <div className="order-1 space-y-5 lg:order-2">
-                <p className="text-xs tracking-[0.2em] text-accent uppercase">Flagship project</p>
-                <h3 className="text-4xl sm:text-5xl">{featuredProject.title}</h3>
-                <p className="text-lg text-text">{featuredProject.subtitle}</p>
-                <p className="max-w-xl text-base sm:text-lg">{featuredProject.description}</p>
-                <dl className="space-y-2 border-l border-border/90 pl-4">
-                  {featuredProject.metadata?.map((item) => (
-                    <div key={item.label} className="space-y-1">
-                      <dt className="text-[0.7rem] tracking-[0.18em] text-muted uppercase">
-                        {item.label}
-                      </dt>
-                      <dd className="text-sm text-text sm:text-base">{item.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-                <p className="text-xs tracking-[0.14em] text-muted uppercase">
-                  {featuredProject.tags.join(' · ')}
-                </p>
-                <Link
-                  to={featuredProject.href}
-                  className="inline-flex items-center gap-2 rounded-full border border-accent bg-accent px-5 py-2.5 text-sm tracking-[0.1em] text-bg uppercase transition hover:-translate-y-0.5"
-                >
-                  {featuredProject.ctaLabel}
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
-          </article>
-
-          <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            <p className="md:col-span-2 xl:col-span-3 text-xs tracking-[0.18em] text-muted uppercase">
-              Additional projects
-            </p>
-            {futureProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
+          <div className="mt-12 sm:mt-16 lg:mt-20">
+            <ProjectSpread
+              project={featuredProject}
+              supportingMedia={kdsReliabilityAssets.slice(0, 2)}
+            />
           </div>
-        </section>
 
-        <section id="about" className="content-wrap border-t border-border/60 py-16 sm:py-24">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="space-y-5">
-              <p className="eyebrow">About</p>
-              <h2 className="max-w-2xl text-3xl sm:text-4xl lg:text-[2.9rem]">
-                Product-minded work across AI, systems, and digital experience.
-              </h2>
-              <p className="max-w-xl text-base sm:text-lg">
-                My focus sits between product strategy and execution: shaping concepts,
-                interface systems, and implementation paths that stay grounded in real
-                operations.
+          <div className="mt-16 sm:mt-20">
+            <div className="border-t border-border/55 pt-5">
+              <p className="meta-label">{workContent.indexLabel}</p>
+              <p className="mt-2 max-w-[34rem] text-[0.9rem] text-muted">
+                {workContent.indexNote}
               </p>
             </div>
-            <div className="rounded-card border border-border/70 bg-surface-alt/45 p-5 sm:p-7">
-              <p className="text-sm text-text sm:text-base">
-                This portfolio is intentionally case-study-driven. The goal is to show
-                product depth: how customer journeys, staff workflows, and operational
-                systems connect as one experience.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="experience" className="content-wrap border-t border-border/60 py-16 sm:py-24">
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="space-y-4">
-              <p className="eyebrow">Experience</p>
-              <h2 className="text-3xl sm:text-4xl">Capabilities preview</h2>
-              <p className="max-w-xl text-base sm:text-lg">
-                A concise view of where I contribute most across product building.
-              </p>
-            </div>
-            <div className="space-y-5">
-              {experienceBlocks.map((block) => (
-                <article
-                  key={block.title}
-                  className="border-t border-border/80 pt-4 first:pt-0"
-                >
-                  <h3 className="mb-2 text-2xl sm:text-[1.7rem]">{block.title}</h3>
-                  <p className="max-w-2xl text-sm sm:text-base">{block.description}</p>
-                </article>
+            <ol className="mt-8">
+              {futureProjects.map((project, index) => (
+                <ProjectIndexRow key={project.slug} project={project} index={index + 2} />
               ))}
+            </ol>
+          </div>
+        </section>
+
+        <section
+          id="about"
+          aria-labelledby="about-heading"
+          className="content-wrap border-t border-border/55 py-14 sm:py-20 lg:py-28"
+        >
+          <SectionHead
+            headingId="about-heading"
+            label={aboutContent.label}
+            statement={aboutContent.statement}
+          />
+
+          <div className="mt-12 lg:mt-16 lg:grid lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-9 lg:col-start-4">
+              <div className="md:grid md:grid-cols-3">
+                {aboutContent.stanzas.map((stanza, index) => (
+                  <div
+                    key={stanza.label}
+                    className={
+                      index === 0
+                        ? 'md:pr-6'
+                        : 'mt-6 border-t border-border/55 pt-6 md:mt-0 md:border-t-0 md:border-l md:pt-0 md:pl-6'
+                    }
+                  >
+                    <p className="meta-label-quiet">{stanza.label}</p>
+                    <p className="mt-3 text-[0.98rem] sm:text-[1.02rem]">{stanza.body}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-10">
+                <CapabilityRail items={capabilityRail} />
+              </div>
             </div>
           </div>
         </section>
 
-      </main>
+        <section
+          id="experience"
+          aria-labelledby="experience-heading"
+          className="content-wrap border-t border-border/55 py-14 sm:py-20 lg:py-28"
+        >
+          <SectionHead
+            headingId="experience-heading"
+            label={experienceContent.label}
+            statement={experienceContent.statement}
+          />
 
-      <Footer
-        title={contactContent.title}
-        description={contactContent.description}
-        email={contactContent.email}
-      />
+          <div className="mt-6 lg:grid lg:grid-cols-12 lg:gap-8">
+            <p className="max-w-[34rem] text-[0.9rem] text-muted lg:col-span-7 lg:col-start-4">
+              {experienceContent.note}
+            </p>
+          </div>
+
+          <ol className="mt-10 lg:mt-14">
+            {experienceContent.entries.map((entry, index) => (
+              <ExperienceRow key={`${entry.role}-${index}`} entry={entry} />
+            ))}
+          </ol>
+        </section>
+
+        <ClosingBlock />
+      </main>
     </div>
   )
 }

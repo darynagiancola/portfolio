@@ -3,6 +3,30 @@ export interface NavigationLink {
   href: string
 }
 
+/**
+ * Marks whether a string is signed-off portfolio copy or still a placeholder.
+ * Provisional copy must never be presented as a factual claim.
+ */
+export type CopyStatus = 'approved' | 'provisional'
+
+export interface InformationBandItem {
+  label: string
+  value: string
+  status: CopyStatus
+}
+
+export interface AboutStanza {
+  label: string
+  body: string
+}
+
+export interface ExperienceEntry {
+  period: string
+  role: string
+  note: string
+  status: CopyStatus
+}
+
 export interface ImageAsset {
   src: string
   alt: string
