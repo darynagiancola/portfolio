@@ -31,12 +31,12 @@ export function HomePage() {
 
           <div className="relative">
             <div className="relative z-10">
-              <p className="hero-display w-full max-w-full text-[clamp(3.4rem,17vw,4.9rem)] leading-[0.76] text-[#1f2522] uppercase sm:text-[clamp(5.1rem,14.8vw,8.2rem)] md:pr-[8%] md:text-[clamp(6.2rem,12.8vw,10.1rem)] lg:pr-[6%] lg:text-[clamp(8.7rem,15.4vw,13.3rem)]">
+              <p className="hero-display w-full max-w-full text-[clamp(3.4rem,17vw,4.9rem)] leading-[0.76] text-[#1f2522] uppercase sm:text-[clamp(5.1rem,14.8vw,8.2rem)] md:pr-[6%] md:text-[clamp(6.2rem,12.8vw,10.1rem)] lg:pr-[4%] lg:text-[clamp(8.7rem,15.4vw,13.3rem)]">
                 {heroContent.portfolioWord}
               </p>
             </div>
 
-            <figure className="pointer-events-none absolute right-[0.25rem] top-[clamp(1.8rem,8vw,3.5rem)] z-20 w-[clamp(20rem,78vw,28rem)] sm:right-[0.45rem] sm:top-[clamp(2.5rem,8vw,4.6rem)] sm:w-[clamp(22rem,66vw,31rem)] md:right-[0.9rem] md:top-[clamp(2.15rem,4.8vw,4rem)] md:w-[clamp(29rem,50vw,39rem)] lg:right-[1.8rem] lg:top-[clamp(2.5rem,4.2vw,4.5rem)] lg:w-[clamp(36rem,45vw,49rem)]">
+            <figure className="pointer-events-none absolute right-[0.1rem] top-[clamp(2.1rem,9vw,3.6rem)] z-20 w-[clamp(17.8rem,70vw,21.5rem)] sm:right-[0.35rem] sm:top-[clamp(2.35rem,8vw,4.2rem)] sm:w-[clamp(20.5rem,60vw,27rem)] md:right-[-0.6rem] md:top-[clamp(1.8rem,4.5vw,3.3rem)] md:w-[clamp(32rem,55vw,43rem)] lg:right-[-0.95rem] lg:top-[clamp(2rem,3.6vw,4rem)] lg:w-[clamp(42rem,52vw,58rem)]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into editorial homepage hero composition."
@@ -45,9 +45,9 @@ export function HomePage() {
               />
             </figure>
 
-            <div className="relative z-10 mt-[clamp(1.2rem,3.2vw,2.2rem)] grid grid-cols-1 gap-y-4 md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
+            <div className="relative z-10 mt-[clamp(5.6rem,18vw,7.4rem)] grid grid-cols-1 gap-y-4 sm:mt-[clamp(6rem,16vw,8rem)] md:mt-[clamp(11rem,17vw,14rem)] md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:mt-[clamp(1.2rem,3.2vw,2.2rem)] lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
               <div className="space-y-5 md:pr-4 lg:pr-8">
-                <h1 className="max-w-[31rem] font-sans text-[clamp(2.65rem,10.8vw,3.65rem)] leading-[1.03] text-[#232926]">
+                <h1 className="max-w-[63%] font-sans text-[clamp(2.5rem,11vw,3.2rem)] leading-[1.03] text-[#232926] sm:max-w-[60%] md:max-w-[31rem] md:text-[clamp(2.65rem,10.8vw,3.65rem)]">
                   {heroContent.title}
                 </h1>
                 <p className="max-w-xl text-[clamp(1.1rem,1.8vw,1.18rem)] text-[#4f5852]">
@@ -64,7 +64,7 @@ export function HomePage() {
                 </div>
               </div>
 
-              <aside className="max-w-sm md:mt-[clamp(15rem,24vw,21rem)] md:max-w-[17rem] md:justify-self-end">
+              <aside className="max-w-sm md:mt-[clamp(8rem,14vw,12rem)] md:max-w-[17rem] md:justify-self-end">
                 <p className="text-[0.68rem] tracking-[0.18em] text-muted uppercase">Location / Availability</p>
                 <p className="mt-1 text-sm text-text">{heroContent.locationNote}</p>
               </aside>
