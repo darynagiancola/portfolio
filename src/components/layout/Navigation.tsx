@@ -1,51 +1,88 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { navigationLinks } from '../../content/site'
 
 export function Navigation() {
   const location = useLocation()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const renderNavItem = (href: string, label: string) => {
+    const isCurrent = location.pathname === '/' && href === '/'
+    const isHash = href.startsWith('#')
+    const hashHref = `${import.meta.env.BASE_URL}${href}`
+
+    if (isHash) {
+      return (
+        <a
+          href={hashHref}
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="text-[0.72rem] tracking-[0.18em] text-muted uppercase transition hover:text-text"
+        >
+          {label}
+        </a>
+      )
+    }
+
+    return (
+      <Link
+        to={href}
+        onClick={() => setIsMobileMenuOpen(false)}
+        aria-current={isCurrent ? 'page' : undefined}
+        className="text-[0.72rem] tracking-[0.18em] text-muted uppercase transition hover:text-text aria-[current=page]:text-text"
+      >
+        {label}
+      </Link>
+    )
+  }
 
   return (
     <header className="sticky top-0 z-30 border-b border-border/55 bg-bg/88 backdrop-blur-md">
-      <div className="content-wrap flex items-center justify-between gap-8 py-5">
+      <div className="content-wrap relative flex items-center justify-between gap-6 py-4 sm:py-5">
         <Link
           to="/"
-          className="font-sans text-[0.95rem] tracking-[0.16em] text-text uppercase"
+          className="font-sans text-[0.82rem] tracking-[0.19em] text-text uppercase"
           aria-label="Go to homepage"
         >
-          Daryna
+          Daryna Giancola
         </Link>
 
-        <nav aria-label="Main navigation">
-          <ul className="flex flex-wrap items-center gap-4 sm:gap-6">
-            {navigationLinks.map((item) => {
-              const isCurrent = location.pathname === '/' && item.href === '/'
-              const isHash = item.href.startsWith('#')
-              const hashHref = `${import.meta.env.BASE_URL}${item.href}`
+        <button
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-nav-panel"
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
+          className="text-[0.76rem] tracking-[0.2em] text-text uppercase transition hover:text-accent md:hidden"
+        >
+          Menu
+        </button>
 
+        <nav aria-label="Main navigation" className="hidden md:block">
+          <ul className="flex items-center gap-4 lg:gap-6">
+            {navigationLinks.map((item) => {
               return (
                 <li key={item.label}>
-                  {isHash ? (
-                    <a
-                      href={hashHref}
-                      className="text-[0.72rem] tracking-[0.18em] text-muted uppercase transition hover:text-text"
-                    >
-                      {item.label}
-                    </a>
-                  ) : (
-                    <Link
-                      to={item.href}
-                      aria-current={isCurrent ? 'page' : undefined}
-                      className="text-[0.72rem] tracking-[0.18em] text-muted uppercase transition hover:text-text aria-[current=page]:text-text"
-                    >
-                      {item.label}
-                    </Link>
-                  )}
+                  {renderNavItem(item.href, item.label)}
                 </li>
               )
             })}
           </ul>
         </nav>
       </div>
+
+      {isMobileMenuOpen ? (
+        <nav
+          id="mobile-nav-panel"
+          aria-label="Mobile navigation"
+          className="border-t border-border/70 bg-bg/96 md:hidden"
+        >
+          <ul className="content-wrap grid gap-3 py-4">
+            {navigationLinks.map((item) => (
+              <li key={item.label}>{renderNavItem(item.href, item.label)}</li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
     </header>
   )
 }
