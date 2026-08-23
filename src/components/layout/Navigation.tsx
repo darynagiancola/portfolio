@@ -12,7 +12,7 @@ export function Navigation() {
           className="font-sans text-[0.95rem] tracking-[0.16em] text-text uppercase"
           aria-label="Go to homepage"
         >
-          Portfolio
+          Daryna
         </Link>
 
         <nav aria-label="Main navigation">

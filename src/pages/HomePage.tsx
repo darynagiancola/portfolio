@@ -47,7 +47,7 @@ export function HomePage() {
             <span className="h-px flex-1 bg-border/80" aria-hidden="true"></span>
           </div>
 
-          <div className="relative min-h-[43rem] sm:min-h-[47rem] lg:min-h-[39rem]">
+          <div className="relative min-h-[40rem] sm:min-h-[45rem] md:min-h-[47rem] lg:min-h-[39rem]">
             <span
               className="pointer-events-none absolute left-[7%] top-[15%] hidden h-2.5 w-2.5 rounded-full bg-secondary/70 lg:block"
               aria-hidden="true"
@@ -57,43 +57,38 @@ export function HomePage() {
               aria-hidden="true"
             ></span>
 
-            <p className="hero-display relative z-10 max-w-[95%] text-[clamp(4.5rem,14vw,13.3rem)] leading-[0.77] text-[#1f2522] uppercase">
+            <p className="hero-display relative z-10 -ml-1 w-max max-w-none text-[clamp(4.9rem,16.5vw,13.4rem)] leading-[0.74] text-[#1f2522] uppercase sm:-ml-2 md:ml-0">
               {heroContent.portfolioWord}
             </p>
 
-            <figure className="pointer-events-none relative z-20 mt-2 h-[18rem] w-full sm:h-[26rem] md:h-[30rem] lg:absolute lg:right-[2%] lg:top-[-1rem] lg:mt-0 lg:h-[36rem] lg:w-[45%]">
+            <figure className="pointer-events-none absolute right-[-0.4rem] top-[3.9rem] z-30 h-[16rem] w-[15rem] sm:right-[2.2rem] sm:top-[4.5rem] sm:h-[22rem] sm:w-[20rem] md:right-[1.8rem] md:top-[4.3rem] md:h-[26rem] md:w-[24rem] lg:right-[3%] lg:top-[-0.3rem] lg:h-[34rem] lg:w-[32rem]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into editorial homepage hero composition."
-                className="h-full w-full object-contain object-[85%_6%]"
+                className="h-full w-full object-contain object-top"
                 loading="eager"
               />
             </figure>
 
-            <div className="relative z-30 mt-4 max-w-[34rem] space-y-5 lg:absolute lg:bottom-1 lg:left-0">
+            <div className="relative z-40 mt-[14.5rem] max-w-[34rem] space-y-5 sm:mt-[19.5rem] md:mt-[23rem] lg:mt-[10.8rem]">
               <h1 className="max-w-[30rem] font-sans text-4xl leading-[1.03] text-[#232926] sm:text-5xl lg:text-[3.65rem]">
                 {heroContent.title}
               </h1>
               <p className="max-w-xl text-base text-[#4f5852] sm:text-[1.18rem]">
                 {heroContent.intro}
               </p>
-              <div className="flex flex-wrap gap-3 pt-1">
+              <div className="pt-1">
                 <a
                   href={`${import.meta.env.BASE_URL}${heroContent.primaryCta.href}`}
-                  className="rounded-full border border-accent bg-accent px-4.5 py-2 text-xs tracking-[0.14em] text-bg uppercase transition hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 text-[0.72rem] tracking-[0.21em] text-accent uppercase transition hover:text-text"
                 >
-                  {heroContent.primaryCta.label}
-                </a>
-                <a
-                  href={`${import.meta.env.BASE_URL}${heroContent.secondaryCta.href}`}
-                  className="rounded-full border border-border bg-surface/92 px-4.5 py-2 text-xs tracking-[0.14em] text-text uppercase transition hover:border-accent/50"
-                >
-                  {heroContent.secondaryCta.label}
+                  Explore selected work
+                  <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
 
-            <aside className="relative z-30 mt-4 max-w-sm lg:absolute lg:bottom-2 lg:right-0 lg:mt-0">
+            <aside className="relative z-40 mt-4 max-w-sm lg:absolute lg:bottom-2 lg:right-0 lg:mt-0">
               <p className="text-[0.68rem] tracking-[0.18em] text-muted uppercase">Location / Availability</p>
               <p className="mt-1 text-sm text-text">{heroContent.locationNote}</p>
             </aside>
