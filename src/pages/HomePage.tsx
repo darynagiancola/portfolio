@@ -3,6 +3,7 @@ import { Navigation } from '../components/layout/Navigation'
 import { ProjectCard } from '../components/projects/ProjectCard'
 import { FeatureCard } from '../components/ui/FeatureCard'
 import { SectionHeading } from '../components/ui/SectionHeading'
+import portfolioHero from '../assets/portfolio-hero.png'
 import { projectCards } from '../content/projects'
 import { contactContent, experienceBlocks, heroContent } from '../content/site'
 
@@ -18,7 +19,7 @@ export function HomePage() {
 
       <main id="main-content">
         <section className="content-wrap py-16 sm:py-24 lg:py-28">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <div className="space-y-10">
             <div className="space-y-6">
               <p className="eyebrow">{heroContent.eyebrow}</p>
               <h1 className="max-w-3xl text-4xl sm:text-5xl lg:text-[4rem]">
@@ -41,23 +42,14 @@ export function HomePage() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-panel border border-border/80 bg-surface p-6 shadow-soft sm:p-8">
-              <div className="pointer-events-none absolute -right-14 -top-20 h-52 w-52 rounded-full bg-secondary-soft/70 blur-2xl"></div>
-              <div className="pointer-events-none absolute -bottom-20 -left-8 h-44 w-44 rounded-full bg-accent-soft blur-2xl"></div>
-              <div className="relative space-y-4">
-                <p className="text-sm tracking-[0.15em] text-muted uppercase">Focus areas</p>
-                <ul className="space-y-3">
-                  {['AI-assisted product building', 'Automation & realtime workflows', 'Editorial UX/UI case studies', 'End-to-end digital product execution'].map(
-                    (item) => (
-                      <li key={item} className="flex items-center gap-3">
-                        <span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true"></span>
-                        <span className="text-sm text-text sm:text-base">{item}</span>
-                      </li>
-                    ),
-                  )}
-                </ul>
-              </div>
-            </div>
+            <figure className="overflow-hidden rounded-panel border border-border/80 bg-surface shadow-card">
+              <img
+                src={portfolioHero}
+                alt="Editorial hero visual with warm ivory palette, organic forms, and AI/automation motifs."
+                className="h-auto w-full"
+                loading="eager"
+              />
+            </figure>
           </div>
         </section>
 
