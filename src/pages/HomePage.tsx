@@ -3,6 +3,7 @@ import { Navigation } from '../components/layout/Navigation'
 import { ProjectCard } from '../components/projects/ProjectCard'
 import { FeatureCard } from '../components/ui/FeatureCard'
 import { SectionHeading } from '../components/ui/SectionHeading'
+import { Link } from 'react-router-dom'
 import portfolioHero from '../assets/portfolio-hero.png'
 import { projectCards } from '../content/projects'
 import { contactContent, experienceBlocks, heroContent } from '../content/site'
@@ -33,12 +34,12 @@ export function HomePage() {
                 >
                   {heroContent.primaryCta.label}
                 </a>
-                <a
-                  href={heroContent.secondaryCta.href}
+                <Link
+                  to={heroContent.secondaryCta.href}
                   className="rounded-full border border-border bg-surface px-5 py-2.5 text-sm tracking-[0.1em] text-text uppercase transition hover:border-accent/50"
                 >
                   {heroContent.secondaryCta.label}
-                </a>
+                </Link>
               </div>
             </div>
 
