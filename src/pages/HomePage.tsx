@@ -24,32 +24,32 @@ export function HomePage() {
       <Navigation />
 
       <main id="main-content">
-        <section className="content-wrap relative pb-10 pt-8 sm:pb-14 sm:pt-10 lg:pb-16 lg:pt-12">
-          <div className="pb-5 pt-2 sm:pb-6 sm:pt-3">
-            <p className="text-[0.9rem] font-semibold tracking-[0.11em] text-accent uppercase sm:text-[0.95rem]">
-              {heroContent.eyebrow}
-            </p>
-          </div>
+        <section className="content-wrap relative pb-10 pt-8 sm:pb-12 sm:pt-10 lg:pb-14 lg:pt-12">
+          <p className="pb-4 pt-2 text-[clamp(0.86rem,1.2vw,0.96rem)] font-semibold tracking-[0.11em] text-accent uppercase sm:pb-5 sm:pt-3">
+            {heroContent.eyebrow}
+          </p>
 
-          <div className="relative min-h-[35rem] overflow-hidden sm:min-h-[39rem] md:min-h-[42rem] lg:min-h-[44rem]">
-            <p className="hero-display relative z-10 ml-0 w-full max-w-full text-[clamp(3.55rem,17.6vw,5.05rem)] leading-[0.76] text-[#1f2522] uppercase sm:-ml-1 sm:text-[clamp(5.45rem,15.4vw,8.45rem)] md:ml-0 md:text-[clamp(6.9rem,13.9vw,10.3rem)] lg:w-max lg:max-w-none lg:text-[clamp(9.1rem,16.6vw,13.9rem)]">
-              {heroContent.portfolioWord}
-            </p>
+          <div className="grid grid-cols-1 gap-y-4 md:grid-cols-[minmax(0,1fr)_minmax(14rem,31vw)] md:gap-x-7 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,30vw)] lg:gap-x-10">
+            <div className="row-start-1 col-start-1">
+              <p className="hero-display relative z-10 w-full max-w-full text-[clamp(3.4rem,17vw,4.9rem)] leading-[0.76] text-[#1f2522] uppercase sm:text-[clamp(5.1rem,14.8vw,8.2rem)] md:pr-[30%] md:text-[clamp(6.2rem,12.8vw,10.1rem)] lg:pr-[28%] lg:text-[clamp(8.7rem,15.4vw,13.3rem)]">
+                {heroContent.portfolioWord}
+              </p>
+            </div>
 
-            <figure className="pointer-events-none absolute right-[-7.4rem] top-[-0.5rem] z-30 h-[34rem] w-[30rem] sm:right-[-5.9rem] sm:top-[-0.7rem] sm:h-[40rem] sm:w-[35rem] md:right-[-3.2rem] md:top-[-1rem] md:h-[47rem] md:w-[41rem] lg:right-[-2.2%] lg:top-[-5rem] lg:h-[62rem] lg:w-[55rem]">
+            <figure className="pointer-events-none row-start-1 col-start-1 z-20 w-[clamp(14.5rem,55vw,19.5rem)] justify-self-end sm:w-[clamp(17rem,51vw,24rem)] md:col-start-2 md:row-span-2 md:w-[clamp(22rem,35vw,30rem)] md:self-start lg:w-[clamp(25rem,33vw,34rem)]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into editorial homepage hero composition."
-                className="h-full w-full object-contain object-top"
+                className="h-auto w-full"
                 loading="eager"
               />
             </figure>
 
-            <div className="relative z-40 mt-[5.1rem] max-w-[66%] space-y-5 sm:mt-[6.3rem] sm:max-w-[60%] md:mt-[7.1rem] md:max-w-[58%] lg:mt-[5.7rem] lg:max-w-[35rem]">
-              <h1 className="max-w-[30rem] font-sans text-4xl leading-[1.03] text-[#232926] sm:text-5xl lg:text-[3.65rem]">
+            <div className="relative z-10 row-start-2 col-start-1 space-y-5 md:pr-4 lg:pr-8">
+              <h1 className="max-w-[31rem] font-sans text-[clamp(3rem,5vw,3.7rem)] leading-[1.03] text-[#232926]">
                 {heroContent.title}
               </h1>
-              <p className="max-w-xl text-base text-[#4f5852] sm:text-[1.18rem]">
+              <p className="max-w-xl text-[clamp(1.1rem,1.8vw,1.18rem)] text-[#4f5852]">
                 {heroContent.intro}
               </p>
               <div className="pt-1">
@@ -63,7 +63,7 @@ export function HomePage() {
               </div>
             </div>
 
-            <aside className="relative z-40 mt-5 max-w-[66%] sm:max-w-[60%] md:max-w-[58%] lg:absolute lg:bottom-4 lg:right-0 lg:mt-0 lg:max-w-sm">
+            <aside className="relative z-10 row-start-3 col-start-1 max-w-sm md:row-start-2 md:col-start-2 md:max-w-[18rem] md:self-end md:justify-self-end">
               <p className="text-[0.68rem] tracking-[0.18em] text-muted uppercase">Location / Availability</p>
               <p className="mt-1 text-sm text-text">{heroContent.locationNote}</p>
             </aside>
