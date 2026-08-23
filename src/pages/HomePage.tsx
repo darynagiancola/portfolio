@@ -24,44 +24,18 @@ export function HomePage() {
 
       <main id="main-content">
         <section className="content-wrap relative pb-10 pt-8 sm:pb-14 sm:pt-10 lg:pb-16 lg:pt-12">
-          <div
-            className="pointer-events-none absolute -left-3 top-4 hidden h-24 w-44 text-border/70 lg:block"
-            aria-hidden="true"
-          >
-            <svg viewBox="0 0 180 90" className="h-full w-full">
-              <path
-                d="M2 45 H86 C104 45 104 18 122 18 H178"
-                stroke="currentColor"
-                strokeWidth="1.1"
-                fill="none"
-              />
-              <circle cx="86" cy="45" r="3.8" fill="#74826d" />
-              <circle cx="122" cy="18" r="3.8" fill="#aea3b7" />
-            </svg>
-          </div>
-
-          <div className="flex items-center gap-3 pb-6 pt-1 sm:gap-4 sm:pb-7">
-            <p className="text-[0.84rem] font-medium tracking-[0.14em] text-accent uppercase sm:text-[0.88rem]">
+          <div className="pb-5 pt-2 sm:pb-6 sm:pt-3">
+            <p className="text-[0.9rem] font-semibold tracking-[0.11em] text-accent uppercase sm:text-[0.95rem]">
               {heroContent.eyebrow}
             </p>
-            <span className="h-px flex-1 bg-border/90" aria-hidden="true"></span>
           </div>
 
-          <div className="relative min-h-[34rem] sm:min-h-[38rem] md:min-h-[39.5rem] lg:min-h-[39rem]">
-            <span
-              className="pointer-events-none absolute left-[7%] top-[15%] hidden h-2.5 w-2.5 rounded-full bg-secondary/70 lg:block"
-              aria-hidden="true"
-            ></span>
-            <span
-              className="pointer-events-none absolute right-[26%] top-[56%] hidden h-5 w-5 rounded-full border border-accent/45 bg-accent-soft/80 lg:block"
-              aria-hidden="true"
-            ></span>
-
-            <p className="hero-display relative z-10 ml-0 w-full max-w-full text-[clamp(3.45rem,17.5vw,4.85rem)] leading-[0.76] text-[#1f2522] uppercase sm:-ml-1 sm:text-[clamp(5rem,15.2vw,8rem)] md:ml-0 md:text-[clamp(6.2rem,13.5vw,9.6rem)] lg:w-max lg:max-w-none lg:text-[clamp(8.8rem,16.5vw,13.4rem)]">
+          <div className="relative min-h-[30.5rem] sm:min-h-[33.6rem] md:min-h-[35.8rem] lg:min-h-[39rem]">
+            <p className="hero-display relative z-10 ml-0 w-full max-w-full text-[clamp(3.5rem,17.8vw,4.92rem)] leading-[0.76] text-[#1f2522] uppercase sm:-ml-1 sm:text-[clamp(5.35rem,15.5vw,8.25rem)] md:ml-0 md:text-[clamp(6.7rem,13.8vw,10rem)] lg:w-max lg:max-w-none lg:text-[clamp(8.8rem,16.5vw,13.4rem)]">
               {heroContent.portfolioWord}
             </p>
 
-            <figure className="pointer-events-none absolute right-[-0.6rem] top-[3.3rem] z-30 h-[14rem] w-[12.8rem] sm:right-[0.7rem] sm:top-[3.9rem] sm:h-[18.4rem] sm:w-[16.7rem] md:right-[1.2rem] md:top-[3.9rem] md:h-[22rem] md:w-[20rem] lg:right-[3%] lg:top-[-0.3rem] lg:h-[34rem] lg:w-[32rem]">
+            <figure className="pointer-events-none absolute right-[-4.1rem] top-[1.45rem] z-30 h-[23rem] w-[20.5rem] sm:right-[-3rem] sm:top-[1.4rem] sm:h-[28.5rem] sm:w-[25.4rem] md:right-[-1.6rem] md:top-[1.15rem] md:h-[33rem] md:w-[29.4rem] lg:right-[0.3%] lg:top-[-2.2rem] lg:h-[45rem] lg:w-[40rem]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into editorial homepage hero composition."
@@ -70,7 +44,7 @@ export function HomePage() {
               />
             </figure>
 
-            <div className="relative z-40 mt-[10.4rem] max-w-[34rem] space-y-5 sm:mt-[13.5rem] md:mt-[16rem] lg:mt-[10.8rem]">
+            <div className="relative z-40 mt-[12.1rem] max-w-[34rem] space-y-5 sm:mt-[15.2rem] md:mt-[17rem] lg:mt-[10.2rem]">
               <h1 className="max-w-[30rem] font-sans text-4xl leading-[1.03] text-[#232926] sm:text-5xl lg:text-[3.65rem]">
                 {heroContent.title}
               </h1>
