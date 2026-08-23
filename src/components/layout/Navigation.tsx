@@ -19,13 +19,14 @@ export function Navigation() {
           <ul className="flex flex-wrap items-center gap-2 sm:gap-3">
             {navigationLinks.map((item) => {
               const isCurrent = location.pathname === '/' && item.href === '/'
-              const isHash = item.href.startsWith('/#')
+              const isHash = item.href.startsWith('#')
+              const hashHref = `${import.meta.env.BASE_URL}${item.href}`
 
               return (
                 <li key={item.label}>
                   {isHash ? (
                     <a
-                      href={item.href}
+                      href={hashHref}
                       className="rounded-full border border-transparent px-3 py-1.5 text-sm text-muted transition hover:border-border hover:text-text"
                     >
                       {item.label}

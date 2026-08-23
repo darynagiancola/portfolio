@@ -2,8 +2,8 @@ import type { NavigationLink } from '../types/portfolio'
 
 export const navigationLinks: NavigationLink[] = [
   { label: 'Home', href: '/' },
-  { label: 'Selected Work', href: '/#selected-work' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Selected Work', href: '#selected-work' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export const heroContent = {
