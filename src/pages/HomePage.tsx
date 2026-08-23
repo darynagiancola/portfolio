@@ -36,7 +36,7 @@ export function HomePage() {
               </p>
             </div>
 
-            <figure className="pointer-events-none relative z-20 -mt-[clamp(2.9rem,12vw,4.1rem)] ml-auto w-[clamp(18.5rem,74vw,22.2rem)] sm:absolute sm:right-[0.35rem] sm:top-[clamp(2.35rem,8vw,4.2rem)] sm:mt-0 sm:w-[clamp(20.5rem,60vw,27rem)] md:right-[-0.6rem] md:top-[clamp(1.8rem,4.5vw,3.3rem)] md:w-[clamp(32rem,55vw,43rem)] lg:right-[-0.95rem] lg:top-[clamp(2rem,3.6vw,4rem)] lg:w-[clamp(42rem,52vw,58rem)]">
+            <figure className="pointer-events-none relative z-20 -mt-[clamp(2.9rem,12vw,4.1rem)] ml-auto w-[clamp(18.5rem,74vw,22.2rem)] min-[360px]:max-sm:float-right min-[360px]:max-sm:-mr-5 min-[360px]:max-sm:-ml-[clamp(6.75rem,27.7vw,8.3rem)] sm:absolute sm:right-[0.35rem] sm:top-[clamp(2.35rem,8vw,4.2rem)] sm:mt-0 sm:w-[clamp(20.5rem,60vw,27rem)] md:right-[-0.6rem] md:top-[clamp(1.8rem,4.5vw,3.3rem)] md:w-[clamp(32rem,55vw,43rem)] lg:right-[-0.95rem] lg:top-[clamp(2rem,3.6vw,4rem)] lg:w-[clamp(42rem,52vw,58rem)]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into editorial homepage hero composition."
@@ -45,12 +45,12 @@ export function HomePage() {
               />
             </figure>
 
-            <div className="relative z-10 mt-4 grid grid-cols-1 gap-y-4 sm:mt-[clamp(6rem,16vw,8rem)] md:mt-[clamp(5.4rem,8.6vw,7rem)] md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:mt-[clamp(1.2rem,3.2vw,2.2rem)] lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
+            <div className="relative z-10 mt-4 grid grid-cols-1 gap-y-4 min-[360px]:max-sm:mt-2 min-[360px]:max-sm:block sm:mt-[clamp(6rem,16vw,8rem)] md:mt-[clamp(5.4rem,8.6vw,7rem)] md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:mt-[clamp(1.2rem,3.2vw,2.2rem)] lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
               <div className="space-y-5 md:pr-4 lg:pr-8">
-                <h1 className="max-w-full font-sans text-[clamp(2.5rem,11vw,3.2rem)] leading-[1.03] text-[#232926] md:max-w-[31rem] md:text-[clamp(2.65rem,10.8vw,3.65rem)]">
+                <h1 className="max-w-full font-sans text-[clamp(2.5rem,11vw,3.2rem)] leading-[1.03] text-[#232926] min-[360px]:max-sm:text-[clamp(2.05rem,9.4vw,3.2rem)] min-[360px]:max-sm:[text-wrap:pretty] md:max-w-[31rem] md:text-[clamp(2.65rem,10.8vw,3.15rem)] lg:text-[clamp(2.65rem,10.8vw,3.65rem)]">
                   {heroContent.title}
                 </h1>
-                <p className="max-w-xl text-[clamp(1.1rem,1.8vw,1.18rem)] text-[#4f5852]">
+                <p className="max-w-xl text-[clamp(1.1rem,1.8vw,1.18rem)] text-[#4f5852] min-[360px]:max-sm:clear-right">
                   {heroContent.intro}
                 </p>
                 <div className="pt-1">
