@@ -40,6 +40,7 @@
   --shadow-soft: var(--portfolio-shadow-soft);
   --font-sans: "Inter", "Avenir Next", "Segoe UI", sans-serif;
   --font-serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-display: "Arial Narrow", "Inter", "Avenir Next", sans-serif;
 }
 
 @layer base {
@@ -103,5 +104,13 @@
 
   .eyebrow {
     @apply mb-3 inline-block text-[0.7rem] tracking-[0.23em] text-accent uppercase;
+  }
+
+  .hero-display {
+    font-family: var(--font-display);
+    font-stretch: condensed;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
   }
 }

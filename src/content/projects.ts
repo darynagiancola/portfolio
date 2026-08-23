@@ -29,7 +29,7 @@ export const projectCards: ProjectCardData[] = [
     title: 'AURELIA',
     subtitle: 'AI-powered hospitality operating system',
     description:
-      'A connected multi-interface platform aligning customer ordering, staff workflows, management visibility, and kitchen operations in one product ecosystem.',
+      'A connected hospitality platform bringing customer ordering, reservations, payments and restaurant operations into one system.',
     tags: ['AI-assisted product build', 'Realtime workflows', 'Multi-interface UX'],
     metadata: [
       {
