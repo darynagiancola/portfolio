@@ -29,44 +29,46 @@ export function HomePage() {
             {heroContent.eyebrow}
           </p>
 
-          <div className="grid grid-cols-1 gap-y-4 md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
-            <div className="row-start-1 col-start-1">
-              <p className="hero-display relative z-10 w-full max-w-full text-[clamp(3.4rem,17vw,4.9rem)] leading-[0.76] text-[#1f2522] uppercase sm:text-[clamp(5.1rem,14.8vw,8.2rem)] md:pr-[24%] md:text-[clamp(6.2rem,12.8vw,10.1rem)] lg:pr-[23%] lg:text-[clamp(8.7rem,15.4vw,13.3rem)]">
+          <div className="relative">
+            <div className="relative z-10">
+              <p className="hero-display w-full max-w-full text-[clamp(3.4rem,17vw,4.9rem)] leading-[0.76] text-[#1f2522] uppercase sm:text-[clamp(5.1rem,14.8vw,8.2rem)] md:pr-[24%] md:text-[clamp(6.2rem,12.8vw,10.1rem)] lg:pr-[23%] lg:text-[clamp(8.7rem,15.4vw,13.3rem)]">
                 {heroContent.portfolioWord}
               </p>
             </div>
 
-            <figure className="pointer-events-none relative z-20 row-start-1 col-start-1 h-[clamp(17.8rem,66vw,24.5rem)] w-[clamp(14.7rem,56vw,20rem)] justify-self-end sm:h-[clamp(22rem,60vw,29rem)] sm:w-[clamp(18rem,52vw,25rem)] md:col-start-2 md:row-span-2 md:mt-[-0.4rem] md:h-[clamp(27rem,44vw,35rem)] md:w-[clamp(22rem,35vw,31rem)] md:self-start lg:mt-[-0.8rem] lg:h-[clamp(30rem,41vw,39rem)] lg:w-[clamp(25rem,33vw,35rem)]">
+            <figure className="pointer-events-none absolute right-[-0.45rem] top-[clamp(3.35rem,10vw,4.9rem)] z-20 w-[clamp(14.7rem,56vw,20rem)] sm:right-[-0.7rem] sm:top-[clamp(4.8rem,12vw,6.9rem)] sm:w-[clamp(18rem,52vw,25rem)] md:right-[0.2rem] md:top-[clamp(3.55rem,7vw,5.4rem)] md:w-[clamp(22rem,35vw,31rem)] lg:right-[0.55rem] lg:top-[clamp(4.1rem,7vw,5.8rem)] lg:w-[clamp(25rem,33vw,35rem)]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into editorial homepage hero composition."
-                className="h-full w-full object-contain object-top"
+                className="h-auto w-full object-contain object-top"
                 loading="eager"
               />
             </figure>
 
-            <div className="relative z-10 row-start-2 col-start-1 space-y-5 md:pr-4 lg:pr-8">
-              <h1 className="max-w-[31rem] font-sans text-[clamp(2.65rem,10.8vw,3.65rem)] leading-[1.03] text-[#232926]">
-                {heroContent.title}
-              </h1>
-              <p className="max-w-xl text-[clamp(1.1rem,1.8vw,1.18rem)] text-[#4f5852]">
-                {heroContent.intro}
-              </p>
-              <div className="pt-1">
-                <a
-                  href={`${import.meta.env.BASE_URL}${heroContent.primaryCta.href}`}
-                  className="inline-flex items-center gap-2 text-[0.72rem] tracking-[0.21em] text-accent uppercase transition hover:text-text"
-                >
-                  Explore selected work
-                  <span aria-hidden="true">→</span>
-                </a>
+            <div className="relative z-10 mt-[clamp(1.8rem,4.8vw,3.3rem)] grid grid-cols-1 gap-y-4 md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
+              <div className="space-y-5 md:pr-4 lg:pr-8">
+                <h1 className="max-w-[31rem] font-sans text-[clamp(2.65rem,10.8vw,3.65rem)] leading-[1.03] text-[#232926]">
+                  {heroContent.title}
+                </h1>
+                <p className="max-w-xl text-[clamp(1.1rem,1.8vw,1.18rem)] text-[#4f5852]">
+                  {heroContent.intro}
+                </p>
+                <div className="pt-1">
+                  <a
+                    href={`${import.meta.env.BASE_URL}${heroContent.primaryCta.href}`}
+                    className="inline-flex items-center gap-2 text-[0.72rem] tracking-[0.21em] text-accent uppercase transition hover:text-text"
+                  >
+                    Explore selected work
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
               </div>
-            </div>
 
-            <aside className="relative z-10 row-start-3 col-start-1 max-w-sm md:row-start-2 md:col-start-2 md:max-w-[17rem] md:self-end md:justify-self-end">
-              <p className="text-[0.68rem] tracking-[0.18em] text-muted uppercase">Location / Availability</p>
-              <p className="mt-1 text-sm text-text">{heroContent.locationNote}</p>
-            </aside>
+              <aside className="max-w-sm md:mt-[clamp(11rem,20vw,16rem)] md:max-w-[17rem] md:justify-self-end">
+                <p className="text-[0.68rem] tracking-[0.18em] text-muted uppercase">Location / Availability</p>
+                <p className="mt-1 text-sm text-text">{heroContent.locationNote}</p>
+              </aside>
+            </div>
           </div>
         </section>
 
