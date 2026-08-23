@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" role="img" aria-labelledby="title desc">
+  <title id="title">AURELIA customer reservation placeholder</title>
+  <desc id="desc">Temporary placeholder for the customer reservation screenshot.</desc>
+  <rect width="1080" height="1920" fill="#f4ece1" />
+  <rect x="120" y="120" width="840" height="1680" rx="56" fill="#fffdf8" stroke="#c9b6a7" stroke-width="6" />
+  <text x="540" y="870" text-anchor="middle" fill="#4c3b33" font-size="66" font-family="Inter, sans-serif">customer reservation</text>
+  <text x="540" y="965" text-anchor="middle" fill="#806557" font-size="36" font-family="Inter, sans-serif">placeholder</text>
+</svg>

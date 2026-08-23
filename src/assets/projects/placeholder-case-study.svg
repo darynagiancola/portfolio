@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Case study placeholder</title>
+  <desc id="desc">Temporary image placeholder for a future portfolio case study.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8f4ec" />
+      <stop offset="100%" stop-color="#efe8db" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)" />
+  <rect x="150" y="120" width="1300" height="760" rx="40" fill="#fbf8f1" stroke="#d6cfbf" stroke-width="4" />
+  <text x="50%" y="45%" text-anchor="middle" fill="#4b5447" font-size="64" font-family="Inter, sans-serif" letter-spacing="5">CASE STUDY</text>
+  <text x="50%" y="54%" text-anchor="middle" fill="#6f786d" font-size="42" font-family="Inter, sans-serif" letter-spacing="2">in progress</text>
+  <text x="50%" y="63%" text-anchor="middle" fill="#8a8f87" font-size="24" font-family="Inter, sans-serif">replace with final project imagery</text>
+</svg>
