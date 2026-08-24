@@ -41,6 +41,8 @@ export interface ProjectCardData {
   title: string
   subtitle: string
   description: string
+  featured?: boolean
+  visualState?: 'final' | 'placeholder'
   tags: string[]
   metadata?: MetadataItem[]
   ctaLabel: string

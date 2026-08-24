@@ -26,15 +26,17 @@ import placeholderThumb from '../assets/projects/placeholder-case-study.svg'
 export const projectCards: ProjectCardData[] = [
   {
     slug: 'aurelia',
-    title: 'AURELIA',
-    subtitle: 'AI-powered hospitality operating system',
+    title: 'AI-Powered Hospitality System',
+    subtitle: 'Connected hospitality ecosystem',
     description:
-      'An integrated restaurant ecosystem connecting customer ordering, AI assistance, payments and kitchen operations.',
+      'A connected hospitality ecosystem covering customer interaction, AI-assisted menu discovery, ordering/payment and kitchen/operational workflows.',
+    featured: true,
+    visualState: 'final',
     tags: ['AI Agent', 'Ordering', 'Payments', 'Kitchen Display', 'Automation'],
     metadata: [
       {
-        label: 'Product Areas',
-        value: 'Customer · Staff · Admin · Kitchen',
+        label: 'Context',
+        value: 'Customer interaction · AI discovery · Ordering/payment · Kitchen operations',
       },
     ],
     ctaLabel: 'View Case Study',
@@ -49,15 +51,23 @@ export const projectCards: ProjectCardData[] = [
     },
   },
   {
-    slug: 'case-study-2',
-    title: 'Next Product Case Study',
-    subtitle: 'Case study in progress',
+    slug: 'lead-marketing-automation-system',
+    title: 'Lead & Marketing Automation System',
+    subtitle: 'Multi-step commercial automation',
     description:
-      'Reserved for the next product narrative and implementation walkthrough.',
-    tags: ['Case study in progress'],
-    ctaLabel: 'Case study in progress',
+      'A multi-step business automation covering lead generation/capture, ActiveCampaign automations, webinar communication, Pipedrive CRM status changes and follow-up workflows.',
+    featured: true,
+    visualState: 'placeholder',
+    tags: ['Lead capture', 'ActiveCampaign', 'Webinar workflows', 'Pipedrive'],
+    metadata: [
+      {
+        label: 'Context',
+        value: 'Lead generation · Automation logic · CRM status routing',
+      },
+    ],
+    ctaLabel: 'View Case Study',
     href: '#',
-    status: 'placeholder',
+    status: 'featured',
     thumbnail: {
       src: placeholderThumb,
       alt: 'Placeholder for upcoming case study',
@@ -65,15 +75,23 @@ export const projectCards: ProjectCardData[] = [
     },
   },
   {
-    slug: 'case-study-3',
-    title: 'Future System Build',
-    subtitle: 'Case study in progress',
+    slug: 'ai-support-ticket-routing',
+    title: 'AI Support & Ticket Routing',
+    subtitle: 'Intercom-based support orchestration',
     description:
-      'Space for an upcoming AI-assisted product system focused on operations and UX.',
-    tags: ['Case study in progress'],
-    ctaLabel: 'Case study in progress',
+      'An Intercom-based AI support system using a knowledge base to answer customer questions and routing/escalation logic to direct requests to the appropriate departments.',
+    featured: true,
+    visualState: 'placeholder',
+    tags: ['Intercom', 'AI support', 'Knowledge base', 'Routing / escalation'],
+    metadata: [
+      {
+        label: 'Context',
+        value: 'Support automation · Knowledge retrieval · Department routing',
+      },
+    ],
+    ctaLabel: 'View Case Study',
     href: '#',
-    status: 'placeholder',
+    status: 'featured',
     thumbnail: {
       src: placeholderThumb,
       alt: 'Placeholder for future product case study',
