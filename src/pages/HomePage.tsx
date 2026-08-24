@@ -39,7 +39,7 @@ export function HomePage() {
               </p>
             </div>
 
-            <figure className="pointer-events-none relative z-20 -mt-[clamp(2.9rem,12vw,4.1rem)] ml-auto w-[clamp(18.5rem,74vw,22.2rem)] min-[360px]:max-sm:float-right min-[360px]:max-sm:-mr-[1.875rem] min-[360px]:max-sm:-ml-[clamp(5.7rem,22vw,8.3rem)] sm:absolute sm:right-[0.35rem] sm:top-[clamp(2.35rem,8vw,4.2rem)] sm:mt-0 sm:w-[clamp(20.5rem,60vw,27rem)] md:right-[-0.6rem] md:top-[clamp(1.8rem,4.5vw,3.3rem)] md:w-[clamp(32rem,55vw,43rem)] lg:right-[-0.95rem] lg:top-[clamp(2rem,3.6vw,4rem)] lg:w-[clamp(42rem,52vw,58rem)]">
+            <figure className="pointer-events-none relative z-20 -mt-[clamp(2.9rem,12vw,4.1rem)] ml-auto w-[clamp(18.5rem,74vw,22.2rem)] min-[360px]:max-sm:float-right min-[360px]:max-sm:-mr-[1.875rem] min-[360px]:max-sm:-ml-[clamp(5.7rem,22vw,8.3rem)] sm:absolute sm:right-[0.35rem] sm:top-[clamp(2.35rem,8vw,4.2rem)] sm:mt-0 sm:w-[clamp(20.5rem,60vw,27rem)] md:right-[-0.6rem] md:top-[clamp(1.8rem,4.5vw,3.3rem)] md:w-[clamp(32rem,55vw,43rem)] lg:right-[-0.95rem] lg:top-auto lg:-bottom-14 lg:w-[clamp(42rem,52vw,58rem)]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into editorial homepage hero composition."

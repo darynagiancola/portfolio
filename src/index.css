@@ -176,9 +176,14 @@
 
   @media (width >= 64rem) {
     .hero-tone-step {
-      top: calc(
-        clamp(2rem, 3.6vw, 4rem) + clamp(28rem, 34.667vw, 38.667rem) - 1.75rem
-      );
+      /*
+       * The portrait is bottom-anchored at this breakpoint (figure bottom is
+       * offset -3.5rem, i.e. flush with the hero section's own lower edge
+       * rather than this inner container's edge), so the step's top is the
+       * container's bottom edge plus that same offset, minus the overlap
+       * used below 64rem, instead of a top-offset + height computation.
+       */
+      top: calc(100% + 3.5rem - 1.75rem);
       bottom: -3.5rem;
       width: calc(50vw + clamp(24.66rem, 30.53vw, 34.06rem) - 0.45rem);
     }
