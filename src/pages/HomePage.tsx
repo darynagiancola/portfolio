@@ -9,25 +9,25 @@ export function HomePage() {
       id: '01',
       title: 'Business & Process Strategy',
       description:
-        'Mapping operational friction, priorities and system boundaries before any tool decisions are made.',
+        'Business analysis, workflow mapping, requirements, market analysis and revenue thinking. I look at how the business works before deciding what should change or what technology belongs in the solution.',
     },
     {
       id: '02',
       title: 'AI & Automation',
       description:
-        'Designing practical AI and automation workflows that improve real execution, not just demos.',
+        'AI agents, intelligent workflows, business automation and system integrations designed around specific processes rather than generic automation templates.',
     },
     {
       id: '03',
       title: 'Marketing & Commercial Strategy',
       description:
-        'Aligning customer acquisition, communication and sales operations into one coherent process.',
+        'Marketing strategy, positioning, customer journeys, lead generation, CRM, lifecycle automation and performance, backed by hands-on experience in marketing leadership and commercial environments.',
     },
     {
       id: '04',
       title: 'Digital Products & Systems',
       description:
-        'Shaping connected products where interface clarity and operational architecture work together.',
+        'Turning requirements and workflows into usable digital products, from customer-facing AI experiences to internal operational tools connected through APIs, databases and automation.',
     },
   ]
   const toolkitCategories = [
@@ -40,35 +40,35 @@ export function HomePage() {
     'Marketing & Analytics',
   ]
   const toolGroups = [
-    { label: 'AI & Knowledge', items: ['OpenAI', 'Claude', 'Gemini', 'Perplexity'] },
-    { label: 'Automation & Integration', items: ['Make', 'n8n', 'Zapier', 'Webhooks / APIs'] },
+    { label: 'AI & Knowledge', items: ['ChatGPT', 'OpenAI API', 'Claude', 'Gemini', 'NotebookLM', 'LangChain'] },
+    { label: 'Automation & Integration', items: ['Make', 'APIs', 'Webhooks', 'Zapier', 'n8n'] },
     {
       label: 'CRM, Marketing & Customer Operations',
-      items: ['ActiveCampaign', 'Pipedrive', 'Intercom', 'Customer journeys'],
+      items: ['ActiveCampaign', 'Pipedrive', 'Intercom'],
     },
-    { label: 'Product & Development', items: ['Cursor', 'GitHub', 'React', 'Vite'] },
-    { label: 'Data, Backend & Deployment', items: ['Supabase', 'PostgreSQL', 'Vercel', 'GitHub Pages'] },
-    { label: 'Business, Data & Productivity', items: ['Notion', 'Airtable', 'Looker Studio', 'Dashboards'] },
-    { label: 'Marketing & Analytics', items: ['GA4', 'UTM strategy', 'Funnel tracking', 'Attribution'] },
+    { label: 'Product & Development', items: ['Cursor', 'Lovable', 'React', 'TypeScript', 'HTML', 'JSON', 'GitHub'] },
+    { label: 'Data, Backend & Deployment', items: ['Supabase', 'Vercel', 'Docker'] },
+    { label: 'Business, Data & Productivity', items: ['Notion', 'Airtable', 'Google Workspace', 'Microsoft 365'] },
+    { label: 'Marketing & Analytics', items: ['Google Analytics', 'Google Ads', 'Meta Ads'] },
   ]
   const approachSteps = [
     {
       id: '01',
-      title: 'Understand',
+      title: 'UNDERSTAND',
       description:
-        'Clarify the business context, operational constraints and outcomes before defining a solution.',
+        'Start with the business objective, the people involved and the process as it actually works. Identify the real problem before deciding on the technology.',
     },
     {
       id: '02',
-      title: 'Design',
+      title: 'DESIGN',
       description:
-        'Structure the system, workflows and interfaces so teams can adopt and run them with confidence.',
+        'Map the improved workflow, define the logic and decide where AI, automation or a digital product can genuinely add value.',
     },
     {
       id: '03',
-      title: 'Build',
+      title: 'BUILD',
       description:
-        'Implement, integrate and refine the final product so strategy and execution stay connected.',
+        'Turn the solution into something usable by connecting the right interfaces, AI, automation, APIs, business tools and data.',
     },
   ]
 
@@ -83,10 +83,8 @@ export function HomePage() {
           <div className="flex items-center gap-10">
             <nav className="flex items-center gap-8 text-[0.68rem] font-semibold tracking-[0.18em] text-[#2c312d] uppercase">
               <a href="#selected-work">WORK</a>
-              <a href="#expertise">EXPERTISE</a>
               <a href="#about">ABOUT</a>
-              <a href="#approach">APPROACH</a>
-              <a href="#toolkit">TOOLKIT</a>
+              <a href="#expertise">EXPERTISE</a>
               <a href="#contact">CONTACT</a>
             </nav>
             <a
@@ -118,11 +116,9 @@ export function HomePage() {
             </figure>
 
             <div className="relative z-10 mt-2 max-w-[32rem]">
-              <h1 className="font-serif text-[3.12rem] leading-[1.05] text-[#1f2522]">
-                I design intelligent systems that <em className="italic">inspire and connect.</em>
-              </h1>
+              <h1 className="font-serif text-[3.12rem] leading-[1.05] text-[#1f2522]">I design intelligent systems around real business needs.</h1>
               <p className="mt-4 max-w-[24rem] text-[1.02rem] text-[#4b544f]">
-                AI-powered products, automation and digital experiences built around real business needs.
+                I combine business strategy, marketing and process thinking with AI, automation and digital product development to turn complex workflows into practical, working solutions.
               </p>
               <a
                 href="#selected-work"
@@ -140,9 +136,9 @@ export function HomePage() {
 
         <section id="selected-work" className="content-wrap py-20">
           <div className="flex items-end justify-between gap-6">
-            <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">Selected Work</p>
+            <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">SELECTED WORK</p>
             <a href="#" className="text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase">
-              View all projects →
+              VIEW ALL PROJECTS →
             </a>
           </div>
 
@@ -196,11 +192,11 @@ export function HomePage() {
                         to={project.href}
                         className="inline-flex text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase"
                       >
-                        View case study →
+                        VIEW CASE STUDY →
                       </Link>
                     ) : (
                       <a href={project.href} className="inline-flex text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase">
-                        View case study →
+                        VIEW CASE STUDY →
                       </a>
                     )}
                   </article>
@@ -211,7 +207,10 @@ export function HomePage() {
         </section>
 
         <section id="expertise" className="content-wrap py-20">
-          <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">Expertise</p>
+          <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">EXPERTISE</p>
+          <p className="mt-5 max-w-[32rem] text-[1.08rem] leading-[1.55] text-[#545d57]">
+            Business thinking, translated into systems.
+          </p>
           <div className="mt-8 grid grid-cols-2 gap-x-16 gap-y-14">
             {expertiseAreas.map((area) => (
               <article key={area.id} className="space-y-3">
@@ -225,16 +224,17 @@ export function HomePage() {
 
         <section id="about" className="py-20">
           <div className="content-wrap bg-secondary-soft/45 px-10 py-16">
-            <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">About</p>
+            <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">ABOUT</p>
             <div className="mt-6 grid grid-cols-[1.35fr_1fr] gap-12">
               <h2 className="font-serif text-[4rem] leading-[0.94] text-[#1f2522]">
                 A business-first approach to technology.
               </h2>
               <div className="self-end">
                 <p className="text-[1.1rem] leading-[1.55] text-[#505a54]">
-                  Technology choices should follow business reality. My work starts from operations, strategy,
-                  commercial context and customer impact, then translates that into systems teams can actually use and
-                  sustain.
+                  I work across business strategy, marketing and technology, with a background spanning marketing leadership, revenue management, sales, market analysis and business operations alongside hands-on work in AI, automation and digital products.
+                </p>
+                <p className="mt-4 text-[1.1rem] leading-[1.55] text-[#505a54]">
+                  That combination allows me to look beyond the technical task itself: understand the business context, analyse the process behind the problem and translate it into a solution that makes sense commercially and works in practice.
                 </p>
               </div>
             </div>
@@ -242,7 +242,10 @@ export function HomePage() {
         </section>
 
         <section id="approach" className="content-wrap py-20">
-          <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">Approach</p>
+          <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">APPROACH</p>
+          <p className="mt-5 max-w-[32rem] text-[1.08rem] leading-[1.55] text-[#545d57]">
+            From business problem to working system.
+          </p>
           <div className="mt-7 border-t border-border/50 pt-7">
             <div className="grid grid-cols-3 gap-10">
             {approachSteps.map((step) => (
@@ -259,9 +262,9 @@ export function HomePage() {
         <section id="toolkit" className="content-wrap py-20">
           <div className="grid grid-cols-[0.8fr_1.2fr] gap-14">
             <div>
-              <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">Toolkit</p>
+              <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">TOOLKIT</p>
               <p className="mt-4 max-w-[22rem] text-[1.02rem] leading-[1.55] text-[#57605a]">
-                Grouped by capability and delivery context rather than presented as an exhaustive logo wall.
+                Tools I work with.
               </p>
               <ul className="mt-8 space-y-2">
                 {toolkitCategories.map((category) => (
@@ -289,11 +292,14 @@ export function HomePage() {
               <h2 className="max-w-[44rem] font-serif text-[3.65rem] leading-[0.97] text-[#1f2522]">
                 Have a business problem that might need a better system?
               </h2>
+              <p className="mt-5 max-w-[38rem] text-[1.08rem] leading-[1.55] text-[#4f5852]">
+                I&apos;m interested in roles and projects involving AI implementation, automation, digital products and business systems, especially where understanding the business is as important as building the solution.
+              </p>
               <a
                 href="mailto:hello@example.com"
                 className="mt-8 inline-flex bg-[#d7cde4] px-6 py-2.5 text-[0.78rem] font-semibold tracking-[0.14em] text-[#3e4348] uppercase"
               >
-                Let&apos;s connect →
+                LET&apos;S CONNECT →
               </a>
             </div>
             <div className="self-end">
