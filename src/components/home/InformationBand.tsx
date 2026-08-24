@@ -4,7 +4,7 @@ export function InformationBand() {
   return (
     <section
       aria-label="Profile summary"
-      className="relative z-30 w-full border-b border-border/55 bg-surface-alt"
+      className="relative z-30 -mt-6 w-full border-b border-border/55 bg-surface-alt sm:-mt-8 lg:-mt-10"
     >
       <div className="content-wrap py-6 sm:py-7 md:grid md:grid-cols-3 md:py-8 lg:py-9">
         {informationBand.map((item, index) => (
