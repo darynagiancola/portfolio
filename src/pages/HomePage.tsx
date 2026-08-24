@@ -1,174 +1,299 @@
-import { Navigation } from '../components/layout/Navigation'
-import { CapabilityRail } from '../components/home/CapabilityRail'
-import { ClosingBlock } from '../components/home/ClosingBlock'
-import { ExperienceRow } from '../components/home/ExperienceRow'
-import { InformationBand } from '../components/home/InformationBand'
-import { ProjectIndexRow } from '../components/home/ProjectIndexRow'
-import { ProjectSpread } from '../components/home/ProjectSpread'
-import { SectionHead } from '../components/home/SectionHead'
+import { Link } from 'react-router-dom'
 import heroPortrait from '../assets/hero-portrait.png'
-import { kdsReliabilityAssets, projectCards } from '../content/projects'
-import {
-  aboutContent,
-  capabilityRail,
-  experienceContent,
-  heroContent,
-  workContent,
-} from '../content/site'
+import { projectCards } from '../content/projects'
 
 export function HomePage() {
-  const [featuredProject, ...futureProjects] = projectCards
+  const projects = projectCards.slice(0, 3)
+  const services = [
+    {
+      title: 'WEB DESIGN',
+      description: 'Modern, responsive websites that look beautiful everywhere.',
+    },
+    {
+      title: 'AUTOMATION SYSTEMS / WORKFLOWS',
+      description: 'End-to-end automation that streamlines operations and reduces manual work.',
+    },
+    {
+      title: 'AI AGENTS & INTEGRATIONS',
+      description: 'Intelligent agents and integrations that connect tools, systems and data.',
+    },
+    {
+      title: 'DIGITAL SYSTEMS & PROCESS ARCHITECTURE',
+      description: 'Scalable digital systems and processes designed for clarity, efficiency and growth.',
+    },
+  ]
+  const toolGroups = [
+    { label: 'AI / LLM', items: ['OpenAI', 'Claude', 'Gemini', 'LangChain'] },
+    { label: 'AUTOMATION', items: ['Make', 'n8n', 'Zapier'] },
+    { label: 'DEVELOPMENT & INFRASTRUCTURE', items: ['Cursor', 'GitHub', 'Supabase', 'Vercel'] },
+    { label: 'BUSINESS / CRM & MARKETING', items: ['Notion', 'Airtable', 'Pipedrive', 'ActiveCampaign'] },
+  ]
+  const processSteps = ['DISCOVER', 'PLAN', 'DESIGN', 'DEVELOP', 'DELIVER']
+  const timeline = [
+    { period: '2022 – Present', role: 'Selected role placeholder focused on AI products and digital systems.' },
+    { period: '2020 – 2022', role: 'Selected role placeholder focused on marketing automation and process ownership.' },
+    { period: '2018 – 2020', role: 'Selected role placeholder focused on digital projects and implementation.' },
+  ]
 
   return (
     <div className="site-canvas min-h-screen">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4">
         Skip to content
       </a>
-      <Navigation />
+      <header className="border-b border-border/65">
+        <div className="content-wrap flex items-center justify-between py-4">
+          <p className="text-[1.65rem] font-semibold tracking-[0.015em] text-[#1d211e]">DARYNA GIANCOLA</p>
+          <div className="flex items-center gap-10">
+            <nav className="flex items-center gap-8 text-[0.68rem] font-semibold tracking-[0.18em] text-[#2c312d] uppercase">
+              <a href="#selected-work">WORK</a>
+              <a href="#about">ABOUT</a>
+              <a href="#experience">EXPERIENCE</a>
+              <a href="#contact">CONTACT</a>
+            </nav>
+            <a
+              href="#contact"
+              className="rounded-sm bg-secondary-soft px-5 py-2 text-[0.66rem] font-semibold tracking-[0.16em] text-[#3f4348] uppercase"
+            >
+              LET&apos;S CONNECT →
+            </a>
+          </div>
+        </div>
+      </header>
 
-      <main id="main-content" className="overflow-x-clip">
-        <section className="content-wrap relative pb-10 pt-8 sm:pb-12 sm:pt-10 lg:pb-14 lg:pt-12">
-          <p className="pb-4 pt-2 text-[clamp(0.86rem,1.2vw,0.96rem)] font-semibold tracking-[0.11em] text-accent uppercase sm:pb-5 sm:pt-3">
-            {heroContent.eyebrow}
+      <main id="main-content">
+        <section className="content-wrap relative border-b border-border/60 pb-0 pt-8">
+          <p className="text-[0.82rem] font-semibold tracking-[0.15em] text-accent uppercase">
+            AI PRODUCTS · AUTOMATION · DIGITAL SYSTEMS
           </p>
 
-          <div className="relative min-[360px]:max-sm:overflow-x-clip">
-            <div className="relative z-10">
-              <p className="hero-display w-full max-w-full text-[clamp(3.4rem,17vw,4.9rem)] leading-[0.76] text-[#1f2522] uppercase min-[360px]:max-sm:text-[clamp(3.05rem,15.8vw,4.55rem)] sm:text-[clamp(5.1rem,14.8vw,8.2rem)] md:pr-[6%] md:text-[clamp(6.2rem,12.8vw,10.1rem)] lg:pr-[4%] lg:text-[clamp(8.7rem,15.4vw,13.3rem)]">
-                {heroContent.portfolioWord}
-              </p>
-            </div>
+          <div className="relative mt-2 min-h-[32rem]">
+            <p className="hero-display relative z-10 text-[12.8rem] leading-[0.82] text-[#111419] uppercase">PORTFOLIO</p>
 
-            <figure className="pointer-events-none relative z-20 -mt-[clamp(2.9rem,12vw,4.1rem)] ml-auto w-[clamp(18.5rem,74vw,22.2rem)] min-[360px]:max-sm:float-right min-[360px]:max-sm:-mr-[1.875rem] min-[360px]:max-sm:-ml-[clamp(5.7rem,22vw,8.3rem)] sm:absolute sm:right-[0.35rem] sm:top-[clamp(2.35rem,8vw,4.2rem)] sm:mt-0 sm:w-[clamp(20.5rem,60vw,27rem)] md:right-[-0.6rem] md:top-[clamp(1.8rem,4.5vw,3.3rem)] md:w-[clamp(32rem,55vw,43rem)] lg:right-[-0.95rem] lg:top-[clamp(2rem,3.6vw,4rem)] lg:w-[clamp(42rem,52vw,58rem)]">
+            <figure className="pointer-events-none absolute bottom-0 right-0 z-20 h-[31.5rem]">
               <img
                 src={heroPortrait}
-                alt="Portrait integrated into editorial homepage hero composition."
-                className="h-auto w-full object-contain object-top"
+                alt="Portrait integrated into homepage hero."
+                className="h-full w-auto object-contain"
                 loading="eager"
               />
             </figure>
 
-            <div className="hero-tone-step" aria-hidden="true"></div>
+            <div className="relative z-10 mt-2 max-w-[32rem]">
+              <h1 className="font-serif text-[3.12rem] leading-[1.05] text-[#1f2522]">
+                I design intelligent systems that <em className="italic">inspire and connect.</em>
+              </h1>
+              <p className="mt-4 max-w-[24rem] text-[1.02rem] text-[#4b544f]">
+                AI-powered products, automation and digital experiences built around real business needs.
+              </p>
+              <a
+                href="#selected-work"
+                className="mt-5 inline-flex rounded-sm bg-secondary-soft px-5 py-2 text-[0.66rem] font-semibold tracking-[0.17em] text-[#3e4247] uppercase"
+              >
+                VIEW MY CV →
+              </a>
+            </div>
+          </div>
+        </section>
 
-            <div className="relative z-10 mt-4 grid grid-cols-1 gap-y-4 min-[360px]:max-sm:mt-8 min-[360px]:max-sm:block sm:mt-[clamp(6rem,16vw,8rem)] md:mt-[clamp(5.4rem,8.6vw,7rem)] md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:mt-[clamp(1.2rem,3.2vw,2.2rem)] lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
-              <div className="space-y-5 md:pr-4 lg:pr-8">
-                <h1 className="max-w-full font-sans text-[clamp(2.5rem,11vw,3.2rem)] leading-[1.03] text-[#232926] min-[360px]:max-sm:text-[clamp(1.42rem,6.5vw,2.28rem)] min-[360px]:max-sm:leading-[0.99] min-[360px]:max-sm:[text-wrap:pretty] md:max-w-[31rem] md:text-[clamp(2.65rem,10.8vw,3.15rem)] lg:text-[clamp(2.65rem,10.8vw,3.65rem)]">
-                  {heroContent.title}
-                </h1>
-                <p className="max-w-xl text-[clamp(1.1rem,1.8vw,1.18rem)] text-[#4f5852] min-[360px]:max-sm:clear-right">
-                  {heroContent.intro}
-                </p>
-                <div className="pt-1">
-                  <a
-                    href={`${import.meta.env.BASE_URL}${heroContent.primaryCta.href}`}
-                    className="inline-flex items-center gap-2 text-[0.72rem] tracking-[0.21em] text-accent uppercase transition hover:text-text"
-                  >
-                    {heroContent.primaryCta.label}
-                    <span aria-hidden="true">→</span>
-                  </a>
+        <section className="w-full border-b border-border/60 bg-surface-alt/75">
+          <div className="content-wrap grid grid-cols-3 divide-x divide-border/55">
+            {[
+              { value: '50+', label: 'PROJECTS COMPLETED', icon: '◻' },
+              { value: '5+', label: 'YEARS OF EXPERIENCE', icon: '☆' },
+              { value: '30+', label: 'HAPPY CLIENTS', icon: '♡' },
+            ].map((stat) => (
+              <div key={stat.label} className="flex items-center gap-5 px-9 py-5">
+                <span className="text-[1.6rem] text-[#2e3430]" aria-hidden="true">
+                  {stat.icon}
+                </span>
+                <div>
+                  <p className="text-[1.4rem] font-semibold leading-none text-[#1f2522]">{stat.value}</p>
+                  <p className="mt-1 text-[0.62rem] font-semibold tracking-[0.15em] text-[#3f4640] uppercase">{stat.label}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="selected-work" className="content-wrap border-b border-border/60 py-8">
+          <div className="grid grid-cols-[2.1fr_1fr] gap-8">
+            <div>
+              <div className="mb-4 flex items-center justify-between">
+                <p className="text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">SELECTED WORKS</p>
+                <a href="#selected-work" className="text-[0.74rem] tracking-[0.12em] text-[#5a5f64] uppercase">
+                  VIEW ALL PROJECTS →
+                </a>
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                {projects.map((project) => (
+                  <article key={project.slug} className="space-y-2">
+                    <div className="h-[13.7rem] overflow-hidden border border-border/55 bg-surface">
+                      <img src={project.thumbnail.src} alt={project.thumbnail.alt} className="h-full w-full object-cover" />
+                    </div>
+                    <h3 className="text-[1.28rem] font-semibold leading-tight text-[#1e2421] uppercase">{project.title}</h3>
+                    <p className="text-[0.8rem] text-[#59625c]">{project.subtitle}</p>
+                    {project.href.startsWith('/') ? (
+                      <Link to={project.href} className="inline-block text-[0.68rem] tracking-[0.14em] text-[#5d636a] uppercase">
+                        VIEW DETAILS →
+                      </Link>
+                    ) : (
+                      <a href={project.href} className="inline-block text-[0.68rem] tracking-[0.14em] text-[#5d636a] uppercase">
+                        VIEW DETAILS →
+                      </a>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="mb-4 text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">WHAT I DO</p>
+              <div className="space-y-3">
+                {services.map((service) => (
+                  <article key={service.title} className="flex gap-3 border-b border-border/50 pb-3">
+                    <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-sm bg-secondary-soft text-[0.8rem] text-[#4e5560]">
+                      ✦
+                    </div>
+                    <div>
+                      <h3 className="text-[0.72rem] font-semibold tracking-[0.11em] text-[#2a312d] uppercase">{service.title}</h3>
+                      <p className="mt-1 text-[0.76rem] text-[#57615b]">{service.description}</p>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        <InformationBand />
-
-        <section
-          id="selected-work"
-          aria-labelledby="selected-work-heading"
-          className="content-wrap py-14 sm:py-20 lg:py-28"
-        >
-          <SectionHead
-            headingId="selected-work-heading"
-            label={workContent.label}
-            statement={workContent.statement}
-            aside="Case studies"
-          />
-
-          <div className="mt-12 sm:mt-16 lg:mt-20">
-            <ProjectSpread
-              project={featuredProject}
-              supportingMedia={kdsReliabilityAssets.slice(0, 2)}
-            />
-          </div>
-
-          <div className="mt-16 sm:mt-20">
-            <div className="border-t border-border/55 pt-5">
-              <p className="meta-label">{workContent.indexLabel}</p>
-              <p className="mt-2 max-w-[34rem] text-[0.9rem] text-muted">
-                {workContent.indexNote}
-              </p>
-            </div>
-            <ol className="mt-8">
-              {futureProjects.map((project, index) => (
-                <ProjectIndexRow key={project.slug} project={project} index={index + 2} />
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        <section
-          id="about"
-          aria-labelledby="about-heading"
-          className="content-wrap border-t border-border/55 py-14 sm:py-20 lg:py-28"
-        >
-          <SectionHead
-            headingId="about-heading"
-            label={aboutContent.label}
-            statement={aboutContent.statement}
-          />
-
-          <div className="mt-12 lg:mt-16 lg:grid lg:grid-cols-12 lg:gap-8">
-            <div className="lg:col-span-9 lg:col-start-4">
-              <div className="md:grid md:grid-cols-3">
-                {aboutContent.stanzas.map((stanza, index) => (
-                  <div
-                    key={stanza.label}
-                    className={
-                      index === 0
-                        ? 'md:pr-6'
-                        : 'mt-6 border-t border-border/55 pt-6 md:mt-0 md:border-t-0 md:border-l md:pt-0 md:pl-6'
-                    }
-                  >
-                    <p className="meta-label-quiet">{stanza.label}</p>
-                    <p className="mt-3 text-[0.98rem] sm:text-[1.02rem]">{stanza.body}</p>
+        <section className="content-wrap border-b border-border/60 py-8">
+          <div className="grid grid-cols-[2.1fr_1fr] gap-8">
+            <div>
+              <p className="mb-4 text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">TOOLS &amp; TECHNOLOGIES</p>
+              <div className="space-y-4">
+                {toolGroups.map((group) => (
+                  <div key={group.label}>
+                    <p className="mb-2 text-[0.62rem] font-semibold tracking-[0.14em] text-[#5f6761] uppercase">{group.label}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {group.items.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-sm border border-border/65 bg-surface px-3 py-1 text-[0.72rem] text-[#313732]"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
+            </div>
 
-              <div className="mt-10">
-                <CapabilityRail items={capabilityRail} />
+            <div>
+              <p className="mb-4 text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">HOW I WORK</p>
+              <div className="grid grid-cols-5 gap-2">
+                {processSteps.map((step, index) => (
+                  <div key={step} className="text-center">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-secondary-soft text-[0.76rem] text-[#4e5560]">
+                        {index + 1}
+                      </span>
+                      {index < processSteps.length - 1 ? (
+                        <span className="text-[0.85rem] text-[#7d8480]" aria-hidden="true">
+                          →
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="mt-2 text-[0.62rem] font-semibold tracking-[0.12em] text-[#333a35] uppercase">{step}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        <section
-          id="experience"
-          aria-labelledby="experience-heading"
-          className="content-wrap border-t border-border/55 py-14 sm:py-20 lg:py-28"
-        >
-          <SectionHead
-            headingId="experience-heading"
-            label={experienceContent.label}
-            statement={experienceContent.statement}
-          />
-
-          <div className="mt-6 lg:grid lg:grid-cols-12 lg:gap-8">
-            <p className="max-w-[34rem] text-[0.9rem] text-muted lg:col-span-7 lg:col-start-4">
-              {experienceContent.note}
-            </p>
+        <section id="about" className="content-wrap border-b border-border/60 py-8">
+          <div className="grid grid-cols-[1.15fr_1.85fr] gap-8">
+            <div>
+              <p className="text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">ABOUT ME</p>
+              <p className="mt-3 max-w-[26rem] text-[1.04rem] text-[#434b46]">
+                My work sits between business thinking, technology and implementation — understanding how an organisation
+                actually operates, then building the system that removes the friction.
+              </p>
+            </div>
+            <div className="grid grid-cols-3 divide-x divide-border/50 border border-border/50">
+              {[
+                {
+                  title: 'SYSTEMS THAT WORK',
+                  text: 'I build systems that scale operationally and stay practical as the business grows.',
+                },
+                {
+                  title: 'PEOPLE AT THE CENTER',
+                  text: 'Technology should support humans and improve clarity, adoption and real impact.',
+                },
+                {
+                  title: 'MEASURABLE IMPACT',
+                  text: 'From automated workflows to focused products, everything is designed for outcomes.',
+                },
+              ].map((item) => (
+                <article key={item.title} className="px-4 py-4">
+                  <p className="text-[0.62rem] font-semibold tracking-[0.13em] text-[#575f59] uppercase">{item.title}</p>
+                  <p className="mt-2 text-[0.78rem] text-[#59625d]">{item.text}</p>
+                </article>
+              ))}
+            </div>
           </div>
-
-          <ol className="mt-10 lg:mt-14">
-            {experienceContent.entries.map((entry, index) => (
-              <ExperienceRow key={`${entry.role}-${index}`} entry={entry} />
-            ))}
-          </ol>
         </section>
 
-        <ClosingBlock />
+        <section id="experience" className="content-wrap border-b border-border/60 py-8">
+          <div className="grid grid-cols-[1fr_1.3fr] gap-8">
+            <div>
+              <p className="mb-3 text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">EXPERIENCE</p>
+              <ol className="relative ml-3 space-y-4 border-l border-border/70 pl-5">
+                {timeline.map((item) => (
+                  <li key={item.period} className="relative">
+                    <span className="absolute -left-[1.62rem] top-1 h-2 w-2 rounded-full bg-secondary" aria-hidden="true"></span>
+                    <p className="text-[0.66rem] font-semibold tracking-[0.11em] text-[#59615b] uppercase">{item.period}</p>
+                    <p className="mt-1 text-[0.8rem] text-[#4f5852]">{item.role}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <aside className="self-start bg-secondary-soft px-7 py-6">
+              <p className="text-[2rem] leading-none text-[#747a83]" aria-hidden="true">
+                “
+              </p>
+              <p className="mt-1 max-w-[32rem] font-serif text-[1.56rem] leading-[1.22] text-[#2d3330]">
+                I turn complexity into clear systems that help teams move faster and make better decisions.
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        <footer id="contact" className="content-wrap py-8">
+          <div className="grid grid-cols-[1.4fr_1fr_1fr] items-end gap-8">
+            <div>
+              <p className="text-[1.55rem] font-serif leading-tight text-[#1e2521]">Let&apos;s create something meaningful together.</p>
+              <a
+                href="#contact"
+                className="mt-4 inline-flex rounded-sm bg-secondary-soft px-5 py-2 text-[0.66rem] font-semibold tracking-[0.16em] text-[#3f4348] uppercase"
+              >
+                LET&apos;S CONNECT →
+              </a>
+            </div>
+            <div className="text-[0.78rem] text-[#57615b]">
+              <p>hello@example.com</p>
+              <p className="mt-1">www.daryna.com</p>
+              <p className="mt-1">@nordic_italy</p>
+            </div>
+            <div className="flex items-center justify-start gap-2 text-[#48514b]">
+              {['in', 'ig', 'be'].map((social) => (
+                <span key={social} className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border/70 text-[0.66rem]">
+                  {social}
+                </span>
+              ))}
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   )
