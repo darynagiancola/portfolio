@@ -1,4 +1,5 @@
 import type {
+  CaseStudyData,
   ImageAsset,
   MetadataItem,
   ProjectCardData,
@@ -238,3 +239,117 @@ export const architectureTooling: ToolCardData[] = [
     description: 'Version control and deployment workflow for iterative product delivery.',
   },
 ]
+
+export const aureliaCaseStudy: CaseStudyData = {
+  slug: 'aurelia',
+  backHref: '/#selected-work',
+  category: 'Hospitality · AI · Operations',
+  projectName: 'AURELIA',
+  systemTitle: 'AI-Powered Hospitality System',
+  summary:
+    'A connected hospitality system designed to align customer ordering, payments and restaurant operations through one integrated workflow.',
+  heroMetadata: [
+    { label: 'Role', value: 'Product concept · UX/UI · AI-assisted development' },
+    { label: 'Project Type', value: 'Portfolio case study / product system' },
+    { label: 'Focus', value: 'Customer flow · Staff operations · Kitchen workflow' },
+    { label: 'Stack', value: 'OpenAI API · LangChain · Supabase · React · Vercel' },
+  ],
+  heroVisual: adminDashboard
+    ? {
+        src: adminDashboard,
+        alt: 'Aurelia admin dashboard project visual',
+        label: 'Selected project visual',
+      }
+    : undefined,
+  context: {
+    heading: 'Context',
+    body:
+      'AURELIA explores a connected hospitality workflow where customer interactions, staff operations and kitchen delivery are designed as one system rather than disconnected screens.',
+  },
+  problem: {
+    heading: 'The Problem',
+    body:
+      'Restaurant teams often operate across fragmented tools for ordering, payments and service coordination. This fragmentation creates handoff friction, duplicated effort and reduced operational clarity.',
+  },
+  system: {
+    heading: 'The System',
+    body:
+      'The solution architecture links customer touchpoints with operational interfaces so ordering, service state and kitchen progress can be managed through a connected data and workflow model.',
+    visual: {
+      src: kitchenDisplay,
+      alt: 'Aurelia kitchen display system visual',
+      label: 'System workflow visual placeholder',
+    },
+    visualNote: 'Reserved space for final system/workflow diagram in future iteration.',
+  },
+  howItWorks: [
+    {
+      id: '01',
+      heading: 'Customer ordering flow',
+      body:
+        'Customer interactions are structured from menu exploration through cart confirmation so order intent can move cleanly into operational execution.',
+      layout: 'side-by-side',
+      images: [
+        {
+          src: customerMenu,
+          alt: 'Aurelia customer ordering interface screenshot',
+          label: 'Customer ordering flow',
+        },
+      ],
+    },
+    {
+      id: '02',
+      heading: 'Service and handoff states',
+      body:
+        'Operational surfaces support coordination between front-of-house and kitchen teams by keeping order state and status transitions visible.',
+      layout: 'two-up',
+      images: [waiterAsset, staffEntryAsset],
+    },
+    {
+      id: '03',
+      heading: 'Kitchen execution and tracking',
+      body:
+        'Kitchen workflow emphasizes actionability and timing clarity, with focused interfaces for preparation states and service handoff.',
+      layout: 'large',
+      images: [
+        {
+          src: kdsLive,
+          alt: 'Aurelia kitchen live mode screenshot',
+          label: 'Kitchen execution view',
+        },
+      ],
+    },
+  ],
+  roleAndImplementation: [
+    {
+      label: 'Analysed',
+      body: 'Customer, staff, admin and kitchen process requirements across service flow.',
+    },
+    {
+      label: 'Designed',
+      body: 'Information architecture and interaction logic for multi-role interfaces.',
+    },
+    {
+      label: 'Configured',
+      body: 'Core data and workflow structure to connect ordering, payment and operations.',
+    },
+    {
+      label: 'Built',
+      body: 'Interface prototypes and functional views for customer and operational contexts.',
+    },
+    {
+      label: 'Connected',
+      body: 'Key workflow touchpoints across customer actions, staff handling and kitchen execution.',
+    },
+    {
+      label: 'Implemented',
+      body: 'AI-assisted product development process from concept through integrated prototype.',
+    },
+  ],
+  tools: [
+    { label: 'AI & Knowledge', items: ['OpenAI API', 'LangChain'] },
+    { label: 'Product & Development', items: ['React', 'TypeScript', 'Cursor'] },
+    { label: 'Data, Backend & Deployment', items: ['Supabase', 'Vercel'] },
+    { label: 'Workflow Context', items: ['Customer ordering', 'Staff operations', 'Kitchen workflow'] },
+  ],
+}
