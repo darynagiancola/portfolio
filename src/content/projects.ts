@@ -27,7 +27,7 @@ export const projectCards: ProjectCardData[] = [
   {
     slug: 'aurelia',
     title: 'AI-Powered Hospitality System',
-    subtitle: 'Connected hospitality ecosystem',
+    subtitle: 'AI · PRODUCT · OPERATIONS',
     description:
       'A connected hospitality ecosystem covering customer interaction, AI-assisted menu discovery, ordering/payment and kitchen/operational workflows.',
     featured: true,
@@ -35,8 +35,8 @@ export const projectCards: ProjectCardData[] = [
     tags: ['AI Agent', 'Ordering', 'Payments', 'Kitchen Display', 'Automation'],
     metadata: [
       {
-        label: 'Context',
-        value: 'Customer interaction · AI discovery · Ordering/payment · Kitchen operations',
+        label: 'Technology / context',
+        value: 'OpenAI API · LangChain · Supabase · React · Vercel',
       },
     ],
     ctaLabel: 'View Case Study',
@@ -53,7 +53,7 @@ export const projectCards: ProjectCardData[] = [
   {
     slug: 'lead-marketing-automation-system',
     title: 'Lead & Marketing Automation System',
-    subtitle: 'Multi-step commercial automation',
+    subtitle: 'AUTOMATION · CRM · MARKETING',
     description:
       'A multi-step business automation covering lead generation/capture, ActiveCampaign automations, webinar communication, Pipedrive CRM status changes and follow-up workflows.',
     featured: true,
@@ -61,8 +61,8 @@ export const projectCards: ProjectCardData[] = [
     tags: ['Lead capture', 'ActiveCampaign', 'Webinar workflows', 'Pipedrive'],
     metadata: [
       {
-        label: 'Context',
-        value: 'Lead generation · Automation logic · CRM status routing',
+        label: 'Technology / context',
+        value: 'Make · ActiveCampaign · Pipedrive · APIs · Webhooks',
       },
     ],
     ctaLabel: 'View Case Study',
@@ -77,7 +77,7 @@ export const projectCards: ProjectCardData[] = [
   {
     slug: 'ai-support-ticket-routing',
     title: 'AI Support & Ticket Routing',
-    subtitle: 'Intercom-based support orchestration',
+    subtitle: 'AI · CUSTOMER OPERATIONS · AUTOMATION',
     description:
       'An Intercom-based AI support system using a knowledge base to answer customer questions and routing/escalation logic to direct requests to the appropriate departments.',
     featured: true,
@@ -85,8 +85,8 @@ export const projectCards: ProjectCardData[] = [
     tags: ['Intercom', 'AI support', 'Knowledge base', 'Routing / escalation'],
     metadata: [
       {
-        label: 'Context',
-        value: 'Support automation · Knowledge retrieval · Department routing',
+        label: 'Technology / context',
+        value: 'Intercom · AI Agent · Knowledge Base · Workflow Automation',
       },
     ],
     ctaLabel: 'View Case Study',
