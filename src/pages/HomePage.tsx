@@ -147,24 +147,19 @@ export function HomePage() {
           </div>
 
           <div className="mt-5 border-t border-border/60 pt-8">
-            <p className="max-w-[40rem] text-[1rem] text-[#5a635d]">
-              Three featured case studies from a growing project library. Each preview highlights business context, system logic and implementation direction.
-            </p>
-
-            <div className="mt-10 grid grid-cols-3 gap-10">
+            <div className="grid grid-cols-3 gap-10">
               {featuredProjects.map((project, index) => {
                 const metadata = project.metadata?.[0]?.value ?? project.tags.join(' · ')
                 const isPlaceholder = project.visualState === 'placeholder'
 
                 return (
                   <article key={project.slug} className="space-y-5 border-t border-border/45 pt-4">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <p className="text-[2.2rem] leading-none text-secondary">
+                    <div>
+                      <p className="text-[2.7rem] leading-none text-secondary">
                         {String(index + 1).padStart(2, '0')}
                       </p>
-                      <p className="text-[0.66rem] tracking-[0.14em] text-[#666e68] uppercase">
-                        Featured case study
-                      </p>
+                      <h2 className="mt-3 font-serif text-[2rem] leading-[1.06] text-[#1f2522]">{project.title}</h2>
+                      <p className="mt-2 text-[0.66rem] tracking-[0.14em] text-[#666e68] uppercase">{project.subtitle}</p>
                     </div>
 
                     <div className="border border-border/60 bg-surface">
@@ -188,8 +183,7 @@ export function HomePage() {
                     </div>
 
                     <div>
-                      <h2 className="font-serif text-[2rem] leading-[1.06] text-[#1f2522]">{project.title}</h2>
-                      <p className="mt-3 text-[1rem] text-[#4d5651]">{project.description}</p>
+                      <p className="text-[1rem] text-[#4d5651]">{project.description}</p>
                       <p className="mt-4 border-t border-border/50 pt-3 text-[0.66rem] tracking-[0.14em] text-[#5f6660] uppercase">
                         {metadata}
                       </p>
