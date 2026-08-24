@@ -3,6 +3,10 @@ import heroPortrait from '../assets/hero-portrait.png'
 import { projectCards } from '../content/projects'
 
 export function HomePage() {
+  const contactEmail = 'daryna.giancola@gmail.com'
+  const linkedinUrl = 'https://www.linkedin.com/in/daryna-giancola/'
+  const githubUrl = 'https://github.com/darynagiancola'
+  const cvHref = '#selected-work'
   const featuredProjects = projectCards.filter((project) => project.featured).slice(0, 3)
   const expertiseAreas = [
     {
@@ -207,14 +211,14 @@ export function HomePage() {
         </section>
 
         <section id="expertise" className="content-wrap py-20">
-          <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">EXPERTISE</p>
-          <p className="mt-5 max-w-[32rem] text-[1.08rem] leading-[1.55] text-[#545d57]">
+          <p className="text-[0.92rem] font-semibold tracking-[0.16em] text-secondary uppercase">EXPERTISE</p>
+          <p className="mt-5 max-w-[44rem] font-serif text-[2.35rem] leading-[1.05] text-[#1f2522]">
             Business thinking, translated into systems.
           </p>
-          <div className="mt-8 grid grid-cols-2 gap-x-16 gap-y-14">
+          <div className="mt-10 grid grid-cols-2 gap-x-16 gap-y-16">
             {expertiseAreas.map((area) => (
-              <article key={area.id} className="space-y-3">
-                <p className="text-[0.9rem] font-semibold tracking-[0.12em] text-secondary uppercase">{area.id}</p>
+              <article key={area.id} className="space-y-4">
+                <p className="text-[1.46rem] font-semibold leading-none tracking-[0.08em] text-secondary uppercase">{area.id}</p>
                 <h3 className="font-sans text-[2rem] leading-[1.08] font-semibold text-[#1f2522]">{area.title}</h3>
                 <p className="max-w-[33rem] text-[1.08rem] leading-[1.55] text-[#545d57]">{area.description}</p>
               </article>
@@ -224,17 +228,26 @@ export function HomePage() {
 
         <section id="about" className="py-20">
           <div className="content-wrap bg-secondary-soft/45 px-10 py-16">
-            <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">ABOUT</p>
-            <div className="mt-6 grid grid-cols-[1.35fr_1fr] gap-12">
-              <h2 className="font-serif text-[4rem] leading-[0.94] text-[#1f2522]">
-                A business-first approach to technology.
-              </h2>
-              <div className="self-end">
-                <p className="text-[1.1rem] leading-[1.55] text-[#505a54]">
-                  I work across business strategy, marketing and technology, with a background spanning marketing leadership, revenue management, sales, market analysis and business operations alongside hands-on work in AI, automation and digital products.
+            <p className="text-[0.92rem] font-semibold tracking-[0.16em] text-secondary uppercase">ABOUT</p>
+            <div className="mt-6 grid grid-cols-[1.18fr_1fr] gap-14">
+              <div>
+                <h2 className="font-serif text-[4rem] leading-[0.94] text-[#1f2522]">
+                  A business-first approach to technology.
+                </h2>
+                <p className="mt-7 text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase">
+                  BUSINESS STRATEGY · MARKETING · AI · AUTOMATION · DIGITAL PRODUCTS
                 </p>
-                <p className="mt-4 text-[1.1rem] leading-[1.55] text-[#505a54]">
-                  That combination allows me to look beyond the technical task itself: understand the business context, analyse the process behind the problem and translate it into a solution that makes sense commercially and works in practice.
+              </div>
+              <div className="self-end">
+                <p className="text-[1.1rem] leading-[1.56] text-[#505a54]">
+                  I work across business strategy, marketing and technology, with a background spanning marketing
+                  leadership, revenue management, sales, market analysis and business operations alongside hands-on
+                  work in AI, automation and digital products.
+                </p>
+                <p className="mt-4 text-[1.1rem] leading-[1.56] text-[#505a54]">
+                  That combination allows me to look beyond the technical task itself: understand the business
+                  context, analyse the process behind the problem and translate it into a solution that makes sense
+                  commercially and works in practice.
                 </p>
               </div>
             </div>
@@ -296,17 +309,37 @@ export function HomePage() {
                 I&apos;m interested in roles and projects involving AI implementation, automation, digital products and business systems, especially where understanding the business is as important as building the solution.
               </p>
               <a
-                href="mailto:hello@example.com"
+                href={`mailto:${contactEmail}`}
                 className="mt-8 inline-flex bg-[#d7cde4] px-6 py-2.5 text-[0.78rem] font-semibold tracking-[0.14em] text-[#3e4348] uppercase"
               >
                 LET&apos;S CONNECT →
               </a>
             </div>
-            <div className="self-end">
-              <p className="text-[0.78rem] font-semibold tracking-[0.12em] text-[#666e68] uppercase">Contact</p>
-              <p className="mt-3 text-[1.02rem] text-[#4f5852]">hello@example.com</p>
-              <p className="mt-1 text-[1.02rem] text-[#4f5852]">LinkedIn</p>
-              <p className="mt-1 text-[1.02rem] text-[#4f5852]">GitHub</p>
+            <div className="self-end space-y-2">
+              <a href={`mailto:${contactEmail}`} className="block text-[1.05rem] text-[#4f5852] hover:text-[#343a37]">
+                {contactEmail}
+              </a>
+              <a
+                href={linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="block text-[1.05rem] text-[#4f5852] hover:text-[#343a37]"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+          <div className="content-wrap mt-10 border-t border-border/45 pt-5">
+            <div className="flex flex-wrap gap-4 text-[0.7rem] font-semibold tracking-[0.13em] text-[#676e69] uppercase">
+              <a href={cvHref}>VIEW CV</a>
+              <span aria-hidden="true">·</span>
+              <a href={linkedinUrl} target="_blank" rel="noreferrer">
+                LINKEDIN
+              </a>
+              <span aria-hidden="true">·</span>
+              <a href={githubUrl} target="_blank" rel="noreferrer">
+                GITHUB
+              </a>
             </div>
           </div>
         </footer>

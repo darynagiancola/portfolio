@@ -100,6 +100,12 @@ export function AureliaCaseStudyPage() {
       <Navigation />
       <main>
         <section className="content-wrap py-14 sm:py-20">
+          <a
+            href={`${import.meta.env.BASE_URL}#selected-work`}
+            className="inline-flex text-[0.72rem] font-semibold tracking-[0.16em] text-secondary uppercase hover:text-text"
+          >
+            ← BACK TO WORK
+          </a>
           <p className="eyebrow">Case study</p>
           <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-start">
             <div className="space-y-6">
