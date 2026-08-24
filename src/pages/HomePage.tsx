@@ -3,37 +3,7 @@ import heroPortrait from '../assets/hero-portrait.png'
 import { projectCards } from '../content/projects'
 
 export function HomePage() {
-  const hospitalityProject = projectCards[0]
-  const caseStudies = [
-    {
-      id: '01',
-      title: 'AI-Powered Hospitality System',
-      description:
-        'A connected hospitality ecosystem covering customer interaction, AI-assisted menu discovery, ordering/payment and kitchen/operational workflows.',
-      metadata: 'Hospitality · AI discovery · Ordering & payment · Kitchen operations',
-      href: hospitalityProject.href,
-      hasImage: true,
-      image: hospitalityProject.thumbnail,
-    },
-    {
-      id: '02',
-      title: 'Lead & Marketing Automation System',
-      description:
-        'A multi-step business automation covering lead generation/capture, ActiveCampaign automations, webinar communication, Pipedrive CRM status changes and follow-up workflows.',
-      metadata: 'Lead capture · ActiveCampaign · Webinar flow · Pipedrive',
-      href: '#',
-      hasImage: false,
-    },
-    {
-      id: '03',
-      title: 'AI Support & Ticket Routing',
-      description:
-        'An Intercom-based AI support system using a knowledge base to answer customer questions and routing/escalation logic to direct requests to the appropriate departments.',
-      metadata: 'Intercom AI support · Knowledge base · Routing & escalation',
-      href: '#',
-      hasImage: false,
-    },
-  ]
+  const featuredProjects = projectCards.filter((project) => project.featured).slice(0, 3)
   const expertiseAreas = [
     {
       id: '01',
@@ -171,76 +141,76 @@ export function HomePage() {
         <section id="selected-work" className="content-wrap border-b border-border/60 py-18">
           <div className="flex items-end justify-between gap-6">
             <p className="text-[0.82rem] font-semibold tracking-[0.15em] text-[#48504a] uppercase">Selected Work</p>
-            <p className="max-w-[34rem] text-right text-[0.95rem] text-[#5a635d]">
-              Three case studies that show strategy, system design and implementation across AI, automation and operations.
-            </p>
+            <a href="#" className="text-[0.74rem] font-semibold tracking-[0.15em] text-[#4b524e] uppercase">
+              View all projects →
+            </a>
           </div>
 
-          <div className="mt-10 border-t border-border/60">
-            {caseStudies.map((study, index) => {
-              const copyBlock = (
-                <div>
-                  <p className="text-[2.4rem] leading-none text-secondary">{study.id}</p>
-                  <h2 className="mt-4 max-w-[32rem] font-serif text-[2.55rem] leading-[1.05] text-[#1f2522]">
-                    {study.title}
-                  </h2>
-                  <p className="mt-4 max-w-[31rem] text-[1rem] text-[#4d5651]">{study.description}</p>
-                  <p className="mt-6 border-t border-border/50 pt-3 text-[0.66rem] tracking-[0.14em] text-[#5f6660] uppercase">
-                    {study.metadata}
-                  </p>
-                  {study.href.startsWith('/') ? (
-                    <Link
-                      to={study.href}
-                      className="mt-6 inline-flex text-[0.7rem] font-semibold tracking-[0.16em] text-[#3f4641] uppercase"
-                    >
-                      View case study →
-                    </Link>
-                  ) : (
-                    <a href={study.href} className="mt-6 inline-flex text-[0.7rem] font-semibold tracking-[0.16em] text-[#3f4641] uppercase">
-                      View case study →
-                    </a>
-                  )}
-                </div>
-              )
+          <div className="mt-5 border-t border-border/60 pt-8">
+            <p className="max-w-[40rem] text-[1rem] text-[#5a635d]">
+              Three featured case studies from a growing project library. Each preview highlights business context, system logic and implementation direction.
+            </p>
 
-              const visualBlock = (
-                <div className="border border-border/60 bg-surface">
-                  {study.hasImage && study.image ? (
-                    <img
-                      src={study.image.src}
-                      alt={study.image.alt}
-                      className="block h-[24rem] w-full object-cover"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="flex h-[24rem] items-center justify-center bg-[#f5eee1]">
-                      <div className="text-center">
-                        <p className="text-[0.66rem] tracking-[0.16em] text-[#727a75] uppercase">
-                          Case Study Visual Placeholder
-                        </p>
-                        <p className="mt-2 text-[0.84rem] text-[#626a64]">Final project visuals to be inserted</p>
-                      </div>
+            <div className="mt-10 grid grid-cols-3 gap-10">
+              {featuredProjects.map((project, index) => {
+                const metadata = project.metadata?.[0]?.value ?? project.tags.join(' · ')
+                const isPlaceholder = project.visualState === 'placeholder'
+
+                return (
+                  <article key={project.slug} className="space-y-5 border-t border-border/45 pt-4">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <p className="text-[2.2rem] leading-none text-secondary">
+                        {String(index + 1).padStart(2, '0')}
+                      </p>
+                      <p className="text-[0.66rem] tracking-[0.14em] text-[#666e68] uppercase">
+                        Featured case study
+                      </p>
                     </div>
-                  )}
-                </div>
-              )
 
-              return (
-                <article key={study.id} className="grid grid-cols-2 gap-14 border-b border-border/45 py-14 last:border-b-0 last:pb-0">
-                  {index % 2 === 0 ? (
-                    <>
-                      {visualBlock}
-                      {copyBlock}
-                    </>
-                  ) : (
-                    <>
-                      {copyBlock}
-                      {visualBlock}
-                    </>
-                  )}
-                </article>
-              )
-            })}
+                    <div className="border border-border/60 bg-surface">
+                      {isPlaceholder ? (
+                        <div className="flex h-[22rem] items-center justify-center bg-[#f5eee1]">
+                          <div className="text-center">
+                            <p className="text-[0.66rem] tracking-[0.16em] text-[#727a75] uppercase">
+                              Case Study Visual Placeholder
+                            </p>
+                            <p className="mt-2 text-[0.84rem] text-[#626a64]">Final project visual to be inserted</p>
+                          </div>
+                        </div>
+                      ) : (
+                        <img
+                          src={project.thumbnail.src}
+                          alt={project.thumbnail.alt}
+                          className="block h-[22rem] w-full object-cover"
+                          loading="lazy"
+                        />
+                      )}
+                    </div>
+
+                    <div>
+                      <h2 className="font-serif text-[2rem] leading-[1.06] text-[#1f2522]">{project.title}</h2>
+                      <p className="mt-3 text-[1rem] text-[#4d5651]">{project.description}</p>
+                      <p className="mt-4 border-t border-border/50 pt-3 text-[0.66rem] tracking-[0.14em] text-[#5f6660] uppercase">
+                        {metadata}
+                      </p>
+                    </div>
+
+                    {project.href.startsWith('/') ? (
+                      <Link
+                        to={project.href}
+                        className="inline-flex text-[0.7rem] font-semibold tracking-[0.16em] text-[#3f4641] uppercase"
+                      >
+                        View case study →
+                      </Link>
+                    ) : (
+                      <a href={project.href} className="inline-flex text-[0.7rem] font-semibold tracking-[0.16em] text-[#3f4641] uppercase">
+                        View case study →
+                      </a>
+                    )}
+                  </article>
+                )
+              })}
+            </div>
           </div>
         </section>
 
