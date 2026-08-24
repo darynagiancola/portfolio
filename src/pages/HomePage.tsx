@@ -33,8 +33,8 @@ export function HomePage() {
           </p>
 
           <div className="relative min-[360px]:max-sm:overflow-x-clip">
-            <div className="relative z-30">
-              <p className="hero-display w-full max-w-full text-[clamp(3.4rem,17vw,4.9rem)] leading-[0.76] text-[#1f2522] uppercase min-[360px]:max-sm:text-[clamp(3.05rem,15.8vw,4.55rem)] min-[360px]:max-sm:tracking-[-0.044em] sm:text-[clamp(5.1rem,14.8vw,8.2rem)] md:pr-[6%] md:text-[clamp(6.2rem,12.8vw,10.1rem)] lg:pr-[4%] lg:text-[clamp(8.7rem,15.4vw,13.3rem)]">
+            <div className="relative z-10">
+              <p className="hero-display w-full max-w-full text-[clamp(3.4rem,17vw,4.9rem)] leading-[0.76] text-[#1f2522] uppercase min-[360px]:max-sm:text-[clamp(3.05rem,15.8vw,4.55rem)] sm:text-[clamp(5.1rem,14.8vw,8.2rem)] md:pr-[6%] md:text-[clamp(6.2rem,12.8vw,10.1rem)] lg:pr-[4%] lg:text-[clamp(8.7rem,15.4vw,13.3rem)]">
                 {heroContent.portfolioWord}
               </p>
             </div>
@@ -48,11 +48,9 @@ export function HomePage() {
               />
             </figure>
 
-            <div className="hero-band-mask" aria-hidden="true"></div>
-
-            <div className="relative z-30 mt-4 grid grid-cols-1 gap-y-4 min-[360px]:max-sm:mt-5 min-[360px]:max-sm:block sm:mt-[clamp(6rem,16vw,8rem)] md:mt-[clamp(5.4rem,8.6vw,7rem)] md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:mt-[clamp(1.2rem,3.2vw,2.2rem)] lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
+            <div className="relative z-10 mt-4 grid grid-cols-1 gap-y-4 min-[360px]:max-sm:mt-8 min-[360px]:max-sm:block sm:mt-[clamp(6rem,16vw,8rem)] md:mt-[clamp(5.4rem,8.6vw,7rem)] md:grid-cols-[minmax(0,1fr)_minmax(18rem,38%)] md:gap-x-7 lg:mt-[clamp(1.2rem,3.2vw,2.2rem)] lg:grid-cols-[minmax(0,1fr)_minmax(20rem,37%)] lg:gap-x-10">
               <div className="space-y-5 md:pr-4 lg:pr-8">
-                <h1 className="max-w-full font-sans text-[clamp(2.5rem,11vw,3.2rem)] leading-[1.03] text-[#232926] min-[360px]:max-sm:text-[clamp(1.2rem,5.5vw,1.95rem)] min-[360px]:max-sm:leading-[0.95] md:max-w-[31rem] md:text-[clamp(2.65rem,10.8vw,3.15rem)] lg:text-[clamp(2.65rem,10.8vw,3.65rem)]">
+                <h1 className="max-w-full font-sans text-[clamp(2.5rem,11vw,3.2rem)] leading-[1.03] text-[#232926] min-[360px]:max-sm:text-[clamp(1.55rem,7.2vw,1.9rem)] min-[360px]:max-sm:leading-[1.05] min-[360px]:max-sm:[text-wrap:pretty] md:max-w-[31rem] md:text-[clamp(2.65rem,10.8vw,3.15rem)] lg:text-[clamp(2.65rem,10.8vw,3.65rem)]">
                   {heroContent.title}
                 </h1>
                 <p className="max-w-xl text-[clamp(1.1rem,1.8vw,1.18rem)] text-[#4f5852] min-[360px]:max-sm:clear-right">

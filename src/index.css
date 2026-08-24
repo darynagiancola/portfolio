@@ -140,44 +140,4 @@
     }
   }
 
-  /*
-   * Straight horizontal band mask: keeps one clean top edge while letting
-   * the portrait's lower 20-30px tuck behind the band tone via z-index.
-   */
-  .hero-band-mask {
-    position: absolute;
-    inset-inline: 0;
-    z-index: 25;
-    pointer-events: none;
-    background: var(--portfolio-surface-alt);
-    top: clamp(10.6rem, 47vw, 11.75rem);
-    bottom: -2.5rem;
-  }
-
-  @media (width >= 40rem) {
-    .hero-band-mask {
-      top: calc(
-        clamp(2.35rem, 8vw, 4.2rem) + clamp(13.667rem, 40vw, 18rem) - 1.55rem
-      );
-      bottom: -3rem;
-    }
-  }
-
-  @media (width >= 48rem) {
-    .hero-band-mask {
-      top: calc(
-        clamp(1.8rem, 4.5vw, 3.3rem) + clamp(21.333rem, 36.667vw, 28.667rem) -
-          1.55rem
-      );
-    }
-  }
-
-  @media (width >= 64rem) {
-    .hero-band-mask {
-      top: calc(
-        clamp(2rem, 3.6vw, 4rem) + clamp(28rem, 34.667vw, 38.667rem) - 1.55rem
-      );
-      bottom: -3.5rem;
-    }
-  }
 }
