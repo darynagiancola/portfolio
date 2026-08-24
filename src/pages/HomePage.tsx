@@ -3,36 +3,103 @@ import heroPortrait from '../assets/hero-portrait.png'
 import { projectCards } from '../content/projects'
 
 export function HomePage() {
-  const projects = projectCards.slice(0, 3)
-  const services = [
+  const hospitalityProject = projectCards[0]
+  const caseStudies = [
     {
-      title: 'WEB DESIGN',
-      description: 'Modern, responsive websites that look beautiful everywhere.',
+      id: '01',
+      title: 'AI-Powered Hospitality System',
+      description:
+        'A connected hospitality ecosystem covering customer interaction, AI-assisted menu discovery, ordering/payment and kitchen/operational workflows.',
+      metadata: 'Hospitality · AI discovery · Ordering & payment · Kitchen operations',
+      href: hospitalityProject.href,
+      hasImage: true,
+      image: hospitalityProject.thumbnail,
     },
     {
-      title: 'AUTOMATION SYSTEMS / WORKFLOWS',
-      description: 'End-to-end automation that streamlines operations and reduces manual work.',
+      id: '02',
+      title: 'Lead & Marketing Automation System',
+      description:
+        'A multi-step business automation covering lead generation/capture, ActiveCampaign automations, webinar communication, Pipedrive CRM status changes and follow-up workflows.',
+      metadata: 'Lead capture · ActiveCampaign · Webinar flow · Pipedrive',
+      href: '#',
+      hasImage: false,
     },
     {
-      title: 'AI AGENTS & INTEGRATIONS',
-      description: 'Intelligent agents and integrations that connect tools, systems and data.',
+      id: '03',
+      title: 'AI Support & Ticket Routing',
+      description:
+        'An Intercom-based AI support system using a knowledge base to answer customer questions and routing/escalation logic to direct requests to the appropriate departments.',
+      metadata: 'Intercom AI support · Knowledge base · Routing & escalation',
+      href: '#',
+      hasImage: false,
+    },
+  ]
+  const expertiseAreas = [
+    {
+      id: '01',
+      title: 'Business & Process Strategy',
+      description:
+        'Mapping operational friction, priorities and system boundaries before any tool decisions are made.',
     },
     {
-      title: 'DIGITAL SYSTEMS & PROCESS ARCHITECTURE',
-      description: 'Scalable digital systems and processes designed for clarity, efficiency and growth.',
+      id: '02',
+      title: 'AI & Automation',
+      description:
+        'Designing practical AI and automation workflows that improve real execution, not just demos.',
     },
+    {
+      id: '03',
+      title: 'Marketing & Commercial Strategy',
+      description:
+        'Aligning customer acquisition, communication and sales operations into one coherent process.',
+    },
+    {
+      id: '04',
+      title: 'Digital Products & Systems',
+      description:
+        'Shaping connected products where interface clarity and operational architecture work together.',
+    },
+  ]
+  const toolkitCategories = [
+    'AI & Knowledge',
+    'Automation & Integration',
+    'CRM, Marketing & Customer Operations',
+    'Product & Development',
+    'Data, Backend & Deployment',
+    'Business, Data & Productivity',
+    'Marketing & Analytics',
   ]
   const toolGroups = [
-    { label: 'AI / LLM', items: ['OpenAI', 'Claude', 'Gemini', 'LangChain'] },
-    { label: 'AUTOMATION', items: ['Make', 'n8n', 'Zapier'] },
-    { label: 'DEVELOPMENT & INFRASTRUCTURE', items: ['Cursor', 'GitHub', 'Supabase', 'Vercel'] },
-    { label: 'BUSINESS / CRM & MARKETING', items: ['Notion', 'Airtable', 'Pipedrive', 'ActiveCampaign'] },
+    { label: 'AI & Knowledge', items: ['OpenAI', 'Claude', 'Gemini', 'Perplexity'] },
+    { label: 'Automation & Integration', items: ['Make', 'n8n', 'Zapier', 'Webhooks / APIs'] },
+    {
+      label: 'CRM, Marketing & Customer Operations',
+      items: ['ActiveCampaign', 'Pipedrive', 'Intercom', 'Customer journeys'],
+    },
+    { label: 'Product & Development', items: ['Cursor', 'GitHub', 'React', 'Vite'] },
+    { label: 'Data, Backend & Deployment', items: ['Supabase', 'PostgreSQL', 'Vercel', 'GitHub Pages'] },
+    { label: 'Business, Data & Productivity', items: ['Notion', 'Airtable', 'Looker Studio', 'Dashboards'] },
+    { label: 'Marketing & Analytics', items: ['GA4', 'UTM strategy', 'Funnel tracking', 'Attribution'] },
   ]
-  const processSteps = ['DISCOVER', 'PLAN', 'DESIGN', 'DEVELOP', 'DELIVER']
-  const timeline = [
-    { period: '2022 – Present', role: 'Selected role placeholder focused on AI products and digital systems.' },
-    { period: '2020 – 2022', role: 'Selected role placeholder focused on marketing automation and process ownership.' },
-    { period: '2018 – 2020', role: 'Selected role placeholder focused on digital projects and implementation.' },
+  const approachSteps = [
+    {
+      id: '01',
+      title: 'Understand',
+      description:
+        'Clarify the business context, operational constraints and outcomes before defining a solution.',
+    },
+    {
+      id: '02',
+      title: 'Design',
+      description:
+        'Structure the system, workflows and interfaces so teams can adopt and run them with confidence.',
+    },
+    {
+      id: '03',
+      title: 'Build',
+      description:
+        'Implement, integrate and refine the final product so strategy and execution stay connected.',
+    },
   ]
 
   return (
@@ -46,8 +113,10 @@ export function HomePage() {
           <div className="flex items-center gap-10">
             <nav className="flex items-center gap-8 text-[0.68rem] font-semibold tracking-[0.18em] text-[#2c312d] uppercase">
               <a href="#selected-work">WORK</a>
+              <a href="#expertise">EXPERTISE</a>
               <a href="#about">ABOUT</a>
-              <a href="#experience">EXPERIENCE</a>
+              <a href="#approach">APPROACH</a>
+              <a href="#toolkit">TOOLKIT</a>
               <a href="#contact">CONTACT</a>
             </nav>
             <a
@@ -96,201 +165,171 @@ export function HomePage() {
         </section>
 
         <section className="w-full border-b border-border/60 bg-surface-alt/75">
-          <div className="content-wrap grid grid-cols-3 divide-x divide-border/55">
-            {[
-              { value: '50+', label: 'PROJECTS COMPLETED', icon: '◻' },
-              { value: '5+', label: 'YEARS OF EXPERIENCE', icon: '☆' },
-              { value: '30+', label: 'HAPPY CLIENTS', icon: '♡' },
-            ].map((stat) => (
-              <div key={stat.label} className="flex items-center gap-5 px-9 py-5">
-                <span className="text-[1.6rem] text-[#2e3430]" aria-hidden="true">
-                  {stat.icon}
-                </span>
+          <div className="content-wrap h-4"></div>
+        </section>
+
+        <section id="selected-work" className="content-wrap border-b border-border/60 py-18">
+          <div className="flex items-end justify-between gap-6">
+            <p className="text-[0.82rem] font-semibold tracking-[0.15em] text-[#48504a] uppercase">Selected Work</p>
+            <p className="max-w-[34rem] text-right text-[0.95rem] text-[#5a635d]">
+              Three case studies that show strategy, system design and implementation across AI, automation and operations.
+            </p>
+          </div>
+
+          <div className="mt-10 border-t border-border/60">
+            {caseStudies.map((study, index) => {
+              const copyBlock = (
                 <div>
-                  <p className="text-[1.4rem] font-semibold leading-none text-[#1f2522]">{stat.value}</p>
-                  <p className="mt-1 text-[0.62rem] font-semibold tracking-[0.15em] text-[#3f4640] uppercase">{stat.label}</p>
+                  <p className="text-[2.4rem] leading-none text-secondary">{study.id}</p>
+                  <h2 className="mt-4 max-w-[32rem] font-serif text-[2.55rem] leading-[1.05] text-[#1f2522]">
+                    {study.title}
+                  </h2>
+                  <p className="mt-4 max-w-[31rem] text-[1rem] text-[#4d5651]">{study.description}</p>
+                  <p className="mt-6 border-t border-border/50 pt-3 text-[0.66rem] tracking-[0.14em] text-[#5f6660] uppercase">
+                    {study.metadata}
+                  </p>
+                  {study.href.startsWith('/') ? (
+                    <Link
+                      to={study.href}
+                      className="mt-6 inline-flex text-[0.7rem] font-semibold tracking-[0.16em] text-[#3f4641] uppercase"
+                    >
+                      View case study →
+                    </Link>
+                  ) : (
+                    <a href={study.href} className="mt-6 inline-flex text-[0.7rem] font-semibold tracking-[0.16em] text-[#3f4641] uppercase">
+                      View case study →
+                    </a>
+                  )}
                 </div>
-              </div>
+              )
+
+              const visualBlock = (
+                <div className="border border-border/60 bg-surface">
+                  {study.hasImage && study.image ? (
+                    <img
+                      src={study.image.src}
+                      alt={study.image.alt}
+                      className="block h-[24rem] w-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="flex h-[24rem] items-center justify-center bg-[#f5eee1]">
+                      <div className="text-center">
+                        <p className="text-[0.66rem] tracking-[0.16em] text-[#727a75] uppercase">
+                          Case Study Visual Placeholder
+                        </p>
+                        <p className="mt-2 text-[0.84rem] text-[#626a64]">Final project visuals to be inserted</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
+
+              return (
+                <article key={study.id} className="grid grid-cols-2 gap-14 border-b border-border/45 py-14 last:border-b-0 last:pb-0">
+                  {index % 2 === 0 ? (
+                    <>
+                      {visualBlock}
+                      {copyBlock}
+                    </>
+                  ) : (
+                    <>
+                      {copyBlock}
+                      {visualBlock}
+                    </>
+                  )}
+                </article>
+              )
+            })}
+          </div>
+        </section>
+
+        <section id="expertise" className="content-wrap border-b border-border/60 py-18">
+          <p className="text-[0.82rem] font-semibold tracking-[0.15em] text-[#48504a] uppercase">Expertise</p>
+          <div className="mt-8 grid grid-cols-2 gap-x-14 gap-y-12">
+            {expertiseAreas.map((area) => (
+              <article key={area.id} className="border-t border-border/50 pt-5">
+                <p className="text-[0.68rem] tracking-[0.15em] text-secondary uppercase">{area.id}</p>
+                <h3 className="mt-3 font-serif text-[2rem] leading-tight text-[#1f2522]">{area.title}</h3>
+                <p className="mt-3 max-w-[30rem] text-[0.98rem] text-[#545d57]">{area.description}</p>
+              </article>
             ))}
           </div>
         </section>
 
-        <section id="selected-work" className="content-wrap border-b border-border/60 py-8">
-          <div className="grid grid-cols-[2.1fr_1fr] gap-8">
-            <div>
-              <div className="mb-4 flex items-center justify-between">
-                <p className="text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">SELECTED WORKS</p>
-                <a href="#selected-work" className="text-[0.74rem] tracking-[0.12em] text-[#5a5f64] uppercase">
-                  VIEW ALL PROJECTS →
-                </a>
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                {projects.map((project) => (
-                  <article key={project.slug} className="space-y-2">
-                    <div className="h-[13.7rem] overflow-hidden border border-border/55 bg-surface">
-                      <img src={project.thumbnail.src} alt={project.thumbnail.alt} className="h-full w-full object-cover" />
-                    </div>
-                    <h3 className="text-[1.28rem] font-semibold leading-tight text-[#1e2421] uppercase">{project.title}</h3>
-                    <p className="text-[0.8rem] text-[#59625c]">{project.subtitle}</p>
-                    {project.href.startsWith('/') ? (
-                      <Link to={project.href} className="inline-block text-[0.68rem] tracking-[0.14em] text-[#5d636a] uppercase">
-                        VIEW DETAILS →
-                      </Link>
-                    ) : (
-                      <a href={project.href} className="inline-block text-[0.68rem] tracking-[0.14em] text-[#5d636a] uppercase">
-                        VIEW DETAILS →
-                      </a>
-                    )}
-                  </article>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="mb-4 text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">WHAT I DO</p>
-              <div className="space-y-3">
-                {services.map((service) => (
-                  <article key={service.title} className="flex gap-3 border-b border-border/50 pb-3">
-                    <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-sm bg-secondary-soft text-[0.8rem] text-[#4e5560]">
-                      ✦
-                    </div>
-                    <div>
-                      <h3 className="text-[0.72rem] font-semibold tracking-[0.11em] text-[#2a312d] uppercase">{service.title}</h3>
-                      <p className="mt-1 text-[0.76rem] text-[#57615b]">{service.description}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="content-wrap border-b border-border/60 py-8">
-          <div className="grid grid-cols-[2.1fr_1fr] gap-8">
-            <div>
-              <p className="mb-4 text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">TOOLS &amp; TECHNOLOGIES</p>
-              <div className="space-y-4">
-                {toolGroups.map((group) => (
-                  <div key={group.label}>
-                    <p className="mb-2 text-[0.62rem] font-semibold tracking-[0.14em] text-[#5f6761] uppercase">{group.label}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {group.items.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-sm border border-border/65 bg-surface px-3 py-1 text-[0.72rem] text-[#313732]"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="mb-4 text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">HOW I WORK</p>
-              <div className="grid grid-cols-5 gap-2">
-                {processSteps.map((step, index) => (
-                  <div key={step} className="text-center">
-                    <div className="flex items-center justify-center gap-1.5">
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-secondary-soft text-[0.76rem] text-[#4e5560]">
-                        {index + 1}
-                      </span>
-                      {index < processSteps.length - 1 ? (
-                        <span className="text-[0.85rem] text-[#7d8480]" aria-hidden="true">
-                          →
-                        </span>
-                      ) : null}
-                    </div>
-                    <p className="mt-2 text-[0.62rem] font-semibold tracking-[0.12em] text-[#333a35] uppercase">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" className="content-wrap border-b border-border/60 py-8">
-          <div className="grid grid-cols-[1.15fr_1.85fr] gap-8">
-            <div>
-              <p className="text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">ABOUT ME</p>
-              <p className="mt-3 max-w-[26rem] text-[1.04rem] text-[#434b46]">
-                My work sits between business thinking, technology and implementation — understanding how an organisation
-                actually operates, then building the system that removes the friction.
+        <section id="about" className="content-wrap border-b border-border/60 py-18">
+          <p className="text-[0.82rem] font-semibold tracking-[0.15em] text-[#48504a] uppercase">About</p>
+          <div className="mt-6 grid grid-cols-[1.35fr_1fr] gap-12">
+            <h2 className="font-serif text-[4rem] leading-[0.94] text-[#1f2522]">
+              A business-first approach to technology.
+            </h2>
+            <div className="self-end border-l border-border/50 pl-6">
+              <p className="text-[1rem] text-[#505a54]">
+                Technology choices should follow business reality. My work starts from operations, decision flows and
+                customer impact, then translates that into systems teams can actually use and sustain.
               </p>
             </div>
-            <div className="grid grid-cols-3 divide-x divide-border/50 border border-border/50">
-              {[
-                {
-                  title: 'SYSTEMS THAT WORK',
-                  text: 'I build systems that scale operationally and stay practical as the business grows.',
-                },
-                {
-                  title: 'PEOPLE AT THE CENTER',
-                  text: 'Technology should support humans and improve clarity, adoption and real impact.',
-                },
-                {
-                  title: 'MEASURABLE IMPACT',
-                  text: 'From automated workflows to focused products, everything is designed for outcomes.',
-                },
-              ].map((item) => (
-                <article key={item.title} className="px-4 py-4">
-                  <p className="text-[0.62rem] font-semibold tracking-[0.13em] text-[#575f59] uppercase">{item.title}</p>
-                  <p className="mt-2 text-[0.78rem] text-[#59625d]">{item.text}</p>
+          </div>
+        </section>
+
+        <section id="approach" className="content-wrap border-b border-border/60 py-18">
+          <p className="text-[0.82rem] font-semibold tracking-[0.15em] text-[#48504a] uppercase">Approach</p>
+          <div className="mt-9 grid grid-cols-3 gap-10">
+            {approachSteps.map((step) => (
+              <article key={step.id} className="border-t border-border/50 pt-4">
+                <p className="text-[0.68rem] tracking-[0.15em] text-secondary uppercase">{step.id}</p>
+                <h3 className="mt-2 font-serif text-[1.95rem] text-[#1f2522]">{step.title}</h3>
+                <p className="mt-3 max-w-[25rem] text-[0.95rem] text-[#545d57]">{step.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="toolkit" className="content-wrap border-b border-border/60 py-18">
+          <div className="grid grid-cols-[0.8fr_1.2fr] gap-14">
+            <div>
+              <p className="text-[0.82rem] font-semibold tracking-[0.15em] text-[#48504a] uppercase">Toolkit</p>
+              <p className="mt-4 max-w-[22rem] text-[0.95rem] text-[#57605a]">
+                Grouped by capability and delivery context rather than presented as an exhaustive logo wall.
+              </p>
+              <ul className="mt-8 space-y-2">
+                {toolkitCategories.map((category) => (
+                  <li key={category} className="text-[0.7rem] tracking-[0.14em] text-[#666e68] uppercase">
+                    {category}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-6">
+              {toolGroups.map((group) => (
+                <article key={group.label} className="border-t border-border/50 pt-3">
+                  <p className="text-[0.66rem] tracking-[0.14em] text-[#59625d] uppercase">{group.label}</p>
+                  <p className="mt-2 text-[0.95rem] text-[#444d47]">{group.items.join(' · ')}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="experience" className="content-wrap border-b border-border/60 py-8">
-          <div className="grid grid-cols-[1fr_1.3fr] gap-8">
+        <footer id="contact" className="content-wrap py-20">
+          <div className="grid grid-cols-[1.4fr_1fr] gap-10 border-t border-border/60 pt-12">
             <div>
-              <p className="mb-3 text-[0.85rem] font-semibold tracking-[0.12em] text-[#474f49] uppercase">EXPERIENCE</p>
-              <ol className="relative ml-3 space-y-4 border-l border-border/70 pl-5">
-                {timeline.map((item) => (
-                  <li key={item.period} className="relative">
-                    <span className="absolute -left-[1.62rem] top-1 h-2 w-2 rounded-full bg-secondary" aria-hidden="true"></span>
-                    <p className="text-[0.66rem] font-semibold tracking-[0.11em] text-[#59615b] uppercase">{item.period}</p>
-                    <p className="mt-1 text-[0.8rem] text-[#4f5852]">{item.role}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <aside className="self-start bg-secondary-soft px-7 py-6">
-              <p className="text-[2rem] leading-none text-[#747a83]" aria-hidden="true">
-                “
-              </p>
-              <p className="mt-1 max-w-[32rem] font-serif text-[1.56rem] leading-[1.22] text-[#2d3330]">
-                I turn complexity into clear systems that help teams move faster and make better decisions.
-              </p>
-            </aside>
-          </div>
-        </section>
-
-        <footer id="contact" className="content-wrap py-8">
-          <div className="grid grid-cols-[1.4fr_1fr_1fr] items-end gap-8">
-            <div>
-              <p className="text-[1.55rem] font-serif leading-tight text-[#1e2521]">Let&apos;s create something meaningful together.</p>
+              <h2 className="max-w-[44rem] font-serif text-[3.55rem] leading-[0.97] text-[#1f2522]">
+                Have a business problem that might need a better system?
+              </h2>
               <a
-                href="#contact"
-                className="mt-4 inline-flex rounded-sm bg-secondary-soft px-5 py-2 text-[0.66rem] font-semibold tracking-[0.16em] text-[#3f4348] uppercase"
+                href="mailto:hello@example.com"
+                className="mt-8 inline-flex rounded-sm bg-secondary-soft px-6 py-2.5 text-[0.68rem] font-semibold tracking-[0.16em] text-[#3e4348] uppercase"
               >
-                LET&apos;S CONNECT →
+                Let&apos;s connect →
               </a>
             </div>
-            <div className="text-[0.78rem] text-[#57615b]">
-              <p>hello@example.com</p>
-              <p className="mt-1">www.daryna.com</p>
-              <p className="mt-1">@nordic_italy</p>
-            </div>
-            <div className="flex items-center justify-start gap-2 text-[#48514b]">
-              {['in', 'ig', 'be'].map((social) => (
-                <span key={social} className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border/70 text-[0.66rem]">
-                  {social}
-                </span>
-              ))}
+            <div className="self-end border-l border-border/50 pl-6">
+              <p className="text-[0.72rem] tracking-[0.14em] text-[#666e68] uppercase">Contact</p>
+              <p className="mt-3 text-[0.98rem] text-[#4f5852]">hello@example.com</p>
+              <p className="mt-1 text-[0.98rem] text-[#4f5852]">LinkedIn</p>
+              <p className="mt-1 text-[0.98rem] text-[#4f5852]">GitHub</p>
             </div>
           </div>
         </footer>
