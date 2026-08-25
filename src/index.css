@@ -128,7 +128,7 @@
    * editorial system instead of varying ad hoc sizes.
    */
   .section-label {
-    @apply text-[0.95rem] font-semibold tracking-[0.15em] text-secondary uppercase;
+    @apply font-sans text-[1.125rem] leading-[1.2] font-semibold tracking-[0.15em] text-secondary uppercase;
   }
 
   .editorial-statement {

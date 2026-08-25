@@ -6,7 +6,7 @@ export function HomePage() {
   const contactEmail = 'daryna.giancola@gmail.com'
   const linkedinUrl = 'https://www.linkedin.com/in/daryna-giancola/'
   const githubUrl = 'https://github.com/darynagiancola'
-  const websiteUrl = 'https://darina-ai.org'
+  const websiteUrl = 'https://www.darynagiancola.com'
   const cvHref = `${import.meta.env.BASE_URL}Daryna_Giancola_CV_AI_Automation_EN_ad0f.pdf`
   const featuredProjects = projectCards.filter((project) => project.featured).slice(0, 3)
   const expertiseAreas = [
@@ -258,49 +258,32 @@ export function HomePage() {
             From business problem to working system.
           </p>
 
-          <div className="relative mt-12">
-            <div
-              className="pointer-events-none absolute left-[10%] right-[10%] top-[1.45rem] hidden h-px bg-border/60 md:block"
-              aria-hidden="true"
-            ></div>
-
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
-              {approachSteps.map((step, index) => (
-                <article key={step.id} className="relative">
-                  <div className="flex items-baseline gap-3">
-                    <p className="text-[2.4rem] font-semibold leading-none text-secondary">{step.id}</p>
-                    {index < approachSteps.length - 1 ? (
-                      <span className="text-[1.1rem] text-secondary/70 md:hidden" aria-hidden="true">
-                        ↓
-                      </span>
-                    ) : null}
-                  </div>
-                  <h3 className="mt-3 font-sans text-[1.92rem] font-semibold text-[#1f2522]">{step.title}</h3>
-                  <p className="mt-3 max-w-[25rem] text-[1.02rem] leading-[1.55] text-[#545d57]">{step.description}</p>
-                </article>
-              ))}
-            </div>
+          <div className="mt-14 grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-16">
+            {approachSteps.map((step) => (
+              <article key={step.id}>
+                <p className="text-[3.4rem] font-semibold leading-none text-secondary">{step.id}</p>
+                <h3 className="mt-4 font-sans text-[2rem] font-semibold leading-[1.05] text-[#1f2522]">{step.title}</h3>
+                <p className="mt-4 max-w-[24rem] text-[1.04rem] leading-[1.58] text-[#545d57]">{step.description}</p>
+              </article>
+            ))}
           </div>
         </section>
 
         <section id="toolkit" className="content-wrap py-20">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
-            <div>
-              <p className="section-label">TOOLKIT</p>
-              <p className="mt-4 max-w-[22rem] text-[1.02rem] leading-[1.55] text-[#57605a]">
-                Tools I work with.
-              </p>
-            </div>
+          <p className="section-label">TOOLS I USE</p>
 
-            <div className="space-y-7">
-              {toolGroups.map((group) => (
-                <article key={group.label}>
-                  <p className="text-[0.78rem] font-semibold tracking-[0.12em] text-secondary uppercase">{group.label}</p>
-                  <p className="mt-2 text-[1rem] leading-[1.55] text-[#444d47]">{group.items.join(' · ')}</p>
-                </article>
-              ))}
-            </div>
+          <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-9 md:grid-cols-2">
+            {toolGroups.map((group) => (
+              <article key={group.label}>
+                <p className="text-[0.8rem] font-semibold tracking-[0.12em] text-secondary uppercase">{group.label}</p>
+                <p className="mt-2.5 text-[1.05rem] leading-[1.6] text-[#3f453f]">{group.items.join(' · ')}</p>
+              </article>
+            ))}
           </div>
+          <p className="mt-10 max-w-[48rem] text-[1.02rem] leading-[1.62] text-[#5c6560]">
+            Every business has a different stack. I focus on the process and system logic first, then work with the
+            tools and platforms the business uses or the solution requires.
+          </p>
         </section>
 
         <footer id="contact" className="mt-4 border-t border-border/60 bg-secondary-soft/55 py-20">
@@ -321,7 +304,24 @@ export function HomePage() {
             <div className="mt-16 grid grid-cols-1 gap-8 border-t border-border/45 pt-8 sm:grid-cols-2 md:grid-cols-4">
               <div>
                 <p className="text-[1.02rem] font-semibold tracking-[0.03em] text-[#1d211e]">DARYNA GIANCOLA</p>
-                <p className="mt-2 text-[0.95rem] text-[#5c6560]">Brescia, Italy</p>
+                <p className="mt-2 flex items-center gap-1.5 text-[0.95rem] text-[#5c6560]">
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    className="h-3.5 w-3.5 shrink-0"
+                  >
+                    <path
+                      d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <circle cx="12" cy="9.5" r="2.15" />
+                  </svg>
+                  Brescia, Italy
+                </p>
               </div>
 
               <div className="space-y-2">
@@ -334,7 +334,7 @@ export function HomePage() {
                   rel="noreferrer"
                   className="block text-[0.98rem] text-[#4f5852] hover:text-[#2c312d]"
                 >
-                  darina-ai.org
+                  www.darynagiancola.com
                 </a>
               </div>
 
@@ -343,7 +343,7 @@ export function HomePage() {
                   href={linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="block text-[0.98rem] font-semibold text-secondary hover:text-[#2c312d]"
+                  className="block text-[0.98rem] text-[#4f5852] hover:text-[#2c312d]"
                 >
                   LinkedIn
                 </a>
@@ -351,7 +351,7 @@ export function HomePage() {
                   href={githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="block text-[0.84rem] text-[#7a8177] hover:text-[#4f5852]"
+                  className="block text-[0.98rem] text-[#4f5852] hover:text-[#2c312d]"
                 >
                   GitHub
                 </a>
