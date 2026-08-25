@@ -1,27 +1,15 @@
-import type {
-  CaseStudyData,
-  ImageAsset,
-  MetadataItem,
-  ProjectCardData,
-  RoleCardData,
-  ToolCardData,
-} from '../types/portfolio'
+import type { CaseStudyData, ProjectCardData } from '../types/portfolio'
 import adminDashboard from '../assets/projects/aurelia/admin-dashboard.svg'
-import adminFloorPlan from '../assets/projects/aurelia/admin-floor-plan.svg'
-import adminLocations from '../assets/projects/aurelia/admin-locations.svg'
-import adminMenuBuilder from '../assets/projects/aurelia/admin-menu-builder.svg'
-import adminSettings from '../assets/projects/aurelia/admin-settings.svg'
-import adminStaff from '../assets/projects/aurelia/admin-staff.svg'
-import customerCart from '../assets/projects/aurelia/customer-cart.svg'
-import customerConfirmation from '../assets/projects/aurelia/customer-confirmation.svg'
-import customerMenu from '../assets/projects/aurelia/customer-menu.svg'
-import customerPayment from '../assets/projects/aurelia/customer-payment.svg'
-import customerReservation from '../assets/projects/aurelia/customer-reservation.svg'
-import kdsDebug from '../assets/projects/aurelia/kds-debug.svg'
-import kdsLive from '../assets/projects/aurelia/kds-live.svg'
-import kitchenDisplay from '../assets/projects/aurelia/kitchen-display.svg'
-import staffLogin from '../assets/projects/aurelia/staff-login.svg'
-import waiterStation from '../assets/projects/aurelia/waiter-station.svg'
+import customerExperienceHome from '../assets/projects/aurelia/01-customer-experience-home.png'
+import aiBaristaOrder from '../assets/projects/aurelia/02-ai-barista-order.png'
+import cartPromoFlow from '../assets/projects/aurelia/03-cart-promo-flow.png'
+import simulatedPayment from '../assets/projects/aurelia/04-simulated-payment.png'
+import operationsDashboard from '../assets/projects/aurelia/05-operations-dashboard.png'
+import adminFloorPlan from '../assets/projects/aurelia/06-admin-floor-plan.png'
+import waiterFloorPlan from '../assets/projects/aurelia/07-waiter-floor-plan.png'
+import waiterActiveOrders from '../assets/projects/aurelia/08-waiter-active-orders.png'
+import kdsLiveBoard from '../assets/projects/aurelia/09-kds-live-board.png'
+import kdsDebugRecovery from '../assets/projects/aurelia/10-kds-debug-recovery.png'
 import placeholderThumb from '../assets/projects/placeholder-case-study.svg'
 
 export const projectCards: ProjectCardData[] = [
@@ -117,239 +105,132 @@ export const projectCards: ProjectCardData[] = [
   },
 ]
 
-export const aureliaHeroMetadata: MetadataItem[] = [
-  {
-    label: 'Role',
-    value: 'Product concept, UX/UI, AI-assisted development',
-  },
-  {
-    label: 'Stack',
-    value: 'Lovable · Cursor · Supabase · React · GitHub',
-  },
-  {
-    label: 'Product Areas',
-    value: 'Customer · Staff · Admin · Kitchen',
-  },
-]
-
-export const customerJourneyAssets: ImageAsset[] = [
-  { src: customerMenu, alt: 'Customer menu screen placeholder', label: 'Browse' },
-  { src: customerReservation, alt: 'Customer reservation screen placeholder', label: 'Add items' },
-  { src: customerCart, alt: 'Customer cart screen placeholder', label: 'Cart' },
-  { src: customerPayment, alt: 'Customer payment screen placeholder', label: 'Payment' },
-  {
-    src: customerConfirmation,
-    alt: 'Customer order confirmation screen placeholder',
-    label: 'Confirmation',
-  },
-]
-
-export const moreThanOrderingAssets: ImageAsset[] = [
-  {
-    src: customerReservation,
-    alt: 'Reservation flow placeholder showing guest and time selection',
-    label: 'Reservations',
-  },
-  {
-    src: customerPayment,
-    alt: 'Payment flow placeholder with method options',
-    label: 'Payments',
-  },
-  {
-    src: customerCart,
-    alt: 'Cart management placeholder',
-    label: 'Cart management',
-  },
-  {
-    src: customerConfirmation,
-    alt: 'Order confirmation placeholder',
-    label: 'Confirmation',
-  },
-]
-
-export const roleCards: RoleCardData[] = [
-  {
-    role: 'Admin',
-    description: 'Full system visibility and control across configuration and operations.',
-  },
-  {
-    role: 'Manager',
-    description: 'Operational oversight for staff, service flow, and performance monitoring.',
-  },
-  {
-    role: 'Waiter',
-    description: 'Tables, active orders, reservations, payments, and front-of-house workflows.',
-  },
-  {
-    role: 'Kitchen',
-    description: 'Incoming orders, preparation status, timers, and handoff clarity.',
-  },
-  {
-    role: 'Cashier',
-    description: 'Payment processing and order completion at the final service step.',
-  },
-]
-
-export const adminAssets: ImageAsset[] = [
-  { src: adminDashboard, alt: 'Admin dashboard placeholder', label: 'Dashboard' },
-  { src: adminFloorPlan, alt: 'Floor plan placeholder', label: 'Floor Plan' },
-  { src: adminMenuBuilder, alt: 'Menu builder placeholder', label: 'Menu Builder' },
-  { src: adminStaff, alt: 'Staff management placeholder', label: 'Staff' },
-  { src: adminLocations, alt: 'Locations management placeholder', label: 'Locations' },
-  { src: adminSettings, alt: 'Settings placeholder', label: 'Settings' },
-]
-
-export const kdsReliabilityAssets: ImageAsset[] = [
-  { src: kitchenDisplay, alt: 'Kitchen display system placeholder', label: 'KDS workspace' },
-  { src: kdsLive, alt: 'Realtime live mode placeholder', label: 'Live / demo mode' },
-  { src: kdsDebug, alt: 'KDS debug simulator placeholder', label: 'Debug simulator' },
-]
-
-export const staffEntryAsset: ImageAsset = {
-  src: staffLogin,
-  alt: 'Staff login placeholder showing email and PIN options',
-  label: 'Staff Login',
-}
-
-export const waiterAsset: ImageAsset = {
-  src: waiterStation,
-  alt: 'Waiter station placeholder showing floor and order states',
-  label: 'Waiter Station',
-}
-
-export const architectureTooling: ToolCardData[] = [
-  {
-    tool: 'Lovable',
-    description: 'Rapid product and interface prototyping to shape journeys and structure quickly.',
-  },
-  {
-    tool: 'Cursor',
-    description: 'Implementation, iteration, and code-level product refinement.',
-  },
-  {
-    tool: 'Supabase',
-    description: 'Database, authentication, and realtime infrastructure for synchronized interfaces.',
-  },
-  {
-    tool: 'React',
-    description: 'Frontend composition for customer, staff, and operations experiences.',
-  },
-  {
-    tool: 'GitHub',
-    description: 'Version control and deployment workflow for iterative product delivery.',
-  },
-]
-
 export const aureliaCaseStudy: CaseStudyData = {
   slug: 'aurelia',
   backHref: '#selected-work',
-  category: 'Hospitality · AI · Operations',
-  projectName: 'AURELIA',
-  systemTitle: 'AI-Powered Hospitality System',
-  summary:
-    'A connected hospitality system designed to align customer ordering, payments and restaurant operations through one integrated workflow.',
+  projectName: 'AURELIA CAFÉ',
+  projectDescriptor: 'AI-powered hospitality ecosystem',
+  category: 'Case Study',
+  intro: [
+    'A concept project exploring how customer experience, restaurant operations and kitchen workflows can work as one connected hospitality system.',
+    'Rather than designing a single interface, I developed three complementary prototypes around the same café concept, each focused on a different part of the operational journey.',
+    'Aurelia is one connected ecosystem composed of: Customer Experience / AI Café, Operations Platform, and Kitchen Display System.',
+  ],
   heroMetadata: [
     { label: 'Role', value: 'Product concept · UX/UI · AI-assisted development' },
-    { label: 'Project Type', value: 'Portfolio case study / product system' },
-    { label: 'Focus', value: 'Customer flow · Staff operations · Kitchen workflow' },
-    { label: 'Stack', value: 'OpenAI API · LangChain · Supabase · React · Vercel' },
+    { label: 'Project Type', value: 'Concept project · connected hospitality ecosystem' },
+    { label: 'Focus', value: 'Customer experience · operations workflows · kitchen execution' },
+    { label: 'Structure', value: '3 complementary prototypes in one operational system' },
   ],
-  heroVisual: adminDashboard
-    ? {
-        src: adminDashboard,
-        alt: 'Aurelia admin dashboard project visual',
-        label: 'Selected project visual',
-      }
-    : undefined,
-  context: {
-    heading: 'Context',
-    body:
-      'AURELIA explores a connected hospitality workflow where customer interactions, staff operations and kitchen delivery are designed as one system rather than disconnected screens.',
+  customerExperience: {
+    label: 'CUSTOMER EXPERIENCE',
+    title: 'Ordering with an AI layer',
+    copy:
+      'A customer-facing café experience combining a browsable menu, cart and promotional logic with an AI Barista that helps customers choose products based on preferences, dietary requirements and budget.\n\nThe assistant works with structured menu and pricing data, can recommend combinations, calculate an order and prepare selected items for the cart.\n\nThe checkout journey continues through promo-code logic and a simulated payment flow, allowing the complete ordering experience to be tested without processing real payments.',
+    features: [
+      'AI Barista recommendations',
+      'Structured menu and pricing data',
+      'Cart and order calculation',
+      'Promo-code logic',
+      'Simulated payment flow',
+    ],
+    images: [
+      {
+        src: customerExperienceHome,
+        alt: 'Aurelia customer homepage showing hero area, menu entry points, and primary ordering actions.',
+        label: '01 · Customer experience home',
+      },
+      {
+        src: aiBaristaOrder,
+        alt: 'AI Barista conversation proposing combinations under a user budget and preparing cart-ready options.',
+        label: '02 · AI Barista order assistant',
+      },
+      {
+        src: cartPromoFlow,
+        alt: 'Customer cart and promo-code flow showing line items, order summary, and discount logic.',
+        label: '03 · Cart + promo flow',
+      },
+      {
+        src: simulatedPayment,
+        alt: 'Simulated payment step continuing checkout without real payment processing.',
+        label: '04 · Simulated payment flow',
+      },
+    ],
+    ctaLabel: 'View AI Café',
+    ctaHref: 'https://darynagiancola.github.io/ai-cafe',
   },
-  problem: {
-    heading: 'The Problem',
-    body:
-      'Restaurant teams often operate across fragmented tools for ordering, payments and service coordination. This fragmentation creates handoff friction, duplicated effort and reduced operational clarity.',
+  operationsPlatform: {
+    label: 'OPERATIONS PLATFORM',
+    title: 'One workspace for the restaurant team',
+    copy:
+      'A broader hospitality management prototype designed around the different people involved in daily restaurant operations.\n\nCustomers can browse the menu, order and reserve a table, while staff access role-specific workspaces for waiter, kitchen and management workflows.\n\nThe management side includes operational dashboards, table and floor status, staff management, menu controls, locations and system settings.',
+    features: [
+      'Customer ordering and reservations',
+      'Role-based staff access',
+      'Waiter station and active orders',
+      'Kitchen workflow',
+      'Floor and table management',
+      'Operational dashboard',
+      'Staff and system management',
+    ],
+    images: [
+      {
+        src: operationsDashboard,
+        alt: 'Operations dashboard with restaurant KPIs, performance cards, and weekly revenue overview.',
+        label: '05 · Operations dashboard',
+      },
+      {
+        src: adminFloorPlan,
+        alt: 'Admin and management floor-plan view with table states and operational controls.',
+        label: '06 · Admin floor-plan view',
+      },
+      {
+        src: waiterFloorPlan,
+        alt: 'Waiter operational floor-plan view used during service for table state management.',
+        label: '07 · Waiter floor-plan view',
+      },
+      {
+        src: waiterActiveOrders,
+        alt: 'Waiter active-orders view showing table orders, status chips, and totals during service.',
+        label: '08 · Waiter active orders',
+      },
+    ],
+    ctaLabel: 'View Hospitality Platform',
+    ctaHref: 'https://aureliacafe.lovable.app/',
   },
-  system: {
-    heading: 'The System',
-    body:
-      'The solution architecture links customer touchpoints with operational interfaces so ordering, service state and kitchen progress can be managed through a connected data and workflow model.',
-    visual: {
-      src: kitchenDisplay,
-      alt: 'Aurelia kitchen display system visual',
-      label: 'System workflow visual placeholder',
-    },
-    visualNote: 'Reserved space for final system/workflow diagram in future iteration.',
+  kitchenDisplaySystem: {
+    label: 'KITCHEN DISPLAY SYSTEM',
+    title: 'Real-time kitchen execution',
+    copy:
+      'A standalone KDS prototype focused specifically on what happens after an order reaches the kitchen.\n\nOrders move through New, In Progress and Ready to Serve states, with real-time synchronization through Supabase.\n\nI also built a simulation and recovery layer for testing operational failures such as delayed events, missing orders, incorrect status transitions and inconsistent screen states. This made the project an opportunity to think beyond the interface and explore reliability in real-time operational systems.',
+    features: [
+      'Real-time order synchronization',
+      'Kitchen status workflow',
+      'Order timers and prioritization',
+      'Live and demo modes',
+      'Failure simulation',
+      'Recovery paths and state consistency',
+    ],
+    images: [
+      {
+        src: kdsLiveBoard,
+        alt: 'Live KDS board with New, In Progress, and Ready to Serve columns synchronized in real time.',
+        label: '09 · Live KDS board',
+      },
+      {
+        src: kdsDebugRecovery,
+        alt: 'KDS debug and recovery panel simulating failures and guiding state-consistency recovery paths.',
+        label: '10 · Debug and recovery layer',
+      },
+    ],
+    ctaLabel: 'View KDS',
+    ctaHref: 'https://darynagiancola.github.io/kds-dashboard/',
   },
-  howItWorks: [
-    {
-      id: '01',
-      heading: 'Customer ordering flow',
-      body:
-        'Customer interactions are structured from menu exploration through cart confirmation so order intent can move cleanly into operational execution.',
-      layout: 'side-by-side',
-      images: [
-        {
-          src: customerMenu,
-          alt: 'Aurelia customer ordering interface screenshot',
-          label: 'Customer ordering flow',
-        },
-      ],
-    },
-    {
-      id: '02',
-      heading: 'Service and handoff states',
-      body:
-        'Operational surfaces support coordination between front-of-house and kitchen teams by keeping order state and status transitions visible.',
-      layout: 'two-up',
-      images: [waiterAsset, staffEntryAsset],
-    },
-    {
-      id: '03',
-      heading: 'Kitchen execution and tracking',
-      body:
-        'Kitchen workflow emphasizes actionability and timing clarity, with focused interfaces for preparation states and service handoff.',
-      layout: 'large',
-      images: [
-        {
-          src: kdsLive,
-          alt: 'Aurelia kitchen live mode screenshot',
-          label: 'Kitchen execution view',
-        },
-      ],
-    },
-  ],
-  roleAndImplementation: [
-    {
-      label: 'Analysed',
-      body: 'Customer, staff, admin and kitchen process requirements across service flow.',
-    },
-    {
-      label: 'Designed',
-      body: 'Information architecture and interaction logic for multi-role interfaces.',
-    },
-    {
-      label: 'Configured',
-      body: 'Core data and workflow structure to connect ordering, payment and operations.',
-    },
-    {
-      label: 'Built',
-      body: 'Interface prototypes and functional views for customer and operational contexts.',
-    },
-    {
-      label: 'Connected',
-      body: 'Key workflow touchpoints across customer actions, staff handling and kitchen execution.',
-    },
-    {
-      label: 'Implemented',
-      body: 'AI-assisted product development process from concept through integrated prototype.',
-    },
-  ],
-  tools: [
-    { label: 'AI & Knowledge', items: ['OpenAI API', 'LangChain'] },
-    { label: 'Product & Development', items: ['React', 'TypeScript', 'Cursor'] },
-    { label: 'Data, Backend & Deployment', items: ['Supabase', 'Vercel'] },
-    { label: 'Workflow Context', items: ['Customer ordering', 'Staff operations', 'Kitchen workflow'] },
-  ],
+  approach: {
+    label: 'THE APPROACH',
+    copy:
+      'The three prototypes explore the same business from different perspectives: the customer placing an order, the team managing service and the kitchen executing it.\n\nThe goal was to think through the workflow as a system, including how information moves between roles, where AI can be useful and what happens when operational data does not behave as expected.',
+  },
+  technologiesLine:
+    'React · TypeScript · Vite · Supabase · OpenAI API · LangChain · Lovable · v0.dev · GitHub · Vercel',
 }

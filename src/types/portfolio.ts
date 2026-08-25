@@ -72,51 +72,30 @@ export interface CaseStudyNarrativeSection {
   body: string
 }
 
-export type CaseStudyHowItWorksLayout = 'side-by-side' | 'two-up' | 'large'
-
-export interface CaseStudyHowItWorksBlock {
-  id: string
-  heading: string
-  body: string
-  layout: CaseStudyHowItWorksLayout
+export interface CaseStudyFeatureSection {
+  label: string
+  title: string
+  copy: string
+  features: string[]
   images: ImageAsset[]
-}
-
-export interface CaseStudyRoleItem {
-  label: string
-  body: string
-}
-
-export interface CaseStudyToolsGroup {
-  label: string
-  items: string[]
-}
-
-export interface CaseStudyOptionalSection {
-  heading: string
-  body: string
+  ctaLabel: string
+  ctaHref: string
 }
 
 export interface CaseStudyData {
   slug: string
   backHref: string
-  category: string
   projectName: string
-  systemTitle: string
-  summary: string
+  projectDescriptor: string
+  category: string
+  intro: string[]
   heroMetadata: MetadataItem[]
-  heroVisual?: ImageAsset
-  context: CaseStudyNarrativeSection
-  problem: CaseStudyNarrativeSection
-  system: CaseStudyNarrativeSection & {
-    visual?: ImageAsset
-    visualNote?: string
+  customerExperience: CaseStudyFeatureSection
+  operationsPlatform: CaseStudyFeatureSection
+  kitchenDisplaySystem: CaseStudyFeatureSection
+  approach: {
+    label: string
+    copy: string
   }
-  howItWorks: CaseStudyHowItWorksBlock[]
-  roleAndImplementation: CaseStudyRoleItem[]
-  tools: CaseStudyToolsGroup[]
-  optionalSections?: {
-    results?: CaseStudyOptionalSection
-    lessons?: CaseStudyOptionalSection
-  }
+  technologiesLine: string
 }
