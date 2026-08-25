@@ -6,7 +6,8 @@ export function HomePage() {
   const contactEmail = 'daryna.giancola@gmail.com'
   const linkedinUrl = 'https://www.linkedin.com/in/daryna-giancola/'
   const githubUrl = 'https://github.com/darynagiancola'
-  const cvHref = '#selected-work'
+  const websiteUrl = 'https://darina-ai.org'
+  const cvHref = `${import.meta.env.BASE_URL}Daryna_Giancola_CV_AI_Automation_EN_ad0f.pdf`
   const featuredProjects = projectCards.filter((project) => project.featured).slice(0, 3)
   const expertiseAreas = [
     {
@@ -34,26 +35,26 @@ export function HomePage() {
         'Turning requirements and workflows into usable digital products, from customer-facing AI experiences to internal operational tools connected through APIs, databases and automation.',
     },
   ]
-  const toolkitCategories = [
-    'AI & Knowledge',
-    'Automation & Integration',
-    'CRM, Marketing & Customer Operations',
-    'Product & Development',
-    'Data, Backend & Deployment',
-    'Business, Data & Productivity',
-    'Marketing & Analytics',
-  ]
   const toolGroups = [
-    { label: 'AI & Knowledge', items: ['ChatGPT', 'OpenAI API', 'Claude', 'Gemini', 'NotebookLM', 'LangChain'] },
-    { label: 'Automation & Integration', items: ['Make', 'APIs', 'Webhooks', 'Zapier', 'n8n'] },
+    { label: 'AI & LLM Platforms', items: ['ChatGPT', 'Claude', 'Gemini', 'NotebookLM'] },
     {
-      label: 'CRM, Marketing & Customer Operations',
-      items: ['ActiveCampaign', 'Pipedrive', 'Intercom'],
+      label: 'AI Agents & APIs',
+      items: ['OpenAI API', 'Anthropic API', 'Gemini API', 'LangChain', 'RAG / Knowledge-Based AI'],
     },
-    { label: 'Product & Development', items: ['Cursor', 'Lovable', 'React', 'TypeScript', 'HTML', 'JSON', 'GitHub'] },
-    { label: 'Data, Backend & Deployment', items: ['Supabase', 'Vercel', 'Docker'] },
-    { label: 'Business, Data & Productivity', items: ['Notion', 'Airtable', 'Google Workspace', 'Microsoft 365'] },
-    { label: 'Marketing & Analytics', items: ['Google Analytics', 'Google Ads', 'Meta Ads'] },
+    {
+      label: 'Automation & Integration',
+      items: ['Make', 'Webhooks', 'REST APIs', 'HTTP Requests', 'JSON', 'Zapier', 'n8n'],
+    },
+    {
+      label: 'CRM & Customer Engagement',
+      items: ['Pipedrive', 'Intercom', 'ActiveCampaign', 'ClickFunnels', 'Cal.com'],
+    },
+    {
+      label: 'AI-Assisted Development',
+      items: ['Cursor', 'Lovable', 'GitHub', 'Vercel', 'Supabase', 'Docker', 'Google Colab', 'HTML/CSS'],
+    },
+    { label: 'Marketing & Analytics', items: ['Meta Ads', 'Google Ads', 'Google Analytics'] },
+    { label: 'Business & Productivity', items: ['Notion', 'Airtable', 'Google Workspace', 'Microsoft 365'] },
   ]
   const approachSteps = [
     {
@@ -125,7 +126,9 @@ export function HomePage() {
                 I combine business strategy, marketing and process thinking with AI, automation and digital product development to turn complex workflows into practical, working solutions.
               </p>
               <a
-                href="#selected-work"
+                href={cvHref}
+                target="_blank"
+                rel="noreferrer"
                 className="mt-5 inline-flex rounded-sm bg-secondary-soft px-5 py-2 text-[0.66rem] font-semibold tracking-[0.17em] text-[#3e4247] uppercase"
               >
                 VIEW MY CV →
@@ -139,15 +142,15 @@ export function HomePage() {
         </section>
 
         <section id="selected-work" className="content-wrap py-20">
-          <div className="flex items-end justify-between gap-6">
-            <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">SELECTED WORK</p>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <p className="section-label">SELECTED WORK</p>
             <a href="#" className="text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase">
               VIEW ALL PROJECTS →
             </a>
           </div>
 
           <div className="mt-8">
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10">
               {featuredProjects.map((project, index) => {
                 const metadata = project.metadata?.[0]?.value ?? project.tags.join(' · ')
                 const isPlaceholder = project.visualState === 'placeholder'
@@ -211,11 +214,11 @@ export function HomePage() {
         </section>
 
         <section id="expertise" className="content-wrap py-20">
-          <p className="text-[0.92rem] font-semibold tracking-[0.16em] text-secondary uppercase">EXPERTISE</p>
+          <p className="section-label">EXPERTISE</p>
           <p className="mt-5 max-w-[44rem] font-serif text-[2.35rem] leading-[1.05] text-[#1f2522]">
             Business thinking, translated into systems.
           </p>
-          <div className="mt-10 grid grid-cols-2 gap-x-16 gap-y-16">
+          <div className="mt-10 grid grid-cols-1 gap-x-16 gap-y-12 md:grid-cols-2 md:gap-y-16">
             {expertiseAreas.map((area) => (
               <article key={area.id} className="space-y-4">
                 <p className="text-[1.46rem] font-semibold leading-none tracking-[0.08em] text-secondary uppercase">{area.id}</p>
@@ -228,17 +231,12 @@ export function HomePage() {
 
         <section id="about" className="py-20">
           <div className="content-wrap bg-secondary-soft/45 px-10 py-16">
-            <p className="text-[0.92rem] font-semibold tracking-[0.16em] text-secondary uppercase">ABOUT</p>
-            <div className="mt-6 grid grid-cols-[1.18fr_1fr] gap-14">
+            <p className="section-label">ABOUT</p>
+            <div className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-[1.18fr_1fr] md:gap-14">
+              <h2 className="font-serif text-[4rem] leading-[0.94] text-[#1f2522]">
+                A business-first approach to technology.
+              </h2>
               <div>
-                <h2 className="font-serif text-[4rem] leading-[0.94] text-[#1f2522]">
-                  A business-first approach to technology.
-                </h2>
-                <p className="mt-7 text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase">
-                  BUSINESS STRATEGY · MARKETING · AI · AUTOMATION · DIGITAL PRODUCTS
-                </p>
-              </div>
-              <div className="self-end">
                 <p className="text-[1.1rem] leading-[1.56] text-[#505a54]">
                   I work across business strategy, marketing and technology, with a background spanning marketing
                   leadership, revenue management, sales, market analysis and business operations alongside hands-on
@@ -255,37 +253,43 @@ export function HomePage() {
         </section>
 
         <section id="approach" className="content-wrap py-20">
-          <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">APPROACH</p>
+          <p className="section-label">APPROACH</p>
           <p className="mt-5 max-w-[32rem] text-[1.08rem] leading-[1.55] text-[#545d57]">
             From business problem to working system.
           </p>
-          <div className="mt-7 border-t border-border/50 pt-7">
-            <div className="grid grid-cols-3 gap-10">
-            {approachSteps.map((step) => (
-              <article key={step.id} className="pr-3">
-                <p className="text-[0.86rem] font-semibold tracking-[0.12em] text-secondary uppercase">{step.id}</p>
-                <h3 className="mt-2 font-sans text-[1.92rem] font-semibold text-[#1f2522]">{step.title}</h3>
-                <p className="mt-3 max-w-[25rem] text-[1.02rem] leading-[1.55] text-[#545d57]">{step.description}</p>
-              </article>
-            ))}
+
+          <div className="relative mt-12">
+            <div
+              className="pointer-events-none absolute left-[10%] right-[10%] top-[1.45rem] hidden h-px bg-border/60 md:block"
+              aria-hidden="true"
+            ></div>
+
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12">
+              {approachSteps.map((step, index) => (
+                <article key={step.id} className="relative">
+                  <div className="flex items-baseline gap-3">
+                    <p className="text-[2.4rem] font-semibold leading-none text-secondary">{step.id}</p>
+                    {index < approachSteps.length - 1 ? (
+                      <span className="text-[1.1rem] text-secondary/70 md:hidden" aria-hidden="true">
+                        ↓
+                      </span>
+                    ) : null}
+                  </div>
+                  <h3 className="mt-3 font-sans text-[1.92rem] font-semibold text-[#1f2522]">{step.title}</h3>
+                  <p className="mt-3 max-w-[25rem] text-[1.02rem] leading-[1.55] text-[#545d57]">{step.description}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
         <section id="toolkit" className="content-wrap py-20">
-          <div className="grid grid-cols-[0.8fr_1.2fr] gap-14">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-14">
             <div>
-              <p className="text-[0.8rem] font-semibold tracking-[0.15em] text-secondary uppercase">TOOLKIT</p>
+              <p className="section-label">TOOLKIT</p>
               <p className="mt-4 max-w-[22rem] text-[1.02rem] leading-[1.55] text-[#57605a]">
                 Tools I work with.
               </p>
-              <ul className="mt-8 space-y-2">
-                {toolkitCategories.map((category) => (
-                  <li key={category} className="text-[0.78rem] tracking-[0.12em] text-[#666e68] uppercase">
-                    {category}
-                  </li>
-                ))}
-              </ul>
             </div>
 
             <div className="space-y-7">
@@ -300,46 +304,69 @@ export function HomePage() {
         </section>
 
         <footer id="contact" className="mt-4 border-t border-border/60 bg-secondary-soft/55 py-20">
-          <div className="content-wrap grid grid-cols-[1.4fr_1fr] gap-10">
-            <div>
-              <h2 className="max-w-[44rem] font-serif text-[3.65rem] leading-[0.97] text-[#1f2522]">
-                Have a business problem that might need a better system?
-              </h2>
-              <p className="mt-5 max-w-[38rem] text-[1.08rem] leading-[1.55] text-[#4f5852]">
-                I&apos;m interested in roles and projects involving AI implementation, automation, digital products and business systems, especially where understanding the business is as important as building the solution.
-              </p>
-              <a
-                href={`mailto:${contactEmail}`}
-                className="mt-8 inline-flex bg-[#d7cde4] px-6 py-2.5 text-[0.78rem] font-semibold tracking-[0.14em] text-[#3e4348] uppercase"
-              >
-                LET&apos;S CONNECT →
-              </a>
-            </div>
-            <div className="self-end space-y-2">
-              <a href={`mailto:${contactEmail}`} className="block text-[1.05rem] text-[#4f5852] hover:text-[#343a37]">
-                {contactEmail}
-              </a>
-              <a
-                href={linkedinUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="block text-[1.05rem] text-[#4f5852] hover:text-[#343a37]"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-          <div className="content-wrap mt-10 border-t border-border/45 pt-5">
-            <div className="flex flex-wrap gap-4 text-[0.7rem] font-semibold tracking-[0.13em] text-[#676e69] uppercase">
-              <a href={cvHref}>VIEW CV</a>
-              <span aria-hidden="true">·</span>
-              <a href={linkedinUrl} target="_blank" rel="noreferrer">
-                LINKEDIN
-              </a>
-              <span aria-hidden="true">·</span>
-              <a href={githubUrl} target="_blank" rel="noreferrer">
-                GITHUB
-              </a>
+          <div className="content-wrap">
+            <h2 className="max-w-[44rem] font-serif text-[3.65rem] leading-[0.97] text-[#1f2522]">
+              Have a business problem that might need a better system?
+            </h2>
+            <p className="mt-5 max-w-[38rem] text-[1.08rem] leading-[1.55] text-[#4f5852]">
+              I&apos;m interested in roles and projects involving AI implementation, automation, digital products and business systems, especially where understanding the business is as important as building the solution.
+            </p>
+            <a
+              href={`mailto:${contactEmail}`}
+              className="mt-8 inline-flex bg-[#d7cde4] px-6 py-2.5 text-[0.78rem] font-semibold tracking-[0.14em] text-[#3e4348] uppercase"
+            >
+              LET&apos;S CONNECT →
+            </a>
+
+            <div className="mt-16 grid grid-cols-1 gap-8 border-t border-border/45 pt-8 sm:grid-cols-2 md:grid-cols-4">
+              <div>
+                <p className="text-[1.02rem] font-semibold tracking-[0.03em] text-[#1d211e]">DARYNA GIANCOLA</p>
+                <p className="mt-2 text-[0.95rem] text-[#5c6560]">Brescia, Italy</p>
+              </div>
+
+              <div className="space-y-2">
+                <a href={`mailto:${contactEmail}`} className="block text-[0.98rem] text-[#4f5852] hover:text-[#2c312d]">
+                  {contactEmail}
+                </a>
+                <a
+                  href={websiteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-[0.98rem] text-[#4f5852] hover:text-[#2c312d]"
+                >
+                  darina-ai.org
+                </a>
+              </div>
+
+              <div className="space-y-2">
+                <a
+                  href={linkedinUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-[0.98rem] font-semibold text-secondary hover:text-[#2c312d]"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-[0.84rem] text-[#7a8177] hover:text-[#4f5852]"
+                >
+                  GitHub
+                </a>
+              </div>
+
+              <div>
+                <a
+                  href={cvHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[0.78rem] font-semibold tracking-[0.13em] text-secondary uppercase"
+                >
+                  VIEW CV →
+                </a>
+              </div>
             </div>
           </div>
         </footer>

@@ -37,7 +37,7 @@ export const projectCards: ProjectCardData[] = [
     metadata: [
       {
         label: 'Technology / context',
-        value: 'OpenAI API · LangChain · Supabase · React · Vercel',
+        value: 'OpenAI API · LangChain · Supabase · Vercel',
       },
     ],
     ctaLabel: 'View Case Study',
@@ -242,7 +242,7 @@ export const architectureTooling: ToolCardData[] = [
 
 export const aureliaCaseStudy: CaseStudyData = {
   slug: 'aurelia',
-  backHref: '/#selected-work',
+  backHref: '#selected-work',
   category: 'Hospitality · AI · Operations',
   projectName: 'AURELIA',
   systemTitle: 'AI-Powered Hospitality System',

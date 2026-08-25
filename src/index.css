@@ -122,6 +122,15 @@
     @apply text-[0.68rem] tracking-[0.18em] text-muted uppercase;
   }
 
+  /*
+   * Single shared treatment for homepage section labels (Selected Work,
+   * Expertise, About, Approach, Toolkit) so they read as one consistent
+   * editorial system instead of varying ad hoc sizes.
+   */
+  .section-label {
+    @apply text-[0.95rem] font-semibold tracking-[0.15em] text-secondary uppercase;
+  }
+
   .editorial-statement {
     @apply font-sans text-[clamp(1.42rem,4.4vw,1.62rem)] leading-[1.14] text-text;
   }
