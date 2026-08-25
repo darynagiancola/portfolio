@@ -9,6 +9,8 @@ import waiterFloorPlan from '../assets/projects/aurelia/07-waiter-floor-plan.png
 import waiterActiveOrders from '../assets/projects/aurelia/08-waiter-active-orders.png'
 import kdsLiveBoard from '../assets/projects/aurelia/09-kds-live-board.png'
 import kdsDebugRecovery from '../assets/projects/aurelia/10-kds-debug-recovery.png'
+import makeLeadRoutingArchitecture from '../assets/projects/lead-marketing/07-make-lead-routing-architecture-cropped.png'
+import finAiMessenger from '../assets/projects/ai-support/01-fin-ai-messenger.png'
 import placeholderThumb from '../assets/projects/placeholder-case-study.svg'
 
 export const projectCards: ProjectCardData[] = [
@@ -24,7 +26,7 @@ export const projectCards: ProjectCardData[] = [
     metadata: [
       {
         label: 'Technology / context',
-        value: 'OpenAI API · LangChain · Supabase · Vercel',
+        value: 'CURSOR · OPENAI API · LANGCHAIN · SUPABASE · LOVABLE',
       },
     ],
     ctaLabel: 'View Case Study',
@@ -42,47 +44,50 @@ export const projectCards: ProjectCardData[] = [
     title: 'Lead & Marketing Automation System',
     subtitle: 'AUTOMATION · CRM · MARKETING',
     description:
-      'A multi-step business automation covering lead generation/capture, ActiveCampaign automations, webinar communication, Pipedrive CRM status changes and follow-up workflows.',
+      'A lead generation and nurturing system connecting content, email automation, webinar qualification, CRM progression and strategy-call booking.',
     featured: true,
-    visualState: 'placeholder',
+    visualState: 'final',
     tags: ['Lead capture', 'ActiveCampaign', 'Webinar workflows', 'Pipedrive'],
     metadata: [
       {
         label: 'Technology / context',
-        value: 'Make · ActiveCampaign · Pipedrive · APIs · Webhooks',
+        value: 'ACTIVECAMPAIGN · MAKE · TYPEFORM · CAL.COM · CRM',
       },
     ],
     ctaLabel: 'View Case Study',
-    href: '#',
+    href: '/projects/lead-marketing',
     status: 'featured',
+    thumbnailMode: 'cover',
     thumbnail: {
-      src: placeholderThumb,
-      alt: 'Placeholder for upcoming case study',
-      label: 'Placeholder',
+      src: makeLeadRoutingArchitecture,
+      alt: 'Lead routing and CRM automation workflow modules preview',
+      label: 'Lead & marketing workflow',
     },
   },
   {
     slug: 'ai-support-ticket-routing',
-    title: 'AI Support & Ticket Routing',
+    title: 'AI Support & Workflow Routing',
     subtitle: 'AI · CUSTOMER OPERATIONS · AUTOMATION',
     description:
-      'An Intercom-based AI support system using a knowledge base to answer customer questions and routing/escalation logic to direct requests to the appropriate departments.',
+      'An AI-assisted support system using Fin and a structured knowledge base to answer customer questions, route requests and connect qualified sales enquiries with the appropriate workflow.',
     featured: true,
-    visualState: 'placeholder',
+    visualState: 'final',
     tags: ['Intercom', 'AI support', 'Knowledge base', 'Routing / escalation'],
     metadata: [
       {
         label: 'Technology / context',
-        value: 'Intercom · AI Agent · Knowledge Base · Workflow Automation',
+        value: 'INTERCOM · FIN AI · PIPEDRIVE · MAKE',
       },
     ],
     ctaLabel: 'View Case Study',
-    href: '#',
+    href: '/projects/ai-support',
     status: 'featured',
+    thumbnailMode: 'cover',
+    thumbnailPosition: '50% 64%',
     thumbnail: {
-      src: placeholderThumb,
-      alt: 'Placeholder for future product case study',
-      label: 'Placeholder',
+      src: finAiMessenger,
+      alt: 'Intercom Fin AI messenger interface preview',
+      label: 'AI support preview',
     },
   },
   {
@@ -112,7 +117,7 @@ export const aureliaCaseStudy: CaseStudyData = {
   intro: [
     'A concept project exploring how customer experience, restaurant operations and kitchen workflows can work as one connected hospitality system.',
     'Rather than designing a single interface, I developed three complementary prototypes around the same café concept, each focused on a different part of the operational journey.',
-    'Aurelia is one connected ecosystem composed of: Customer Experience / AI Café, Operations Platform, and Kitchen Display System.',
+    'Aurelia brings together three complementary prototypes: a customer-facing AI Café, a multi-role operations platform and a real-time Kitchen Display System.',
   ],
   heroMetadata: [
     { label: 'Role', value: 'Product concept · UX/UI · AI-assisted development' },
@@ -230,5 +235,5 @@ export const aureliaCaseStudy: CaseStudyData = {
       'The three prototypes explore the same business from different perspectives: the customer placing an order, the team managing service and the kitchen executing it.\n\nThe goal was to think through the workflow as a system, including how information moves between roles, where AI can be useful and what happens when operational data does not behave as expected.',
   },
   technologiesLine:
-    'React · TypeScript · Vite · Supabase · OpenAI API · LangChain · Lovable · v0.dev · GitHub · Vercel',
+    'React · TypeScript · Vite · Supabase · OpenAI API · LangChain · Cursor · Lovable · v0.dev · GitHub · Vercel',
 }

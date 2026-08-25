@@ -9,6 +9,11 @@ export function HomePage() {
   const websiteUrl = 'https://www.darynagiancola.com'
   const cvHref = `${import.meta.env.BASE_URL}Daryna_Giancola_CV_AI_Automation_EN_ad0f.pdf`
   const featuredProjects = projectCards.filter((project) => project.featured).slice(0, 3)
+  const selectedWorkCardTitles: Record<string, string> = {
+    aurelia: 'AI-POWERED\nHOSPITALITY\nSYSTEM',
+    'lead-marketing-automation-system': 'LEAD & MARKETING\nAUTOMATION SYSTEM',
+    'ai-support-ticket-routing': 'AI SUPPORT &\nWORKFLOW ROUTING',
+  }
   const expertiseAreas = [
     {
       id: '01',
@@ -153,39 +158,41 @@ export function HomePage() {
             <div className="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10">
               {featuredProjects.map((project, index) => {
                 const metadata = project.metadata?.[0]?.value ?? project.tags.join(' · ')
-                const isPlaceholder = project.visualState === 'placeholder'
+                const cardTitle = selectedWorkCardTitles[project.slug] ?? project.title.toUpperCase()
+                const cardContent = (
+                  <>
+                    <div className="flex items-start justify-between">
+                      <p className="font-serif text-[3rem] leading-none text-[#b5abbe]">{String(index + 1).padStart(2, '0')}</p>
+                      <span className="mt-1 text-[1.02rem] leading-none text-[#1f2522] transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]">
+                        ↗
+                      </span>
+                    </div>
+                    <div className="mt-auto">
+                      <h2 className="whitespace-pre-line font-sans text-[2rem] leading-[1.04] font-semibold text-[#1f2522]">
+                        {cardTitle}
+                      </h2>
+                      <p className="mt-3 text-[0.8rem] tracking-[0.12em] text-[#666e68] uppercase">{project.subtitle}</p>
+                    </div>
+                  </>
+                )
 
                 return (
                   <article key={project.slug} className="space-y-5">
-                    <div>
-                      <p className="text-[2.7rem] leading-none text-secondary">
-                        {String(index + 1).padStart(2, '0')}
-                      </p>
-                      <h2 className="mt-3 font-sans text-[2.1rem] leading-[1.04] font-semibold text-[#1f2522]">
-                        {project.title}
-                      </h2>
-                      <p className="mt-2 text-[0.8rem] tracking-[0.12em] text-[#666e68] uppercase">{project.subtitle}</p>
-                    </div>
-
-                    <div className="border border-border/60 bg-surface">
-                      {isPlaceholder ? (
-                        <div className="flex h-[22rem] items-center justify-center bg-secondary-soft/55">
-                          <div className="text-center">
-                            <p className="text-[0.76rem] tracking-[0.14em] text-[#6c7470] uppercase">
-                              Case Study Visual Placeholder
-                            </p>
-                            <p className="mt-2 text-[0.95rem] text-[#626a64]">Final project visual to be inserted</p>
-                          </div>
-                        </div>
-                      ) : (
-                        <img
-                          src={project.thumbnail.src}
-                          alt={project.thumbnail.alt}
-                          className="block h-[22rem] w-full object-cover"
-                          loading="lazy"
-                        />
-                      )}
-                    </div>
+                    {project.href.startsWith('/') ? (
+                      <Link
+                        to={project.href}
+                        className="group flex h-[22rem] flex-col border border-border/60 bg-[#EEE9F0] p-6 transition-colors duration-200 hover:bg-[#e9e4ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/45 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      >
+                        {cardContent}
+                      </Link>
+                    ) : (
+                      <a
+                        href={project.href}
+                        className="group flex h-[22rem] flex-col border border-border/60 bg-[#EEE9F0] p-6 transition-colors duration-200 hover:bg-[#e9e4ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/45 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      >
+                        {cardContent}
+                      </a>
+                    )}
 
                     <div>
                       <p className="text-[1.08rem] leading-[1.55] text-[#4d5651]">{project.description}</p>

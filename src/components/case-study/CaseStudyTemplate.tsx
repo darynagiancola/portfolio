@@ -36,7 +36,7 @@ function SectionIntro({ section }: { section: CaseStudyFeatureSection }) {
       <h2 className="mt-4 font-serif text-[clamp(2.1rem,4.4vw,3.35rem)] leading-[1.02] text-[#1f2522]">{section.title}</h2>
       <div className="mt-6 space-y-4">
         {copyParagraphs.map((paragraph) => (
-          <p key={paragraph} className="max-w-[50rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
+          <p key={paragraph} className="max-w-[52rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
             {paragraph}
           </p>
         ))}
@@ -104,8 +104,8 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
             <div className="space-y-6">
               <FramedImage image={caseStudy.customerExperience.images[1]} frameClassName="h-[18rem] sm:h-[22rem] lg:h-[23rem]" />
               <div className="grid gap-6 sm:grid-cols-2">
-                <FramedImage image={caseStudy.customerExperience.images[2]} frameClassName="h-[14rem] sm:h-[16rem] lg:h-[15.5rem]" />
-                <FramedImage image={caseStudy.customerExperience.images[3]} frameClassName="h-[14rem] sm:h-[16rem] lg:h-[15.5rem]" />
+                <FramedImage image={caseStudy.customerExperience.images[2]} frameClassName="h-[14rem] sm:h-[16rem] lg:h-[17rem]" />
+                <FramedImage image={caseStudy.customerExperience.images[3]} frameClassName="h-[14rem] sm:h-[16rem] lg:h-[17rem]" />
               </div>
             </div>
           </div>
@@ -129,13 +129,13 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
           </div>
         </article>
 
-        <article className="border-t border-border/55 pt-12">
+        <article className="border-t border-border/55 pt-10">
           <p className="section-label">{caseStudy.approach.label}</p>
           <p className="mt-6 max-w-[44rem] font-serif text-[clamp(1.56rem,2.8vw,2.3rem)] leading-[1.08] text-[#1f2522]">
             {caseStudy.approach.copy.split('\n\n')[0]}
           </p>
-          <p className="mt-5 max-w-[50rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">{caseStudy.approach.copy.split('\n\n')[1]}</p>
-          <p className="mt-8 border-t border-border/45 pt-4 text-[0.9rem] tracking-[0.06em] text-[#5d6660]">
+          <p className="mt-5 max-w-[52rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">{caseStudy.approach.copy.split('\n\n')[1]}</p>
+          <p className="mt-7 border-t border-border/45 pt-4 text-[0.9rem] tracking-[0.06em] text-[#5d6660]">
             {caseStudy.technologiesLine}
           </p>
         </article>

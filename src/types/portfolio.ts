@@ -49,6 +49,8 @@ export interface ProjectCardData {
   href: string
   status: ProjectStatus
   dominant?: boolean
+  thumbnailMode?: 'cover' | 'contain'
+  thumbnailPosition?: string
   thumbnail: ImageAsset
 }
 
