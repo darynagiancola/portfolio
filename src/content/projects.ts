@@ -1,11 +1,10 @@
 import type { CaseStudyData, ProjectCardData } from '../types/portfolio'
-import adminDashboard from '../assets/projects/aurelia/admin-dashboard.svg'
 import customerExperienceHome from '../assets/projects/aurelia/01-customer-experience-home.png'
 import aiBaristaOrder from '../assets/projects/aurelia/02-ai-barista-order.png'
 import cartPromoFlow from '../assets/projects/aurelia/03-cart-promo-flow.png'
 import simulatedPayment from '../assets/projects/aurelia/04-simulated-payment.png'
-import operationsDashboard from '../assets/projects/aurelia/05-operations-dashboard.png'
-import adminFloorPlan from '../assets/projects/aurelia/06-admin-floor-plan.png'
+import customerOrderingInterface from '../assets/projects/aurelia/05-operations-dashboard.png'
+import adminDashboardView from '../assets/projects/aurelia/06-admin-floor-plan.png'
 import waiterFloorPlan from '../assets/projects/aurelia/07-waiter-floor-plan.png'
 import waiterActiveOrders from '../assets/projects/aurelia/08-waiter-active-orders.png'
 import kdsLiveBoard from '../assets/projects/aurelia/09-kds-live-board.png'
@@ -18,7 +17,7 @@ export const projectCards: ProjectCardData[] = [
     title: 'AI-Powered Hospitality System',
     subtitle: 'AI · PRODUCT · OPERATIONS',
     description:
-      'A connected hospitality ecosystem covering customer interaction, AI-assisted menu discovery, ordering/payment and kitchen/operational workflows.',
+      'A connected hospitality ecosystem covering customer experience, AI-assisted ordering, restaurant operations and real-time kitchen workflows.',
     featured: true,
     visualState: 'final',
     tags: ['AI Agent', 'Ordering', 'Payments', 'Kitchen Display', 'Automation'],
@@ -33,10 +32,9 @@ export const projectCards: ProjectCardData[] = [
     status: 'featured',
     dominant: true,
     thumbnail: {
-      src: adminDashboard,
-      alt: 'AURELIA admin dashboard placeholder',
+      src: customerExperienceHome,
+      alt: 'Aurelia customer experience homepage preview',
       label: 'AURELIA preview',
-      note: 'Replace with composed hero screenshot when assets are available.',
     },
   },
   {
@@ -175,14 +173,14 @@ export const aureliaCaseStudy: CaseStudyData = {
     ],
     images: [
       {
-        src: operationsDashboard,
-        alt: 'Operations dashboard with restaurant KPIs, performance cards, and weekly revenue overview.',
-        label: '05 · Operations dashboard',
+        src: customerOrderingInterface,
+        alt: 'Customer ordering and menu interface showing categories, item cards, and add-to-order actions.',
+        label: '05 · CUSTOMER ORDERING INTERFACE',
       },
       {
-        src: adminFloorPlan,
-        alt: 'Admin and management floor-plan view with table states and operational controls.',
-        label: '06 · Admin floor-plan view',
+        src: adminDashboardView,
+        alt: 'Admin dashboard showing operational metrics, revenue cards, and weekly performance chart.',
+        label: '06 · ADMIN DASHBOARD',
       },
       {
         src: waiterFloorPlan,

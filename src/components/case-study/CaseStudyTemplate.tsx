@@ -4,11 +4,11 @@ interface CaseStudyTemplateProps {
   caseStudy: CaseStudyData
 }
 
-function FramedImage({ image, heightClass = 'h-[19rem]' }: { image: ImageAsset; heightClass?: string }) {
+function FramedImage({ image, frameClassName = '' }: { image: ImageAsset; frameClassName?: string }) {
   return (
-    <figure className="space-y-2">
-      <div className={`overflow-hidden border border-border/60 bg-surface ${heightClass}`}>
-        <img src={image.src} alt={image.alt} className="h-full w-full object-contain" loading="lazy" />
+    <figure className="flex flex-col gap-2.5">
+      <div className={`overflow-hidden border border-border/55 bg-surface/20 ${frameClassName}`}>
+        <img src={image.src} alt={image.alt} className="block h-full w-full object-contain object-top" loading="lazy" />
       </div>
       <figcaption className="text-[0.7rem] tracking-[0.12em] text-muted uppercase">{image.label}</figcaption>
     </figure>
@@ -65,7 +65,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
           ← BACK TO WORK
         </a>
 
-        <div className="mt-7 grid gap-10 lg:grid-cols-[1.14fr_0.86fr] lg:items-start">
+        <div className="mt-7 grid gap-10 lg:grid-cols-[1.06fr_0.94fr] lg:items-start">
           <div>
             <p className="text-[0.74rem] font-semibold tracking-[0.15em] text-secondary uppercase">
               {caseStudy.category} · {caseStudy.projectDescriptor}
@@ -91,7 +91,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
           </div>
 
           <div className="space-y-4">
-            <FramedImage image={caseStudy.customerExperience.images[0]} heightClass="h-[21rem] sm:h-[26rem]" />
+            <FramedImage image={caseStudy.customerExperience.images[0]} frameClassName="h-[18rem] sm:h-[24rem] lg:h-[26rem]" />
           </div>
         </div>
       </section>
@@ -100,12 +100,12 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
         <article>
           <SectionIntro section={caseStudy.customerExperience} />
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <FramedImage image={caseStudy.customerExperience.images[0]} heightClass="h-[20rem] sm:h-[25rem] lg:h-[31rem]" />
+            <FramedImage image={caseStudy.customerExperience.images[0]} frameClassName="h-[19rem] sm:h-[24rem] lg:h-[30rem]" />
             <div className="space-y-6">
-              <FramedImage image={caseStudy.customerExperience.images[1]} heightClass="h-[18rem] sm:h-[20rem]" />
+              <FramedImage image={caseStudy.customerExperience.images[1]} frameClassName="h-[18rem] sm:h-[22rem] lg:h-[23rem]" />
               <div className="grid gap-6 sm:grid-cols-2">
-                <FramedImage image={caseStudy.customerExperience.images[2]} heightClass="h-[16rem] sm:h-[17rem]" />
-                <FramedImage image={caseStudy.customerExperience.images[3]} heightClass="h-[16rem] sm:h-[17rem]" />
+                <FramedImage image={caseStudy.customerExperience.images[2]} frameClassName="h-[14rem] sm:h-[16rem] lg:h-[15.5rem]" />
+                <FramedImage image={caseStudy.customerExperience.images[3]} frameClassName="h-[14rem] sm:h-[16rem] lg:h-[15.5rem]" />
               </div>
             </div>
           </div>
@@ -113,27 +113,25 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
 
         <article>
           <SectionIntro section={caseStudy.operationsPlatform} />
-          <div className="mt-10 space-y-6">
-            <FramedImage image={caseStudy.operationsPlatform.images[0]} heightClass="h-[20rem] sm:h-[28rem] lg:h-[34rem]" />
-            <div className="grid gap-6 lg:grid-cols-2">
-              <FramedImage image={caseStudy.operationsPlatform.images[2]} heightClass="h-[20rem] sm:h-[24rem]" />
-              <FramedImage image={caseStudy.operationsPlatform.images[3]} heightClass="h-[20rem] sm:h-[24rem]" />
-            </div>
-            <FramedImage image={caseStudy.operationsPlatform.images[1]} heightClass="h-[18rem] sm:h-[22rem] lg:h-[24rem]" />
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <FramedImage image={caseStudy.operationsPlatform.images[0]} frameClassName="lg:h-[21.5rem]" />
+            <FramedImage image={caseStudy.operationsPlatform.images[1]} frameClassName="lg:h-[21.5rem]" />
+            <FramedImage image={caseStudy.operationsPlatform.images[2]} frameClassName="lg:h-[21.5rem]" />
+            <FramedImage image={caseStudy.operationsPlatform.images[3]} frameClassName="lg:h-[21.5rem]" />
           </div>
         </article>
 
         <article>
           <SectionIntro section={caseStudy.kitchenDisplaySystem} />
           <div className="mt-10 space-y-6">
-            <FramedImage image={caseStudy.kitchenDisplaySystem.images[0]} heightClass="h-[20rem] sm:h-[28rem] lg:h-[34rem]" />
-            <FramedImage image={caseStudy.kitchenDisplaySystem.images[1]} heightClass="h-[18rem] sm:h-[25rem] lg:h-[30rem]" />
+            <FramedImage image={caseStudy.kitchenDisplaySystem.images[0]} />
+            <FramedImage image={caseStudy.kitchenDisplaySystem.images[1]} />
           </div>
         </article>
 
         <article className="border-t border-border/55 pt-12">
           <p className="section-label">{caseStudy.approach.label}</p>
-          <p className="mt-6 max-w-[54rem] font-serif text-[clamp(1.8rem,3.2vw,2.7rem)] leading-[1.08] text-[#1f2522]">
+          <p className="mt-6 max-w-[44rem] font-serif text-[clamp(1.56rem,2.8vw,2.3rem)] leading-[1.08] text-[#1f2522]">
             {caseStudy.approach.copy.split('\n\n')[0]}
           </p>
           <p className="mt-5 max-w-[50rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">{caseStudy.approach.copy.split('\n\n')[1]}</p>
