@@ -1,8 +1,10 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import heroPortrait from '../assets/hero-portrait.png'
 import { projectCards } from '../content/projects'
 
 export function HomePage() {
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null)
   const contactEmail = 'daryna.giancola@gmail.com'
   const linkedinUrl = 'https://www.linkedin.com/in/daryna-giancola/'
   const githubUrl = 'https://github.com/darynagiancola'
@@ -87,18 +89,29 @@ export function HomePage() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4">
         Skip to content
       </a>
-      <header className="border-b border-border/65">
+      <header className="relative z-40 border-b border-border/65">
         <div className="content-wrap flex items-center justify-between py-4">
           <p className="text-[1.2rem] font-semibold tracking-[0.015em] text-[#1d211e] md:text-[1.65rem]">DARYNA GIANCOLA</p>
-          <details className="relative md:hidden">
+          <details ref={mobileMenuRef} className="group static md:hidden">
             <summary className="cursor-pointer list-none text-[0.68rem] font-semibold tracking-[0.16em] text-[#2c312d] uppercase [&::-webkit-details-marker]:hidden">
-              MENU
+              <span className="group-open:hidden">MENU</span>
+              <span className="hidden group-open:inline">CLOSE</span>
             </summary>
-            <nav className="absolute right-0 top-[calc(100%+1rem)] z-50 flex min-w-[10rem] flex-col gap-4 border border-border/65 bg-bg px-5 py-4 text-right text-[0.68rem] font-semibold tracking-[0.16em] text-[#2c312d] uppercase">
-              <a href="#selected-work">WORK</a>
-              <a href="#about">ABOUT</a>
-              <a href="#expertise">EXPERTISE</a>
-              <a href="#contact">CONTACT</a>
+            <nav className="absolute left-0 right-0 top-full bg-bg">
+              <div className="content-wrap flex flex-col py-3 text-left text-[0.68rem] font-semibold tracking-[0.16em] text-[#2c312d] uppercase">
+                <a href="#selected-work" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
+                  WORK
+                </a>
+                <a href="#about" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
+                  ABOUT
+                </a>
+                <a href="#expertise" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
+                  EXPERTISE
+                </a>
+                <a href="#contact" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
+                  CONTACT
+                </a>
+              </div>
             </nav>
           </details>
           <div className="hidden items-center gap-5 md:flex lg:gap-10">
