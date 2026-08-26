@@ -148,8 +148,8 @@ export function HomePage() {
 
         <section id="selected-work" className="content-wrap py-20">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <p className="section-label">SELECTED WORK</p>
-            <a href="#" className="text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase">
+            <p className="homepage-section-label">Selected Work</p>
+            <a href="#" className="utility-action text-secondary">
               VIEW ALL PROJECTS →
             </a>
           </div>
@@ -168,7 +168,7 @@ export function HomePage() {
                       </span>
                     </div>
                     <div className="mt-auto">
-                      <h2 className="whitespace-pre-line font-sans text-[2rem] leading-[1.04] font-semibold text-[#1f2522]">
+                      <h2 className="homepage-content-heading whitespace-pre-line">
                         {cardTitle}
                       </h2>
                       <p className="mt-3 text-[0.8rem] tracking-[0.12em] text-[#666e68] uppercase">{project.subtitle}</p>
@@ -195,7 +195,7 @@ export function HomePage() {
                     )}
 
                     <div>
-                      <p className="text-[1.08rem] leading-[1.55] text-[#4d5651]">{project.description}</p>
+                      <p className="homepage-body-standard text-[#4d5651]">{project.description}</p>
                       <p className="mt-4 border-t border-border/50 pt-3 text-[0.8rem] tracking-[0.1em] text-[#5f6660] uppercase">
                         {metadata}
                       </p>
@@ -204,12 +204,12 @@ export function HomePage() {
                     {project.href.startsWith('/') ? (
                       <Link
                         to={project.href}
-                        className="inline-flex text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase"
+                        className="utility-action inline-flex text-secondary"
                       >
                         VIEW CASE STUDY →
                       </Link>
                     ) : (
-                      <a href={project.href} className="inline-flex text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase">
+                      <a href={project.href} className="utility-action inline-flex text-secondary">
                         VIEW CASE STUDY →
                       </a>
                     )}
@@ -221,16 +221,15 @@ export function HomePage() {
         </section>
 
         <section id="expertise" className="content-wrap py-20">
-          <p className="section-label">EXPERTISE</p>
+          <p className="homepage-section-label">Expertise</p>
           <p className="mt-5 max-w-[44rem] font-serif text-[2.35rem] leading-[1.05] text-[#1f2522]">
             Business thinking, translated into systems.
           </p>
           <div className="mt-10 grid grid-cols-1 gap-x-16 gap-y-12 md:grid-cols-2 md:gap-y-16">
             {expertiseAreas.map((area) => (
               <article key={area.id} className="space-y-4">
-                <p className="text-[1.46rem] font-semibold leading-none tracking-[0.08em] text-secondary uppercase">{area.id}</p>
-                <h3 className="font-sans text-[2rem] leading-[1.08] font-semibold text-[#1f2522]">{area.title}</h3>
-                <p className="max-w-[33rem] text-[1.08rem] leading-[1.55] text-[#545d57]">{area.description}</p>
+                <h3 className="homepage-content-heading">{area.title}</h3>
+                <p className="homepage-body-standard max-w-[33rem] text-[#545d57]">{area.description}</p>
               </article>
             ))}
           </div>
@@ -238,7 +237,7 @@ export function HomePage() {
 
         <section id="about" className="py-20">
           <div className="content-wrap bg-secondary-soft/45 px-10 py-16">
-            <p className="section-label">ABOUT</p>
+            <p className="homepage-section-label">About</p>
             <div className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-[1.18fr_1fr] md:gap-14">
               <h2 className="font-serif text-[4rem] leading-[0.94] text-[#1f2522]">
                 A business-first approach to technology.
@@ -260,34 +259,41 @@ export function HomePage() {
         </section>
 
         <section id="approach" className="content-wrap py-20">
-          <p className="section-label">APPROACH</p>
-          <p className="mt-5 max-w-[32rem] text-[1.08rem] leading-[1.55] text-[#545d57]">
+          <p className="homepage-section-label">Approach</p>
+          <p className="homepage-body-standard mt-5 max-w-[32rem] text-[#545d57]">
             From business problem to working system.
           </p>
 
           <div className="mt-14 grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-16">
-            {approachSteps.map((step) => (
-              <article key={step.id}>
-                <p className="text-[3.4rem] font-semibold leading-none text-secondary">{step.id}</p>
-                <h3 className="mt-4 font-sans text-[2rem] font-semibold leading-[1.05] text-[#1f2522]">{step.title}</h3>
-                <p className="mt-4 max-w-[24rem] text-[1.04rem] leading-[1.58] text-[#545d57]">{step.description}</p>
+            {approachSteps.map((step, index) => (
+              <article key={step.id} className="relative">
+                <h3 className="homepage-content-heading">{step.title}</h3>
+                {index < approachSteps.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute -right-[2.7rem] top-0 hidden text-[1.35rem] font-light leading-none text-secondary/75 lg:block"
+                  >
+                    →
+                  </span>
+                )}
+                <p className="homepage-body-standard mt-4 max-w-[24rem] text-[#545d57]">{step.description}</p>
               </article>
             ))}
           </div>
         </section>
 
         <section id="toolkit" className="content-wrap py-20">
-          <p className="section-label">TOOLS I USE</p>
+          <p className="homepage-section-label">Tools I Use</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-9 md:grid-cols-2">
             {toolGroups.map((group) => (
               <article key={group.label}>
                 <p className="text-[0.8rem] font-semibold tracking-[0.12em] text-secondary uppercase">{group.label}</p>
-                <p className="mt-2.5 text-[1.05rem] leading-[1.6] text-[#3f453f]">{group.items.join(' · ')}</p>
+                <p className="homepage-body-standard mt-2.5 text-[#3f453f]">{group.items.join(' · ')}</p>
               </article>
             ))}
           </div>
-          <p className="mt-10 max-w-[48rem] text-[1.02rem] leading-[1.62] text-[#5c6560]">
+          <p className="homepage-body-standard mt-10 max-w-[48rem] text-[#5c6560]">
             Every business has a different stack. I focus on the process and system logic first, then work with the
             tools and platforms the business uses or the solution requires.
           </p>
@@ -298,12 +304,12 @@ export function HomePage() {
             <h2 className="max-w-[44rem] font-serif text-[3.65rem] leading-[0.97] text-[#1f2522]">
               Have a business problem that might need a better system?
             </h2>
-            <p className="mt-5 max-w-[38rem] text-[1.08rem] leading-[1.55] text-[#4f5852]">
+            <p className="homepage-body-standard mt-5 max-w-[38rem] text-[#4f5852]">
               I&apos;m interested in roles and projects involving AI implementation, automation, digital products and business systems, especially where understanding the business is as important as building the solution.
             </p>
             <a
               href={`mailto:${contactEmail}`}
-              className="mt-8 inline-flex bg-[#d7cde4] px-6 py-2.5 text-[0.78rem] font-semibold tracking-[0.14em] text-[#3e4348] uppercase"
+              className="utility-action mt-8 inline-flex bg-[#d7cde4] px-6 py-2.5 text-[#3e4348]"
             >
               LET&apos;S CONNECT →
             </a>
@@ -369,7 +375,7 @@ export function HomePage() {
                   href={cvHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[0.78rem] font-semibold tracking-[0.13em] text-secondary uppercase"
+                  className="utility-action text-secondary"
                 >
                   VIEW CV →
                 </a>

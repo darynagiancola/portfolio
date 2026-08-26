@@ -1,3 +1,8 @@
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter/latin-800.css";
+@import "@fontsource/fraunces/latin-400.css";
+@import "@fontsource/fraunces/latin-400-italic.css";
 @import "tailwindcss";
 
 :root {
@@ -131,6 +136,23 @@
     @apply font-sans text-[1.125rem] leading-[1.2] font-semibold tracking-[0.15em] text-secondary uppercase;
   }
 
+  .homepage-section-label {
+    @apply font-serif text-[1.125rem] leading-[1.2] font-normal text-secondary italic;
+    letter-spacing: -0.015em;
+  }
+
+  .homepage-content-heading {
+    @apply font-sans text-[2rem] leading-[1.06] font-semibold text-[#1f2522];
+  }
+
+  .homepage-body-standard {
+    @apply text-[1.05rem] leading-[1.58];
+  }
+
+  .utility-action {
+    @apply text-[0.78rem] font-semibold tracking-[0.14em] uppercase;
+  }
+
   .editorial-statement {
     @apply font-sans text-[clamp(1.42rem,4.4vw,1.62rem)] leading-[1.14] text-text;
   }
@@ -143,6 +165,11 @@
   }
 
   @media (width >= 64rem) {
+    .homepage-section-label {
+      font-size: 2.25rem;
+      line-height: 1.08;
+    }
+
     .editorial-statement {
       font-size: 2.4rem;
       line-height: 1.1;
