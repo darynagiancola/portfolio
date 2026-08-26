@@ -119,27 +119,28 @@ export function AiSupportCaseStudyPage() {
         </section>
 
         <section className="content-wrap space-y-24 pb-20">
-          <article>
-            <p className="section-label">AI SUPPORT LAYER</p>
-            <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">
-              Answering routine questions before they become tickets
-            </h2>
-            <div className="mt-6 space-y-4">
-              <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                The first layer of the system is Fin, embedded directly into the customer-facing website experience.
-              </p>
-              <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                Instead of sending every incoming question immediately to a human team member, Fin can use the
-                configured support knowledge to respond to common customer questions at the point of contact.
-              </p>
-              <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                The objective is not to remove human support. It is to separate questions that can be resolved
-                immediately from conversations that genuinely require a person, allowing the support workflow to respond
-                differently depending on the request.
-              </p>
+          <article className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-14">
+            <div>
+              <p className="section-label">AI SUPPORT LAYER</p>
+              <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">
+                Answering routine questions before they become tickets
+              </h2>
+              <div className="mt-6 space-y-4">
+                <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
+                  The first layer of the system is Fin, embedded directly into the customer-facing website experience.
+                </p>
+                <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
+                  Using the configured support knowledge, Fin can respond to common customer questions at the point of
+                  contact.
+                </p>
+                <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
+                  Routine questions can be resolved immediately, while conversations requiring judgement or
+                  business-specific action remain available for human follow-up.
+                </p>
+              </div>
             </div>
 
-            <div className="mt-10 w-full max-w-[22rem] sm:max-w-[25rem] lg:max-w-[28rem]">
+            <div className="w-full max-w-[22rem] sm:max-w-[25rem] lg:justify-self-end">
               <Screenshot
                 src={finKnowledgeAnswer}
                 alt="Fin answer view showing a knowledge-grounded response to a customer product question."
@@ -156,9 +157,6 @@ export function AiSupportCaseStudyPage() {
             </h2>
             <div className="mt-6 space-y-4">
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                Not every conversation should follow the same path.
-              </p>
-              <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
                 Workflow rules provide the operational layer behind the AI interaction. When a request requires human
                 involvement, the conversation can be routed according to its purpose rather than remaining in a generic
                 support queue.
@@ -168,7 +166,7 @@ export function AiSupportCaseStudyPage() {
                 into Pipedrive, allowing the conversation to continue inside the appropriate business process.
               </p>
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                This turns the support interface into an entry point for multiple workflows rather than an isolated
+                This makes the support interface an entry point for multiple workflows rather than an isolated
                 chatbot.
               </p>
             </div>
@@ -183,33 +181,34 @@ export function AiSupportCaseStudyPage() {
             </div>
           </article>
 
-          <article>
-            <p className="section-label">HUMAN HANDOFF</p>
-            <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">
-              Keeping AI and human support in the same workflow
-            </h2>
-            <div className="mt-6 space-y-4">
-              <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                AI resolution is only useful when escalation is equally clear.
-              </p>
-              <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                When Fin cannot or should not complete a request independently, the conversation remains in the same
-                support workflow and can be handed to the appropriate teammate or team.
-              </p>
-              <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                This creates a more practical division of work: repeatable questions can be handled automatically, while
-                conversations requiring judgement, ambiguity resolution or business-specific action can move to human
-                follow-up with connected Pipedrive context available.
-              </p>
-            </div>
-
-            <div className="mt-10 max-w-[44rem]">
+          <article className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14">
+            <div className="w-full max-w-[44rem]">
               <Screenshot
                 src={pipedriveContextInIntercom}
                 alt="Intercom view showing linked Pipedrive context for a routed sales conversation."
                 caption="05 · PIPEDRIVE CONTEXT IN SUPPORT"
-                frameClassName="h-[16rem] sm:h-[19rem] lg:h-[22rem]"
+                frameClassName="aspect-[725/610]"
               />
+            </div>
+
+            <div>
+              <p className="section-label">HUMAN HANDOFF</p>
+              <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">
+                Keeping AI and human support in the same workflow
+              </h2>
+              <div className="mt-6 space-y-4">
+                <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
+                  Escalation remains within the same support workflow.
+                </p>
+                <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
+                  When a conversation needs judgement, ambiguity resolution or business-specific action, it can be
+                  handed to the appropriate teammate or team.
+                </p>
+                <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
+                  For routed sales conversations, connected Pipedrive context remains available to support human
+                  follow-up.
+                </p>
+              </div>
             </div>
           </article>
 
@@ -227,12 +226,8 @@ export function AiSupportCaseStudyPage() {
                 workflow when the customer&apos;s intent changes.
               </p>
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                For sales-related enquiries, the routing logic connects the support interaction with Pipedrive rather
-                than leaving the request trapped inside the support platform.
-              </p>
-              <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                The architecture keeps those transitions explicit so support, sales and operations stay connected as one
-                customer journey.
+                For sales-related enquiries, routing connects the support interaction with Pipedrive so support, sales
+                and operations remain connected stages of the same customer journey.
               </p>
             </div>
 
