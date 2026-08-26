@@ -41,7 +41,7 @@ export function HomePage() {
     },
   ]
   const toolGroups = [
-    { label: 'AI & LLM Platforms', items: ['ChatGPT', 'Claude', 'Gemini', 'NotebookLM'] },
+    { label: 'AI & LLM Platforms', items: ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'NotebookLM'] },
     {
       label: 'AI Agents & APIs',
       items: ['OpenAI API', 'Anthropic API', 'Gemini API', 'LangChain', 'RAG / Knowledge-Based AI'],
@@ -55,8 +55,8 @@ export function HomePage() {
       items: ['Pipedrive', 'Intercom', 'ActiveCampaign', 'ClickFunnels', 'Cal.com'],
     },
     {
-      label: 'AI-Assisted Development',
-      items: ['Cursor', 'Lovable', 'GitHub', 'Vercel', 'Supabase', 'Docker', 'Google Colab', 'HTML/CSS'],
+      label: 'Development & Data',
+      items: ['Cursor', 'Lovable', 'GitHub', 'Vercel', 'Supabase', 'BigQuery', 'Docker', 'Google Colab', 'HTML/CSS'],
     },
     { label: 'Marketing & Analytics', items: ['Meta Ads', 'Google Ads', 'Google Analytics'] },
     { label: 'Business & Productivity', items: ['Notion', 'Airtable', 'Google Workspace', 'Microsoft 365'] },
@@ -201,7 +201,7 @@ export function HomePage() {
                     key={project.slug}
                     className={`flex h-full flex-col gap-5 ${
                       index === 2
-                        ? 'md:col-span-2 md:w-[calc(50%-1.25rem)] md:justify-self-center xl:col-span-1 xl:w-auto'
+                        ? 'md:col-span-2 md:w-[calc(50%-1.25rem)] md:justify-self-start xl:col-span-1 xl:w-auto xl:justify-self-stretch'
                         : ''
                     }`}
                   >
