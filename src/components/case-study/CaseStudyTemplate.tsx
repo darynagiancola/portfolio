@@ -97,7 +97,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
         </dl>
       </section>
 
-      <section className="content-wrap space-y-24 pb-20">
+      <section className="case-study-section-flow content-wrap pb-20">
         <article>
           <SectionIntro section={caseStudy.customerExperience} />
           <div className="mt-10 space-y-6">

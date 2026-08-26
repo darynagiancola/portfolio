@@ -83,14 +83,25 @@ export function HomePage() {
   ]
 
   return (
-    <div className="site-canvas min-h-screen">
+    <div className="site-canvas min-h-screen overflow-x-hidden md:overflow-x-visible">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4">
         Skip to content
       </a>
       <header className="border-b border-border/65">
         <div className="content-wrap flex items-center justify-between py-4">
-          <p className="text-[1.65rem] font-semibold tracking-[0.015em] text-[#1d211e]">DARYNA GIANCOLA</p>
-          <div className="flex items-center gap-10">
+          <p className="text-[1.2rem] font-semibold tracking-[0.015em] text-[#1d211e] md:text-[1.65rem]">DARYNA GIANCOLA</p>
+          <details className="relative md:hidden">
+            <summary className="cursor-pointer list-none text-[0.68rem] font-semibold tracking-[0.16em] text-[#2c312d] uppercase [&::-webkit-details-marker]:hidden">
+              MENU
+            </summary>
+            <nav className="absolute right-0 top-[calc(100%+1rem)] z-50 flex min-w-[10rem] flex-col gap-4 border border-border/65 bg-bg px-5 py-4 text-right text-[0.68rem] font-semibold tracking-[0.16em] text-[#2c312d] uppercase">
+              <a href="#selected-work">WORK</a>
+              <a href="#about">ABOUT</a>
+              <a href="#expertise">EXPERTISE</a>
+              <a href="#contact">CONTACT</a>
+            </nav>
+          </details>
+          <div className="hidden items-center gap-10 md:flex">
             <nav className="flex items-center gap-8 text-[0.68rem] font-semibold tracking-[0.18em] text-[#2c312d] uppercase">
               <a href="#selected-work">WORK</a>
               <a href="#about">ABOUT</a>
@@ -113,21 +124,21 @@ export function HomePage() {
             AI PRODUCTS · AUTOMATION · DIGITAL SYSTEMS
           </p>
 
-          <div className="relative mt-2 min-h-[32rem]">
-            <p className="hero-display relative z-10 text-[12.8rem] leading-[0.82] text-[#111419] uppercase">PORTFOLIO</p>
+          <div className="relative mt-3 md:mt-2 md:min-h-[32rem]">
+            <p className="hero-display homepage-display relative z-10 text-[#111419] uppercase">PORTFOLIO</p>
 
-            <figure className="pointer-events-none absolute bottom-0 right-0 z-20 h-[31.5rem]">
+            <figure className="pointer-events-none relative z-20 -mt-9 h-[16.2rem] w-full overflow-hidden md:absolute md:bottom-0 md:right-0 md:mt-0 md:h-[31.5rem] md:w-auto md:overflow-visible">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into homepage hero."
-                className="h-full w-auto object-contain"
+                className="absolute -right-[4.75rem] -top-2 h-[21.6rem] w-auto max-w-none object-contain md:static md:h-full"
                 loading="eager"
               />
             </figure>
 
-            <div className="relative z-10 mt-2 max-w-[32rem]">
-              <h1 className="font-serif text-[3.12rem] leading-[1.05] text-[#1f2522]">I design intelligent systems around real business needs.</h1>
-              <p className="mt-4 max-w-[24rem] text-[1.02rem] text-[#4b544f]">
+            <div className="relative z-10 mt-3 max-w-[32rem] pb-8 md:mt-2 md:pb-0">
+              <h1 className="homepage-editorial-headline font-serif text-[#1f2522] md:text-[3.12rem] md:leading-[1.05]">I design intelligent systems around real business needs.</h1>
+              <p className="homepage-body mt-4 max-w-[28rem] text-[#4b544f] md:max-w-[24rem] md:text-[1.02rem] md:leading-relaxed">
                 I combine business strategy, marketing and process thinking with AI, automation and digital product development to turn complex workflows into practical, working solutions.
               </p>
               <a
@@ -146,7 +157,7 @@ export function HomePage() {
           <div className="content-wrap h-4"></div>
         </section>
 
-        <section id="selected-work" className="content-wrap py-20">
+        <section id="selected-work" className="homepage-section-spacing content-wrap">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <p className="homepage-section-label">Selected Work</p>
             <a href="#" className="utility-action text-secondary">
@@ -155,7 +166,7 @@ export function HomePage() {
           </div>
 
           <div className="mt-8">
-            <div className="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10">
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
               {featuredProjects.map((project, index) => {
                 const metadata = project.metadata?.[0]?.value ?? project.tags.join(' · ')
                 const cardTitle = selectedWorkCardTitles[project.slug] ?? project.title.toUpperCase()
@@ -163,15 +174,24 @@ export function HomePage() {
                   <>
                     <div className="flex items-start justify-between">
                       <p className="font-serif text-[3rem] leading-none text-[#b5abbe]">{String(index + 1).padStart(2, '0')}</p>
-                      <span className="mt-1 text-[1.02rem] leading-none text-[#1f2522] transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]">
-                        ↗
-                      </span>
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mt-1 h-4 w-4 text-[#1f2522] transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
+                      >
+                        <path d="M5 19 19 5M9 5h10v10" />
+                      </svg>
                     </div>
                     <div className="mt-auto">
                       <h2 className="homepage-content-heading whitespace-pre-line">
                         {cardTitle}
                       </h2>
-                      <p className="mt-3 text-[0.8rem] tracking-[0.12em] text-[#666e68] uppercase">{project.subtitle}</p>
+                      <p className="homepage-metadata mt-3 tracking-[0.12em] text-[#666e68] uppercase">{project.subtitle}</p>
                     </div>
                   </>
                 )
@@ -181,22 +201,22 @@ export function HomePage() {
                     {project.href.startsWith('/') ? (
                       <Link
                         to={project.href}
-                        className="group flex h-[22rem] flex-col border border-border/60 bg-[#EEE9F0] p-6 transition-colors duration-200 hover:bg-[#e9e4ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/45 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                        className="group flex h-[19rem] flex-col border border-border/60 bg-[#EEE9F0] p-5 transition-colors duration-200 hover:bg-[#e9e4ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/45 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-[22rem] md:p-6"
                       >
                         {cardContent}
                       </Link>
                     ) : (
                       <a
                         href={project.href}
-                        className="group flex h-[22rem] flex-col border border-border/60 bg-[#EEE9F0] p-6 transition-colors duration-200 hover:bg-[#e9e4ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/45 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                        className="group flex h-[19rem] flex-col border border-border/60 bg-[#EEE9F0] p-5 transition-colors duration-200 hover:bg-[#e9e4ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/45 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-[22rem] md:p-6"
                       >
                         {cardContent}
                       </a>
                     )}
 
                     <div>
-                      <p className="homepage-body-standard text-[#4d5651]">{project.description}</p>
-                      <p className="mt-4 border-t border-border/50 pt-3 text-[0.8rem] tracking-[0.1em] text-[#5f6660] uppercase">
+                      <p className="homepage-body text-[#4d5651]">{project.description}</p>
+                      <p className="homepage-metadata mt-4 border-t border-border/50 pt-3 tracking-[0.1em] text-[#5f6660] uppercase">
                         {metadata}
                       </p>
                     </div>
@@ -220,35 +240,35 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="expertise" className="content-wrap py-20">
+        <section id="expertise" className="homepage-section-spacing content-wrap">
           <p className="homepage-section-label">Expertise</p>
-          <p className="mt-5 max-w-[44rem] font-serif text-[2.35rem] leading-[1.05] text-[#1f2522]">
+          <p className="homepage-editorial-headline mt-5 max-w-[44rem] font-serif text-[#1f2522] md:text-[2.35rem] md:leading-[1.05]">
             Business thinking, translated into systems.
           </p>
           <div className="mt-10 grid grid-cols-1 gap-x-16 gap-y-12 md:grid-cols-2 md:gap-y-16">
             {expertiseAreas.map((area) => (
               <article key={area.id} className="space-y-4">
                 <h3 className="homepage-content-heading">{area.title}</h3>
-                <p className="homepage-body-standard max-w-[33rem] text-[#545d57]">{area.description}</p>
+                <p className="homepage-body max-w-[33rem] text-[#545d57]">{area.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="about" className="py-20">
-          <div className="content-wrap bg-secondary-soft/45 px-10 py-16">
+        <section id="about" className="homepage-section-spacing">
+          <div className="content-wrap bg-secondary-soft/45 px-5 py-12 md:px-10 md:py-16">
             <p className="homepage-section-label">About</p>
             <div className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-[1.18fr_1fr] md:gap-14">
-              <h2 className="font-serif text-[4rem] leading-[0.94] text-[#1f2522]">
+              <h2 className="homepage-editorial-headline font-serif text-[#1f2522] md:text-[4rem] md:leading-[0.94]">
                 A business-first approach to technology.
               </h2>
               <div>
-                <p className="text-[1.1rem] leading-[1.56] text-[#505a54]">
+                <p className="homepage-body text-[#505a54] md:text-[1.1rem] md:leading-[1.56]">
                   I work across business strategy, marketing and technology, with a background spanning marketing
                   leadership, revenue management, sales, market analysis and business operations alongside hands-on
                   work in AI, automation and digital products.
                 </p>
-                <p className="mt-4 text-[1.1rem] leading-[1.56] text-[#505a54]">
+                <p className="homepage-body mt-4 text-[#505a54] md:text-[1.1rem] md:leading-[1.56]">
                   That combination allows me to look beyond the technical task itself: understand the business
                   context, analyse the process behind the problem and translate it into a solution that makes sense
                   commercially and works in practice.
@@ -258,9 +278,9 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="approach" className="content-wrap py-20">
+        <section id="approach" className="homepage-section-spacing content-wrap">
           <p className="homepage-section-label">Approach</p>
-          <p className="homepage-body-standard mt-5 max-w-[32rem] text-[#545d57]">
+          <p className="homepage-body mt-5 max-w-[32rem] text-[#545d57]">
             From business problem to working system.
           </p>
 
@@ -276,35 +296,35 @@ export function HomePage() {
                     →
                   </span>
                 )}
-                <p className="homepage-body-standard mt-4 max-w-[24rem] text-[#545d57]">{step.description}</p>
+                <p className="homepage-body mt-4 max-w-[24rem] text-[#545d57]">{step.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="toolkit" className="content-wrap py-20">
+        <section id="toolkit" className="homepage-section-spacing content-wrap">
           <p className="homepage-section-label">Tools I Use</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-9 md:grid-cols-2">
             {toolGroups.map((group) => (
               <article key={group.label}>
-                <p className="text-[0.8rem] font-semibold tracking-[0.12em] text-secondary uppercase">{group.label}</p>
-                <p className="homepage-body-standard mt-2.5 text-[#3f453f]">{group.items.join(' · ')}</p>
+                <p className="homepage-metadata font-semibold tracking-[0.12em] text-secondary uppercase">{group.label}</p>
+                <p className="homepage-body mt-2.5 text-[#3f453f]">{group.items.join(' · ')}</p>
               </article>
             ))}
           </div>
-          <p className="homepage-body-standard mt-10 max-w-[48rem] text-[#5c6560]">
+          <p className="homepage-body mt-10 max-w-[48rem] text-[#5c6560]">
             Every business has a different stack. I focus on the process and system logic first, then work with the
             tools and platforms the business uses or the solution requires.
           </p>
         </section>
 
-        <footer id="contact" className="mt-4 border-t border-border/60 bg-secondary-soft/55 py-20">
+        <footer id="contact" className="homepage-section-spacing mt-4 border-t border-border/60 bg-secondary-soft/55">
           <div className="content-wrap">
-            <h2 className="max-w-[44rem] font-serif text-[3.65rem] leading-[0.97] text-[#1f2522]">
+            <h2 className="contact-cta-headline max-w-[44rem] font-serif text-[#1f2522]">
               Have a business problem that might need a better system?
             </h2>
-            <p className="homepage-body-standard mt-5 max-w-[38rem] text-[#4f5852]">
+            <p className="homepage-body mt-5 max-w-[38rem] text-[#4f5852]">
               I&apos;m interested in roles and projects involving AI implementation, automation, digital products and business systems, especially where understanding the business is as important as building the solution.
             </p>
             <a

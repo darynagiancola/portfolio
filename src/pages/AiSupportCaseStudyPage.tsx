@@ -118,7 +118,7 @@ export function AiSupportCaseStudyPage() {
           </dl>
         </section>
 
-        <section className="content-wrap space-y-24 pb-20">
+        <section className="case-study-section-flow content-wrap pb-20">
           <article className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-14">
             <div>
               <p className="section-label">AI SUPPORT LAYER</p>

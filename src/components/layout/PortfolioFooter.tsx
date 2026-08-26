@@ -8,7 +8,7 @@ export function PortfolioFooter() {
   return (
     <footer id="contact" className="mt-4 border-t border-border/60 bg-secondary-soft/55 py-20">
       <div className="content-wrap">
-        <h2 className="max-w-[44rem] font-serif text-[3.65rem] leading-[0.97] text-[#1f2522]">
+        <h2 className="contact-cta-headline max-w-[44rem] font-serif text-[#1f2522]">
           Have a business problem that might need a better system?
         </h2>
         <p className="mt-5 max-w-[38rem] text-[1.08rem] leading-[1.55] text-[#4f5852]">

@@ -119,7 +119,7 @@ export function LeadMarketingCaseStudyPage() {
           </dl>
         </section>
 
-        <section className="content-wrap space-y-24 pb-20">
+        <section className="case-study-section-flow content-wrap pb-20">
           <article>
             <p className="section-label">THE SYSTEM</p>
             <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">

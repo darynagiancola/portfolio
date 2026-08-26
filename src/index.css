@@ -137,20 +137,53 @@
   }
 
   .homepage-section-label {
-    @apply font-serif text-[1.125rem] leading-[1.2] font-normal text-secondary italic;
+    @apply font-serif font-normal text-secondary italic;
+    font-size: clamp(1.5rem, 6.5vw, 1.75rem);
+    line-height: 1.08;
     letter-spacing: -0.015em;
   }
 
-  .homepage-content-heading {
-    @apply font-sans text-[2rem] leading-[1.06] font-semibold text-[#1f2522];
+  .homepage-display {
+    font-size: clamp(3.75rem, 16vw, 5rem);
+    line-height: 0.82;
   }
 
-  .homepage-body-standard {
-    @apply text-[1.05rem] leading-[1.58];
+  .homepage-editorial-headline {
+    font-size: clamp(2.25rem, 10vw, 2.65rem);
+    line-height: 1.03;
+  }
+
+  .homepage-content-heading {
+    @apply font-sans font-semibold text-[#1f2522];
+    font-size: clamp(1.55rem, 6.8vw, 1.75rem);
+    line-height: 1.08;
+  }
+
+  .homepage-body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .homepage-metadata {
+    font-size: 0.75rem;
+    line-height: 1.45;
   }
 
   .utility-action {
     @apply text-[0.78rem] font-semibold tracking-[0.14em] uppercase;
+  }
+
+  .homepage-section-spacing {
+    padding-block: 2.0125rem;
+  }
+
+  .case-study-section-flow > * + * {
+    margin-top: 4rem;
+  }
+
+  .contact-cta-headline {
+    font-size: clamp(2rem, 8.5vw, 2.25rem);
+    line-height: 1.04;
   }
 
   .editorial-statement {
@@ -173,6 +206,41 @@
     .editorial-statement {
       font-size: 2.4rem;
       line-height: 1.1;
+    }
+  }
+
+  @media (width >= 48rem) {
+    .homepage-display {
+      font-size: 12.8rem;
+      line-height: 0.82;
+    }
+
+    .homepage-content-heading {
+      font-size: 2rem;
+      line-height: 1.06;
+    }
+
+    .homepage-body {
+      font-size: 1.05rem;
+      line-height: 1.58;
+    }
+
+    .homepage-metadata {
+      font-size: 0.8rem;
+      line-height: inherit;
+    }
+
+    .homepage-section-spacing {
+      padding-block: 5rem;
+    }
+
+    .case-study-section-flow > * + * {
+      margin-top: 6rem;
+    }
+
+    .contact-cta-headline {
+      font-size: 3.65rem;
+      line-height: 0.97;
     }
   }
 
