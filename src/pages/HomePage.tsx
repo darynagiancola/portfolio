@@ -1,15 +1,19 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import heroPortrait from '../assets/hero-portrait.png'
+import { LanguageSwitcher } from '../components/layout/LanguageSwitcher'
 import { projectCards } from '../content/projects'
+import { italianHome } from '../i18n/italian'
+import { useLanguage } from '../i18n/language'
 
 export function HomePage() {
   const mobileMenuRef = useRef<HTMLDetailsElement>(null)
+  const { language, cvHref } = useLanguage()
+  const isItalian = language === 'it'
   const contactEmail = 'daryna.giancola@gmail.com'
   const linkedinUrl = 'https://www.linkedin.com/in/daryna-giancola/'
   const githubUrl = 'https://github.com/darynagiancola'
   const websiteUrl = 'https://www.darynagiancola.com'
-  const cvHref = `${import.meta.env.BASE_URL}Daryna_Giancola_CV_AI_Automation_EN_ad0f.pdf`
   const featuredProjects = projectCards.filter((project) => project.featured).slice(0, 3)
   const selectedWorkCardTitles: Record<string, string> = {
     aurelia: 'AI-POWERED\nHOSPITALITY\nSYSTEM',
@@ -92,40 +96,44 @@ export function HomePage() {
       <header className="relative z-40 border-b border-border/65">
         <div className="content-wrap flex items-center justify-between py-4">
           <p className="text-[1.2rem] font-semibold tracking-[0.015em] text-[#1d211e] md:text-[1.65rem]">DARYNA GIANCOLA</p>
-          <details ref={mobileMenuRef} className="group static md:hidden">
-            <summary className="cursor-pointer list-none text-[0.68rem] font-semibold tracking-[0.16em] text-[#2c312d] uppercase [&::-webkit-details-marker]:hidden">
-              <span className="group-open:hidden">MENU</span>
-              <span className="hidden group-open:inline">CLOSE</span>
-            </summary>
-            <nav className="absolute left-0 right-0 top-full bg-bg">
-              <div className="content-wrap flex flex-col py-3 text-left text-[0.68rem] font-semibold tracking-[0.16em] text-[#2c312d] uppercase">
-                <a href="#selected-work" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
-                  WORK
-                </a>
-                <a href="#about" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
-                  ABOUT
-                </a>
-                <a href="#expertise" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
-                  EXPERTISE
-                </a>
-                <a href="#contact" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
-                  CONTACT
-                </a>
-              </div>
-            </nav>
-          </details>
+          <div className="flex items-center gap-3 md:hidden">
+            <LanguageSwitcher />
+            <details ref={mobileMenuRef} className="group static">
+              <summary className="cursor-pointer list-none text-[0.68rem] font-semibold tracking-[0.16em] text-[#2c312d] uppercase [&::-webkit-details-marker]:hidden">
+                <span className="group-open:hidden">MENU</span>
+                <span className="hidden group-open:inline">CLOSE</span>
+              </summary>
+              <nav className="absolute left-0 right-0 top-full bg-bg">
+                <div className="content-wrap flex flex-col py-3 text-left text-[0.68rem] font-semibold tracking-[0.16em] text-[#2c312d] uppercase">
+                  <a href="#selected-work" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
+                    {isItalian ? italianHome.navigation.work : 'WORK'}
+                  </a>
+                  <a href="#about" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
+                    {isItalian ? italianHome.navigation.about : 'ABOUT'}
+                  </a>
+                  <a href="#expertise" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
+                    {isItalian ? italianHome.navigation.expertise : 'EXPERTISE'}
+                  </a>
+                  <a href="#contact" onClick={() => mobileMenuRef.current?.removeAttribute('open')} className="py-2.5">
+                    {isItalian ? italianHome.navigation.contact : 'CONTACT'}
+                  </a>
+                </div>
+              </nav>
+            </details>
+          </div>
           <div className="hidden items-center gap-5 md:flex lg:gap-10">
             <nav className="flex items-center gap-4 text-[0.68rem] font-semibold tracking-[0.18em] text-[#2c312d] uppercase lg:gap-8">
-              <a href="#selected-work">WORK</a>
-              <a href="#about">ABOUT</a>
-              <a href="#expertise">EXPERTISE</a>
-              <a href="#contact">CONTACT</a>
+              <a href="#selected-work">{isItalian ? italianHome.navigation.work : 'WORK'}</a>
+              <a href="#about">{isItalian ? italianHome.navigation.about : 'ABOUT'}</a>
+              <a href="#expertise">{isItalian ? italianHome.navigation.expertise : 'EXPERTISE'}</a>
+              <a href="#contact">{isItalian ? italianHome.navigation.contact : 'CONTACT'}</a>
             </nav>
+            <LanguageSwitcher />
             <a
               href="#contact"
               className="whitespace-nowrap rounded-sm bg-secondary-soft px-4 py-2 text-[0.66rem] font-semibold tracking-[0.16em] text-[#3f4348] uppercase lg:px-5"
             >
-              LET&apos;S CONNECT →
+              {isItalian ? italianHome.navigation.connect : "LET'S CONNECT →"}
             </a>
           </div>
         </div>
@@ -150,9 +158,15 @@ export function HomePage() {
             </figure>
 
             <div className="relative z-10 mt-3 max-w-[32rem] pb-8 md:mt-2 md:pb-0">
-              <h1 className="homepage-editorial-headline font-serif text-[#1f2522] md:text-[3.12rem] md:leading-[1.05]">I design intelligent systems around real business needs.</h1>
+              <h1 className="homepage-editorial-headline font-serif text-[#1f2522] md:text-[3.12rem] md:leading-[1.05]">
+                {isItalian
+                  ? italianHome.hero.title
+                  : 'I design intelligent systems around real business needs.'}
+              </h1>
               <p className="homepage-body mt-4 max-w-[28rem] text-[#4b544f] md:max-w-[24rem] md:text-[1.02rem] md:leading-relaxed">
-                I combine business strategy, marketing and process thinking with AI, automation and digital product development to turn complex workflows into practical, working solutions.
+                {isItalian
+                  ? italianHome.hero.body
+                  : 'I combine business strategy, marketing and process thinking with AI, automation and digital product development to turn complex workflows into practical, working solutions.'}
               </p>
               <a
                 href={cvHref}
@@ -160,7 +174,7 @@ export function HomePage() {
                 rel="noreferrer"
                 className="mt-5 inline-flex rounded-sm bg-secondary-soft px-5 py-2 text-[0.66rem] font-semibold tracking-[0.17em] text-[#3e4247] uppercase"
               >
-                VIEW MY CV →
+                {isItalian ? italianHome.hero.cv : 'VIEW MY CV →'}
               </a>
             </div>
           </div>
@@ -172,9 +186,11 @@ export function HomePage() {
 
         <section id="selected-work" className="homepage-section-spacing content-wrap">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <p className="homepage-section-label">Selected Work</p>
+            <p className="homepage-section-label">
+              {isItalian ? italianHome.selectedWork.heading : 'Selected Work'}
+            </p>
             <a href="#" className="utility-action text-secondary">
-              VIEW ALL PROJECTS →
+              {isItalian ? italianHome.selectedWork.viewAll : 'VIEW ALL PROJECTS →'}
             </a>
           </div>
 
@@ -235,7 +251,13 @@ export function HomePage() {
                     )}
 
                     <div>
-                      <p className="homepage-body text-[#4d5651]">{project.description}</p>
+                      <p className="homepage-body text-[#4d5651]">
+                        {isItalian
+                          ? italianHome.selectedWork.descriptions[
+                              project.slug as keyof typeof italianHome.selectedWork.descriptions
+                            ]
+                          : project.description}
+                      </p>
                       <p className="homepage-metadata mt-4 border-t border-border/50 pt-3 tracking-[0.1em] text-[#5f6660] uppercase">
                         {metadata}
                       </p>
@@ -246,11 +268,11 @@ export function HomePage() {
                         to={project.href}
                         className="utility-action mt-auto inline-flex text-secondary"
                       >
-                        VIEW CASE STUDY →
+                        {isItalian ? italianHome.selectedWork.viewCaseStudy : 'VIEW CASE STUDY →'}
                       </Link>
                     ) : (
                       <a href={project.href} className="utility-action mt-auto inline-flex text-secondary">
-                        VIEW CASE STUDY →
+                        {isItalian ? italianHome.selectedWork.viewCaseStudy : 'VIEW CASE STUDY →'}
                       </a>
                     )}
                   </article>
@@ -261,15 +283,19 @@ export function HomePage() {
         </section>
 
         <section id="expertise" className="homepage-section-spacing content-wrap">
-          <p className="homepage-section-label">Expertise</p>
+          <p className="homepage-section-label">{isItalian ? italianHome.expertise.heading : 'Expertise'}</p>
           <p className="homepage-editorial-headline mt-5 max-w-[44rem] font-serif text-[#1f2522] md:text-[2.35rem] md:leading-[1.05]">
-            Business thinking, translated into systems.
+            {isItalian
+              ? italianHome.expertise.statement
+              : 'Business thinking, translated into systems.'}
           </p>
           <div className="mt-10 grid grid-cols-1 gap-x-16 gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:gap-x-16">
-            {expertiseAreas.map((area) => (
+            {expertiseAreas.map((area, index) => (
               <article key={area.id} className="space-y-4">
                 <h3 className="homepage-content-heading">{area.title}</h3>
-                <p className="homepage-body max-w-[33rem] text-[#545d57]">{area.description}</p>
+                <p className="homepage-body max-w-[33rem] text-[#545d57]">
+                  {isItalian ? italianHome.expertise.descriptions[index] : area.description}
+                </p>
               </article>
             ))}
           </div>
@@ -277,21 +303,21 @@ export function HomePage() {
 
         <section id="about" className="homepage-section-spacing">
           <div className="content-wrap bg-secondary-soft/45 px-5 py-12 md:px-8 md:py-16 xl:px-10">
-            <p className="homepage-section-label">About</p>
+            <p className="homepage-section-label">{isItalian ? italianHome.about.heading : 'About'}</p>
             <div className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-[1.18fr_1fr] xl:gap-14">
               <h2 className="homepage-editorial-headline font-serif text-[#1f2522] md:text-[clamp(3rem,5vw,4rem)] md:leading-[0.94]">
-                A business-first approach to technology.
+                {isItalian ? italianHome.about.title : 'A business-first approach to technology.'}
               </h2>
               <div>
                 <p className="homepage-body text-[#505a54] md:text-[1.1rem] md:leading-[1.56]">
-                  I work across business strategy, marketing and technology, with a background spanning marketing
-                  leadership, revenue management, sales, market analysis and business operations alongside hands-on
-                  work in AI, automation and digital products.
+                  {isItalian
+                    ? italianHome.about.paragraphs[0]
+                    : 'I work across business strategy, marketing and technology, with a background spanning marketing leadership, revenue management, sales, market analysis and business operations alongside hands-on work in AI, automation and digital products.'}
                 </p>
                 <p className="homepage-body mt-4 text-[#505a54] md:text-[1.1rem] md:leading-[1.56]">
-                  That combination allows me to look beyond the technical task itself: understand the business
-                  context, analyse the process behind the problem and translate it into a solution that makes sense
-                  commercially and works in practice.
+                  {isItalian
+                    ? italianHome.about.paragraphs[1]
+                    : 'That combination allows me to look beyond the technical task itself: understand the business context, analyse the process behind the problem and translate it into a solution that makes sense commercially and works in practice.'}
                 </p>
               </div>
             </div>
@@ -299,15 +325,17 @@ export function HomePage() {
         </section>
 
         <section id="approach" className="homepage-section-spacing content-wrap">
-          <p className="homepage-section-label">Approach</p>
+          <p className="homepage-section-label">{isItalian ? italianHome.approach.heading : 'Approach'}</p>
           <p className="homepage-body mt-5 max-w-[32rem] text-[#545d57]">
-            From business problem to working system.
+            {isItalian ? italianHome.approach.statement : 'From business problem to working system.'}
           </p>
 
           <div className="mt-14 grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-8 lg:gap-12 xl:gap-16">
             {approachSteps.map((step, index) => (
               <article key={step.id} className="relative">
-                <h3 className="homepage-content-heading">{step.title}</h3>
+                <h3 className="homepage-content-heading">
+                  {isItalian ? italianHome.approach.steps[index].title : step.title}
+                </h3>
                 {index < approachSteps.length - 1 && (
                   <span
                     aria-hidden="true"
@@ -316,14 +344,16 @@ export function HomePage() {
                     →
                   </span>
                 )}
-                <p className="homepage-body mt-4 max-w-[24rem] text-[#545d57]">{step.description}</p>
+                <p className="homepage-body mt-4 max-w-[24rem] text-[#545d57]">
+                  {isItalian ? italianHome.approach.steps[index].body : step.description}
+                </p>
               </article>
             ))}
           </div>
         </section>
 
         <section id="toolkit" className="homepage-section-spacing content-wrap">
-          <p className="homepage-section-label">Tools I Use</p>
+          <p className="homepage-section-label">{isItalian ? italianHome.tools.heading : 'Tools I Use'}</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-9 md:grid-cols-2 md:gap-x-8 xl:gap-x-14">
             {toolGroups.map((group) => (
@@ -334,24 +364,29 @@ export function HomePage() {
             ))}
           </div>
           <p className="homepage-body mt-10 max-w-[48rem] text-[#5c6560]">
-            Every business has a different stack. I focus on the process and system logic first, then work with the
-            tools and platforms the business uses or the solution requires.
+            {isItalian
+              ? italianHome.tools.paragraph
+              : 'Every business has a different stack. I focus on the process and system logic first, then work with the tools and platforms the business uses or the solution requires.'}
           </p>
         </section>
 
         <footer id="contact" className="homepage-section-spacing mt-4 border-t border-border/60 bg-secondary-soft/55">
           <div className="content-wrap">
             <h2 className="contact-cta-headline max-w-[44rem] font-serif text-[#1f2522]">
-              Have a business problem that might need a better system?
+              {isItalian
+                ? italianHome.contact.title
+                : 'Have a business problem that might need a better system?'}
             </h2>
             <p className="homepage-body mt-5 max-w-[38rem] text-[#4f5852]">
-              I&apos;m interested in roles and projects involving AI implementation, automation, digital products and business systems, especially where understanding the business is as important as building the solution.
+              {isItalian
+                ? italianHome.contact.body
+                : "I'm interested in roles and projects involving AI implementation, automation, digital products and business systems, especially where understanding the business is as important as building the solution."}
             </p>
             <a
               href={`mailto:${contactEmail}`}
               className="utility-action mt-8 inline-flex bg-[#d7cde4] px-6 py-2.5 text-[#3e4348]"
             >
-              LET&apos;S CONNECT →
+              {isItalian ? italianHome.contact.cta : "LET'S CONNECT →"}
             </a>
 
             <div className="mt-16 grid grid-cols-1 gap-8 border-t border-border/45 pt-8 sm:grid-cols-2 xl:grid-cols-4">
@@ -373,7 +408,7 @@ export function HomePage() {
                     />
                     <circle cx="12" cy="9.5" r="2.15" />
                   </svg>
-                  Brescia, Italy
+                  {isItalian ? italianHome.contact.location : 'Brescia, Italy'}
                 </p>
               </div>
 
@@ -417,7 +452,7 @@ export function HomePage() {
                   rel="noreferrer"
                   className="utility-action text-secondary"
                 >
-                  VIEW CV →
+                  {isItalian ? italianHome.contact.cv : 'VIEW CV →'}
                 </a>
               </div>
             </div>

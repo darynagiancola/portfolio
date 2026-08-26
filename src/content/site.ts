@@ -13,7 +13,7 @@ import type {
 export const navigationLinks: NavigationLink[] = [
   { label: 'Work', href: '#selected-work' },
   { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Expertise', href: '#expertise' },
   { label: 'Contact', href: '#contact' },
 ]
 

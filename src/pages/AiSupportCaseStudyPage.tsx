@@ -5,6 +5,8 @@ import makeAiCrmRouting from '../assets/projects/ai-support/04-make-ai-crm-routi
 import pipedriveContextInIntercom from '../assets/projects/ai-support/05-pipedrive-context-in-intercom.png'
 import { Navigation } from '../components/layout/Navigation'
 import { PortfolioFooter } from '../components/layout/PortfolioFooter'
+import { italianAiSupport } from '../i18n/italian'
+import { useLanguage } from '../i18n/language'
 
 interface ScreenshotProps {
   src: string
@@ -39,6 +41,9 @@ function Screenshot({
 }
 
 export function AiSupportCaseStudyPage() {
+  const { language } = useLanguage()
+  const it = language === 'it' ? italianAiSupport : null
+
   return (
     <div className="site-canvas min-h-screen">
       <Navigation />
@@ -64,18 +69,16 @@ export function AiSupportCaseStudyPage() {
               </h1>
               <div className="mt-6 space-y-4">
                 <p className="max-w-[56rem] text-[1.08rem] leading-[1.58] text-[#4e5752]">
-                  A customer-support system designed around AI-assisted first-line resolution, structured knowledge and
-                  automated routing.
+                  {it?.intro[0] ??
+                    'A customer-support system designed around AI-assisted first-line resolution, structured knowledge and automated routing.'}
                 </p>
                 <p className="max-w-[56rem] text-[1.08rem] leading-[1.58] text-[#4e5752]">
-                  Fin handles incoming questions using the configured support knowledge base, while workflow rules
-                  determine what should happen when a conversation requires human attention or belongs to a specific
-                  business function.
+                  {it?.intro[1] ??
+                    'Fin handles incoming questions using the configured support knowledge base, while workflow rules determine what should happen when a conversation requires human attention or belongs to a specific business function.'}
                 </p>
                 <p className="max-w-[56rem] text-[1.08rem] leading-[1.58] text-[#4e5752]">
-                  The system extends beyond answering questions. Sales-related requests can be identified, assigned to
-                  the appropriate team and passed into the sales workflow, connecting customer support with the wider
-                  operational process.
+                  {it?.intro[2] ??
+                    'The system extends beyond answering questions. Sales-related requests can be identified, assigned to the appropriate team and passed into the sales workflow, connecting customer support with the wider operational process.'}
                 </p>
               </div>
             </div>
@@ -92,25 +95,33 @@ export function AiSupportCaseStudyPage() {
 
           <dl className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
             <div className="border-t border-border/45 pt-3">
-              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">ROLE</dt>
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">
+                {it?.metadata.role ?? 'ROLE'}
+              </dt>
               <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
                 AI support architecture · Knowledge structure · Workflow automation
               </dd>
             </div>
             <div className="border-t border-border/45 pt-3">
-              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">PROJECT TYPE</dt>
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">
+                {it?.metadata.projectType ?? 'PROJECT TYPE'}
+              </dt>
               <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
                 AI customer support · Routing · Business automation
               </dd>
             </div>
             <div className="border-t border-border/45 pt-3">
-              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">FOCUS</dt>
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">
+                {it?.metadata.focus ?? 'FOCUS'}
+              </dt>
               <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
                 AI-assisted resolution · Escalation · Cross-system handoff
               </dd>
             </div>
             <div className="border-t border-border/45 pt-3">
-              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">SYSTEM</dt>
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">
+                {it?.metadata.system ?? 'SYSTEM'}
+              </dt>
               <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
                 Customer question → Fin → resolution or routing → team / sales workflow
               </dd>
@@ -123,19 +134,20 @@ export function AiSupportCaseStudyPage() {
             <div>
               <p className="section-label">AI SUPPORT LAYER</p>
               <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">
-                Answering routine questions before they become tickets
+                {it?.support.title ?? 'Answering routine questions before they become tickets'}
               </h2>
               <div className="mt-6 space-y-4">
                 <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                  The first layer of the system is Fin, embedded directly into the customer-facing website experience.
+                  {it?.support.paragraphs[0] ??
+                    'The first layer of the system is Fin, embedded directly into the customer-facing website experience.'}
                 </p>
                 <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                  Using the configured support knowledge, Fin can respond to common customer questions at the point of
-                  contact.
+                  {it?.support.paragraphs[1] ??
+                    'Using the configured support knowledge, Fin can respond to common customer questions at the point of contact.'}
                 </p>
                 <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                  Routine questions can be resolved immediately, while conversations requiring judgement or
-                  business-specific action remain available for human follow-up.
+                  {it?.support.paragraphs[2] ??
+                    'Routine questions can be resolved immediately, while conversations requiring judgement or business-specific action remain available for human follow-up.'}
                 </p>
               </div>
             </div>
@@ -153,21 +165,20 @@ export function AiSupportCaseStudyPage() {
           <article>
             <p className="section-label">ROUTING LOGIC</p>
             <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">
-              Turning customer intent into the next action
+              {it?.routing.title ?? 'Turning customer intent into the next action'}
             </h2>
             <div className="mt-6 space-y-4">
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                Workflow rules provide the operational layer behind the AI interaction. When a request requires human
-                involvement, the conversation can be routed according to its purpose rather than remaining in a generic
-                support queue.
+                {it?.routing.paragraphs[0] ??
+                  'Workflow rules provide the operational layer behind the AI interaction. When a request requires human involvement, the conversation can be routed according to its purpose rather than remaining in a generic support queue.'}
               </p>
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                Sales enquiries are one example. A relevant request can be assigned to the Sales Team and then passed
-                into Pipedrive, allowing the conversation to continue inside the appropriate business process.
+                {it?.routing.paragraphs[1] ??
+                  'Sales enquiries are one example. A relevant request can be assigned to the Sales Team and then passed into Pipedrive, allowing the conversation to continue inside the appropriate business process.'}
               </p>
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                This makes the support interface an entry point for multiple workflows rather than an isolated
-                chatbot.
+                {it?.routing.paragraphs[2] ??
+                  'This makes the support interface an entry point for multiple workflows rather than an isolated chatbot.'}
               </p>
             </div>
 
@@ -194,19 +205,19 @@ export function AiSupportCaseStudyPage() {
             <div>
               <p className="section-label">HUMAN HANDOFF</p>
               <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">
-                Keeping AI and human support in the same workflow
+                {it?.handoff.title ?? 'Keeping AI and human support in the same workflow'}
               </h2>
               <div className="mt-6 space-y-4">
                 <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                  Escalation remains within the same support workflow.
+                  {it?.handoff.paragraphs[0] ?? 'Escalation remains within the same support workflow.'}
                 </p>
                 <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                  When a conversation needs judgement, ambiguity resolution or business-specific action, it can be
-                  handed to the appropriate teammate or team.
+                  {it?.handoff.paragraphs[1] ??
+                    'When a conversation needs judgement, ambiguity resolution or business-specific action, it can be handed to the appropriate teammate or team.'}
                 </p>
                 <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                  For routed sales conversations, connected Pipedrive context remains available to support human
-                  follow-up.
+                  {it?.handoff.paragraphs[2] ??
+                    'For routed sales conversations, connected Pipedrive context remains available to support human follow-up.'}
                 </p>
               </div>
             </div>
@@ -215,19 +226,20 @@ export function AiSupportCaseStudyPage() {
           <article>
             <p className="section-label">CONNECTED OPERATIONS</p>
             <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">
-              Support as part of the wider business system
+              {it?.operations.title ?? 'Support as part of the wider business system'}
             </h2>
             <div className="mt-6 space-y-4">
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                The final layer is the connection between customer support and downstream operations.
+                {it?.operations.paragraphs[0] ??
+                  'The final layer is the connection between customer support and downstream operations.'}
               </p>
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                A conversation can begin as a website question, be handled by Fin, and then move into a human or sales
-                workflow when the customer&apos;s intent changes.
+                {it?.operations.paragraphs[1] ??
+                  "A conversation can begin as a website question, be handled by Fin, and then move into a human or sales workflow when the customer's intent changes."}
               </p>
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                For sales-related enquiries, routing connects the support interaction with Pipedrive so support, sales
-                and operations remain connected stages of the same customer journey.
+                {it?.operations.paragraphs[2] ??
+                  'For sales-related enquiries, routing connects the support interaction with Pipedrive so support, sales and operations remain connected stages of the same customer journey.'}
               </p>
             </div>
 
@@ -248,20 +260,20 @@ export function AiSupportCaseStudyPage() {
           <article className="border-t border-border/55 pt-12">
             <p className="section-label">SYSTEM OUTCOME</p>
             <h2 className="mt-4 font-serif text-[clamp(1.9rem,3.3vw,2.8rem)] leading-[1.05] text-[#1f2522]">
-              A support workflow designed around resolution and escalation
+              {it?.outcome.title ?? 'A support workflow designed around resolution and escalation'}
             </h2>
             <div className="mt-5 space-y-4">
               <p className="max-w-[52rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                The project demonstrates how an AI support layer can sit inside a broader operational system rather than
-                functioning as a standalone chatbot.
+                {it?.outcome.paragraphs[0] ??
+                  'The project demonstrates how an AI support layer can sit inside a broader operational system rather than functioning as a standalone chatbot.'}
               </p>
               <p className="max-w-[52rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                Knowledge-based responses handle appropriate first-line questions, while routing rules manage intent and
-                escalation when the request needs human or sales follow-up.
+                {it?.outcome.paragraphs[1] ??
+                  'Knowledge-based responses handle appropriate first-line questions, while routing rules manage intent and escalation when the request needs human or sales follow-up.'}
               </p>
               <p className="max-w-[52rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                The emphasis is on designing clear transitions between those layers so automation supports service
-                quality without disconnecting the journey from the teams and systems behind it.
+                {it?.outcome.paragraphs[2] ??
+                  'The emphasis is on designing clear transitions between those layers so automation supports service quality without disconnecting the journey from the teams and systems behind it.'}
               </p>
             </div>
             <p className="mt-8 border-t border-border/45 pt-4 text-[0.9rem] tracking-[0.06em] text-[#5d6660]">
