@@ -101,8 +101,8 @@ export function HomePage() {
               <a href="#contact">CONTACT</a>
             </nav>
           </details>
-          <div className="hidden items-center gap-10 md:flex">
-            <nav className="flex items-center gap-8 text-[0.68rem] font-semibold tracking-[0.18em] text-[#2c312d] uppercase">
+          <div className="hidden items-center gap-5 md:flex lg:gap-10">
+            <nav className="flex items-center gap-4 text-[0.68rem] font-semibold tracking-[0.18em] text-[#2c312d] uppercase lg:gap-8">
               <a href="#selected-work">WORK</a>
               <a href="#about">ABOUT</a>
               <a href="#expertise">EXPERTISE</a>
@@ -110,7 +110,7 @@ export function HomePage() {
             </nav>
             <a
               href="#contact"
-              className="rounded-sm bg-secondary-soft px-5 py-2 text-[0.66rem] font-semibold tracking-[0.16em] text-[#3f4348] uppercase"
+              className="whitespace-nowrap rounded-sm bg-secondary-soft px-4 py-2 text-[0.66rem] font-semibold tracking-[0.16em] text-[#3f4348] uppercase lg:px-5"
             >
               LET&apos;S CONNECT →
             </a>
@@ -127,7 +127,7 @@ export function HomePage() {
           <div className="relative mt-3 md:mt-2 md:min-h-[32rem]">
             <p className="hero-display homepage-display relative z-10 text-[#111419] uppercase">PORTFOLIO</p>
 
-            <figure className="pointer-events-none relative z-20 -mt-9 h-[16.2rem] w-full overflow-hidden md:absolute md:bottom-0 md:right-0 md:mt-0 md:h-[31.5rem] md:w-auto md:overflow-visible">
+            <figure className="pointer-events-none relative z-20 -mt-9 h-[16.2rem] w-full overflow-hidden md:absolute md:bottom-0 md:right-0 md:mt-0 md:h-[27rem] md:w-auto md:overflow-visible xl:h-[31.5rem]">
               <img
                 src={heroPortrait}
                 alt="Portrait integrated into homepage hero."
@@ -166,7 +166,7 @@ export function HomePage() {
           </div>
 
           <div className="mt-8">
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
               {featuredProjects.map((project, index) => {
                 const metadata = project.metadata?.[0]?.value ?? project.tags.join(' · ')
                 const cardTitle = selectedWorkCardTitles[project.slug] ?? project.title.toUpperCase()
@@ -197,7 +197,14 @@ export function HomePage() {
                 )
 
                 return (
-                  <article key={project.slug} className="space-y-5">
+                  <article
+                    key={project.slug}
+                    className={`flex h-full flex-col gap-5 ${
+                      index === 2
+                        ? 'md:col-span-2 md:w-[calc(50%-1.25rem)] md:justify-self-center xl:col-span-1 xl:w-auto'
+                        : ''
+                    }`}
+                  >
                     {project.href.startsWith('/') ? (
                       <Link
                         to={project.href}
@@ -224,12 +231,12 @@ export function HomePage() {
                     {project.href.startsWith('/') ? (
                       <Link
                         to={project.href}
-                        className="utility-action inline-flex text-secondary"
+                        className="utility-action mt-auto inline-flex text-secondary"
                       >
                         VIEW CASE STUDY →
                       </Link>
                     ) : (
-                      <a href={project.href} className="utility-action inline-flex text-secondary">
+                      <a href={project.href} className="utility-action mt-auto inline-flex text-secondary">
                         VIEW CASE STUDY →
                       </a>
                     )}
@@ -245,7 +252,7 @@ export function HomePage() {
           <p className="homepage-editorial-headline mt-5 max-w-[44rem] font-serif text-[#1f2522] md:text-[2.35rem] md:leading-[1.05]">
             Business thinking, translated into systems.
           </p>
-          <div className="mt-10 grid grid-cols-1 gap-x-16 gap-y-12 md:grid-cols-2 md:gap-y-16">
+          <div className="mt-10 grid grid-cols-1 gap-x-16 gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:gap-x-16">
             {expertiseAreas.map((area) => (
               <article key={area.id} className="space-y-4">
                 <h3 className="homepage-content-heading">{area.title}</h3>
@@ -256,10 +263,10 @@ export function HomePage() {
         </section>
 
         <section id="about" className="homepage-section-spacing">
-          <div className="content-wrap bg-secondary-soft/45 px-5 py-12 md:px-10 md:py-16">
+          <div className="content-wrap bg-secondary-soft/45 px-5 py-12 md:px-8 md:py-16 xl:px-10">
             <p className="homepage-section-label">About</p>
-            <div className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-[1.18fr_1fr] md:gap-14">
-              <h2 className="homepage-editorial-headline font-serif text-[#1f2522] md:text-[4rem] md:leading-[0.94]">
+            <div className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-[1.18fr_1fr] xl:gap-14">
+              <h2 className="homepage-editorial-headline font-serif text-[#1f2522] md:text-[clamp(3rem,5vw,4rem)] md:leading-[0.94]">
                 A business-first approach to technology.
               </h2>
               <div>
@@ -284,7 +291,7 @@ export function HomePage() {
             From business problem to working system.
           </p>
 
-          <div className="mt-14 grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-16">
+          <div className="mt-14 grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-8 lg:gap-12 xl:gap-16">
             {approachSteps.map((step, index) => (
               <article key={step.id} className="relative">
                 <h3 className="homepage-content-heading">{step.title}</h3>
@@ -305,7 +312,7 @@ export function HomePage() {
         <section id="toolkit" className="homepage-section-spacing content-wrap">
           <p className="homepage-section-label">Tools I Use</p>
 
-          <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-9 md:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-x-14 gap-y-9 md:grid-cols-2 md:gap-x-8 xl:gap-x-14">
             {toolGroups.map((group) => (
               <article key={group.label}>
                 <p className="homepage-metadata font-semibold tracking-[0.12em] text-secondary uppercase">{group.label}</p>
@@ -334,7 +341,7 @@ export function HomePage() {
               LET&apos;S CONNECT →
             </a>
 
-            <div className="mt-16 grid grid-cols-1 gap-8 border-t border-border/45 pt-8 sm:grid-cols-2 md:grid-cols-4">
+            <div className="mt-16 grid grid-cols-1 gap-8 border-t border-border/45 pt-8 sm:grid-cols-2 xl:grid-cols-4">
               <div>
                 <p className="text-[1.02rem] font-semibold tracking-[0.03em] text-[#1d211e]">DARYNA GIANCOLA</p>
                 <p className="mt-2 flex items-center gap-1.5 text-[0.95rem] text-[#5c6560]">

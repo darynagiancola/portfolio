@@ -22,7 +22,7 @@ export function PortfolioFooter() {
           LET&apos;S CONNECT →
         </a>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 border-t border-border/45 pt-8 sm:grid-cols-2 md:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-8 border-t border-border/45 pt-8 sm:grid-cols-2 xl:grid-cols-4">
           <div>
             <p className="text-[1.02rem] font-semibold tracking-[0.03em] text-[#1d211e]">DARYNA GIANCOLA</p>
             <p className="mt-2 flex items-center gap-1.5 text-[0.95rem] text-[#5c6560]">

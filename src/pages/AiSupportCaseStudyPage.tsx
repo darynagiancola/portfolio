@@ -52,7 +52,7 @@ export function AiSupportCaseStudyPage() {
             ← BACK TO WORK
           </a>
 
-          <div className="mt-7 grid gap-10 lg:grid-cols-[1.03fr_0.97fr] lg:items-start">
+          <div className="mt-7 grid gap-10 md:grid-cols-[1.2fr_0.8fr] md:items-start">
             <div>
               <p className="text-[0.74rem] font-semibold tracking-[0.15em] text-secondary uppercase">
                 CASE STUDY · AI-ASSISTED CUSTOMER OPERATIONS
@@ -80,7 +80,7 @@ export function AiSupportCaseStudyPage() {
               </div>
             </div>
 
-            <div className="w-full max-w-[18rem] sm:max-w-[21rem] lg:ml-auto lg:mr-0 lg:max-w-[23rem]">
+            <div className="w-full max-w-[18rem] sm:max-w-[21rem] md:ml-auto md:mr-0 md:max-w-[20rem] lg:max-w-[23rem]">
               <Screenshot
                 src={finAiMessenger}
                 alt="Intercom Fin website messenger showing a customer conversation and Powered by Fin footer."
@@ -119,7 +119,7 @@ export function AiSupportCaseStudyPage() {
         </section>
 
         <section className="case-study-section-flow content-wrap pb-20">
-          <article className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-14">
+          <article className="grid gap-10 md:grid-cols-[1.5fr_1fr] md:items-center md:gap-10 lg:gap-14">
             <div>
               <p className="section-label">AI SUPPORT LAYER</p>
               <h2 className="mt-4 font-serif text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.02] text-[#1f2522]">
@@ -140,7 +140,7 @@ export function AiSupportCaseStudyPage() {
               </div>
             </div>
 
-            <div className="w-full max-w-[22rem] sm:max-w-[25rem] lg:justify-self-end">
+            <div className="w-full max-w-[22rem] sm:max-w-[25rem] md:justify-self-end">
               <Screenshot
                 src={finKnowledgeAnswer}
                 alt="Fin answer view showing a knowledge-grounded response to a customer product question."
@@ -181,7 +181,7 @@ export function AiSupportCaseStudyPage() {
             </div>
           </article>
 
-          <article className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-14">
+          <article className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-10 lg:gap-14">
             <div className="w-full max-w-[44rem]">
               <Screenshot
                 src={pipedriveContextInIntercom}
