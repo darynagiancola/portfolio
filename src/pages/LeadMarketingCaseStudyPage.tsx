@@ -135,13 +135,12 @@ export function LeadMarketingCaseStudyPage() {
                 email nurture, webinar registration, qualification and finally a strategy call.
               </p>
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                The system was structured so that each action changes what happens next. Registration, attendance and
-                call booking are not isolated events. They become signals used to update the contact journey and CRM
-                status.
+                Registration, attendance and call booking are captured as signals that update the contact journey and
+                CRM status.
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[1fr_2fr] lg:items-start">
+            <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
               <Screenshot
                 src={leadMagnetLandingPage}
                 alt="Lead magnet landing page promoting a free guide and capturing name, phone number, and email."
@@ -247,8 +246,8 @@ export function LeadMarketingCaseStudyPage() {
                 update the contact and apply the appropriate CRM signal.
               </p>
               <p className="max-w-[58rem] text-[1.06rem] leading-[1.58] text-[#4e5752]">
-                This prevents booking and registration events from becoming disconnected data points. They become part
-                of the same lead lifecycle used by the rest of the automation.
+                This keeps booking and registration data connected to the contact record used by the rest of the
+                automation.
               </p>
             </div>
 
