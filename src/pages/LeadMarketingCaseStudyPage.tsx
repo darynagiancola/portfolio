@@ -81,32 +81,6 @@ export function LeadMarketingCaseStudyPage() {
                   appropriate next step.
                 </p>
               </div>
-              <dl className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-                <div className="border-t border-border/45 pt-3">
-                  <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">ROLE</dt>
-                  <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
-                    Automation strategy · Funnel architecture · Implementation
-                  </dd>
-                </div>
-                <div className="border-t border-border/45 pt-3">
-                  <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">PROJECT TYPE</dt>
-                  <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
-                    Lead generation · Marketing automation · CRM workflow
-                  </dd>
-                </div>
-                <div className="border-t border-border/45 pt-3">
-                  <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">FOCUS</dt>
-                  <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
-                    Lead nurturing · Qualification · CRM progression · Cross-platform automation
-                  </dd>
-                </div>
-                <div className="border-t border-border/45 pt-3">
-                  <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">SYSTEM</dt>
-                  <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
-                    Lead magnet → nurture → webinar → qualification → strategy call
-                  </dd>
-                </div>
-              </dl>
             </div>
 
             <Screenshot
@@ -116,6 +90,33 @@ export function LeadMarketingCaseStudyPage() {
               frameClassName="h-[10.5rem] sm:h-[12.5rem] lg:h-auto lg:aspect-[1874/552]"
             />
           </div>
+
+          <dl className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="border-t border-border/45 pt-3">
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">ROLE</dt>
+              <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
+                Automation strategy · Funnel architecture · Implementation
+              </dd>
+            </div>
+            <div className="border-t border-border/45 pt-3">
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">PROJECT TYPE</dt>
+              <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
+                Lead generation · Marketing automation · CRM workflow
+              </dd>
+            </div>
+            <div className="border-t border-border/45 pt-3">
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">FOCUS</dt>
+              <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
+                Lead nurturing · Qualification · CRM progression · Cross-platform automation
+              </dd>
+            </div>
+            <div className="border-t border-border/45 pt-3">
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">SYSTEM</dt>
+              <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
+                Lead magnet → nurture → webinar → qualification → strategy call
+              </dd>
+            </div>
+          </dl>
         </section>
 
         <section className="content-wrap space-y-24 pb-20">

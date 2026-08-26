@@ -78,32 +78,6 @@ export function AiSupportCaseStudyPage() {
                   operational process.
                 </p>
               </div>
-              <dl className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-                <div className="border-t border-border/45 pt-3">
-                  <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">ROLE</dt>
-                  <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
-                    AI support architecture · Knowledge structure · Workflow automation
-                  </dd>
-                </div>
-                <div className="border-t border-border/45 pt-3">
-                  <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">PROJECT TYPE</dt>
-                  <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
-                    AI customer support · Routing · Business automation
-                  </dd>
-                </div>
-                <div className="border-t border-border/45 pt-3">
-                  <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">FOCUS</dt>
-                  <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
-                    AI-assisted resolution · Escalation · Cross-system handoff
-                  </dd>
-                </div>
-                <div className="border-t border-border/45 pt-3">
-                  <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">SYSTEM</dt>
-                  <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
-                    Customer question → Fin → resolution or routing → team / sales workflow
-                  </dd>
-                </div>
-              </dl>
             </div>
 
             <div className="w-full max-w-[18rem] sm:max-w-[21rem] lg:ml-auto lg:mr-0 lg:max-w-[23rem]">
@@ -115,6 +89,33 @@ export function AiSupportCaseStudyPage() {
               />
             </div>
           </div>
+
+          <dl className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="border-t border-border/45 pt-3">
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">ROLE</dt>
+              <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
+                AI support architecture · Knowledge structure · Workflow automation
+              </dd>
+            </div>
+            <div className="border-t border-border/45 pt-3">
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">PROJECT TYPE</dt>
+              <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
+                AI customer support · Routing · Business automation
+              </dd>
+            </div>
+            <div className="border-t border-border/45 pt-3">
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">FOCUS</dt>
+              <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
+                AI-assisted resolution · Escalation · Cross-system handoff
+              </dd>
+            </div>
+            <div className="border-t border-border/45 pt-3">
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">SYSTEM</dt>
+              <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">
+                Customer question → Fin → resolution or routing → team / sales workflow
+              </dd>
+            </div>
+          </dl>
         </section>
 
         <section className="content-wrap space-y-24 pb-20">

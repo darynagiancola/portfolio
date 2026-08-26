@@ -123,7 +123,7 @@ export const aureliaCaseStudy: CaseStudyData = {
     { label: 'Role', value: 'Product concept · UX/UI · AI-assisted development' },
     { label: 'Project Type', value: 'Concept project · connected hospitality ecosystem' },
     { label: 'Focus', value: 'Customer experience · operations workflows · kitchen execution' },
-    { label: 'Structure', value: '3 complementary prototypes in one operational system' },
+    { label: 'Structure', value: '3 complementary prototypes across one hospitality workflow' },
   ],
   customerExperience: {
     label: 'CUSTOMER EXPERIENCE',

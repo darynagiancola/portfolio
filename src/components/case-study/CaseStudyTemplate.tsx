@@ -80,33 +80,31 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
                 </p>
               ))}
             </div>
-            <dl className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2">
-              {caseStudy.heroMetadata.map((item) => (
-                <div key={item.label} className="border-t border-border/45 pt-3">
-                  <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">{item.label}</dt>
-                  <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">{item.value}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           <div className="space-y-4">
             <FramedImage image={caseStudy.customerExperience.images[0]} frameClassName="h-[18rem] sm:h-[24rem] lg:h-[26rem]" />
           </div>
         </div>
+
+        <dl className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+          {caseStudy.heroMetadata.map((item) => (
+            <div key={item.label} className="border-t border-border/45 pt-3">
+              <dt className="text-[0.68rem] font-semibold tracking-[0.14em] text-secondary uppercase">{item.label}</dt>
+              <dd className="mt-2 text-[0.95rem] leading-[1.5] text-text">{item.value}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       <section className="content-wrap space-y-24 pb-20">
         <article>
           <SectionIntro section={caseStudy.customerExperience} />
-          <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <FramedImage image={caseStudy.customerExperience.images[0]} frameClassName="h-[19rem] sm:h-[24rem] lg:h-[30rem]" />
-            <div className="space-y-6">
-              <FramedImage image={caseStudy.customerExperience.images[1]} frameClassName="h-[18rem] sm:h-[22rem] lg:h-[23rem]" />
-              <div className="grid gap-6 sm:grid-cols-2">
-                <FramedImage image={caseStudy.customerExperience.images[2]} frameClassName="h-[14rem] sm:h-[16rem] lg:h-[17rem]" />
-                <FramedImage image={caseStudy.customerExperience.images[3]} frameClassName="h-[14rem] sm:h-[16rem] lg:h-[17rem]" />
-              </div>
+          <div className="mt-10 space-y-6">
+            <FramedImage image={caseStudy.customerExperience.images[1]} frameClassName="h-[20rem] sm:h-[28rem] lg:h-[36rem]" />
+            <div className="grid gap-6 sm:grid-cols-2">
+              <FramedImage image={caseStudy.customerExperience.images[2]} frameClassName="h-[18rem] sm:h-[22rem] lg:h-[24rem]" />
+              <FramedImage image={caseStudy.customerExperience.images[3]} frameClassName="h-[18rem] sm:h-[22rem] lg:h-[24rem]" />
             </div>
           </div>
         </article>
