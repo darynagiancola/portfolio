@@ -5,9 +5,9 @@ const STORAGE_KEY = 'portfolio-language'
 
 function getInitialLanguage(): Language {
   try {
-    return window.sessionStorage.getItem(STORAGE_KEY) === 'it' ? 'it' : 'en'
+    return window.sessionStorage.getItem(STORAGE_KEY) === 'en' ? 'en' : 'it'
   } catch {
-    return 'en'
+    return 'it'
   }
 }
 
