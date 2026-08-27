@@ -1,4 +1,5 @@
 import type { CaseStudyData, CaseStudyFeatureSection, ImageAsset } from '../../types/portfolio'
+import { useLanguage } from '../../i18n/language'
 
 interface CaseStudyTemplateProps {
   caseStudy: CaseStudyData
@@ -55,6 +56,11 @@ function SectionIntro({ section }: { section: CaseStudyFeatureSection }) {
 }
 
 export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
+  const { language } = useLanguage()
+
+  const backToWorkLabel = language === 'it' ? 'TORNA AI PROGETTI' : 'BACK TO WORK'
+  const backToSelectedWorkLabel = language === 'it' ? 'TORNA AI PROGETTI SELEZIONATI' : 'BACK TO SELECTED WORK'
+
   return (
     <main id="main-content">
       <section className="content-wrap pb-16 pt-14 sm:pb-20 sm:pt-16 lg:pb-24 lg:pt-20">
@@ -62,7 +68,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
           href={`${import.meta.env.BASE_URL}${caseStudy.backHref}`}
           className="inline-flex text-[0.72rem] font-semibold tracking-[0.16em] text-secondary uppercase hover:text-text"
         >
-          ← BACK TO WORK
+          ← {backToWorkLabel}
         </a>
 
         <div className="mt-7 grid gap-10 lg:grid-cols-[1.06fr_0.94fr] lg:items-start">
@@ -143,7 +149,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
             href={`${import.meta.env.BASE_URL}${caseStudy.backHref}`}
             className="inline-flex text-[0.78rem] font-semibold tracking-[0.14em] text-secondary uppercase hover:text-text"
           >
-            BACK TO SELECTED WORK →
+            {backToSelectedWorkLabel} →
           </a>
         </div>
       </section>
