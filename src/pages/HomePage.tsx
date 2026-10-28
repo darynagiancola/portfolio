@@ -2,7 +2,8 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import heroPortrait from '../assets/hero-portrait.png'
 import { LanguageSwitcher } from '../components/layout/LanguageSwitcher'
-import { projectCards } from '../content/projects'
+import { SelectedWorkCard } from '../components/projects/SelectedWorkCard'
+import { getFeaturedProjects } from '../content/projects'
 import { italianHome } from '../i18n/italian'
 import { useLanguage } from '../i18n/language'
 
@@ -14,12 +15,8 @@ export function HomePage() {
   const linkedinUrl = 'https://www.linkedin.com/in/daryna-giancola/'
   const githubUrl = 'https://github.com/darynagiancola'
   const websiteUrl = 'https://www.darynagiancola.com'
-  const featuredProjects = projectCards.filter((project) => project.featured).slice(0, 3)
-  const selectedWorkCardTitles: Record<string, string> = {
-    aurelia: 'AI-POWERED\nHOSPITALITY\nSYSTEM',
-    'lead-marketing-automation-system': 'LEAD & MARKETING\nAUTOMATION SYSTEM',
-    'ai-support-ticket-routing': 'AI SUPPORT &\nWORKFLOW ROUTING',
-  }
+  const featuredProjects = getFeaturedProjects(4)
+  const viewAllProjectsLabel = isItalian ? italianHome.selectedWork.viewAll : 'VIEW ALL PROJECTS →'
   const expertiseAreas = [
     {
       id: '01',
@@ -189,95 +186,27 @@ export function HomePage() {
             <p className="homepage-section-label">
               {isItalian ? italianHome.selectedWork.heading : 'Selected Work'}
             </p>
-            <a href="#" className="utility-action text-secondary">
-              {isItalian ? italianHome.selectedWork.viewAll : 'VIEW ALL PROJECTS →'}
-            </a>
+            <Link to="/projects" className="utility-action text-secondary">
+              {viewAllProjectsLabel}
+            </Link>
           </div>
 
           <div className="mt-8">
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
-              {featuredProjects.map((project, index) => {
-                const metadata = project.metadata?.[0]?.value ?? project.tags.join(' · ')
-                const cardTitle = selectedWorkCardTitles[project.slug] ?? project.title.toUpperCase()
-                const cardContent = (
-                  <>
-                    <div className="flex items-start justify-between">
-                      <p className="font-serif text-[3rem] leading-none text-[#b5abbe]">{String(index + 1).padStart(2, '0')}</p>
-                      <svg
-                        aria-hidden="true"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mt-1 h-4 w-4 text-[#1f2522] transition-transform duration-200 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]"
-                      >
-                        <path d="M5 19 19 5M9 5h10v10" />
-                      </svg>
-                    </div>
-                    <div className="mt-auto">
-                      <h2 className="homepage-content-heading whitespace-pre-line">
-                        {cardTitle}
-                      </h2>
-                      <p className="homepage-metadata mt-3 tracking-[0.12em] text-[#666e68] uppercase">{project.subtitle}</p>
-                    </div>
-                  </>
-                )
-
-                return (
-                  <article
-                    key={project.slug}
-                    className={`flex h-full flex-col gap-5 ${
-                      index === 2
-                        ? 'md:col-span-2 md:w-[calc(50%-1.25rem)] md:justify-self-start xl:col-span-1 xl:w-auto xl:justify-self-stretch'
-                        : ''
-                    }`}
-                  >
-                    {project.href.startsWith('/') ? (
-                      <Link
-                        to={project.href}
-                        className="group flex h-[19rem] flex-col border border-border/60 bg-[#EEE9F0] p-5 transition-colors duration-200 hover:bg-[#e9e4ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/45 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-[22rem] md:p-6"
-                      >
-                        {cardContent}
-                      </Link>
-                    ) : (
-                      <a
-                        href={project.href}
-                        className="group flex h-[19rem] flex-col border border-border/60 bg-[#EEE9F0] p-5 transition-colors duration-200 hover:bg-[#e9e4ec] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/45 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-[22rem] md:p-6"
-                      >
-                        {cardContent}
-                      </a>
-                    )}
-
-                    <div>
-                      <p className="homepage-body text-[#4d5651]">
-                        {isItalian
-                          ? italianHome.selectedWork.descriptions[
-                              project.slug as keyof typeof italianHome.selectedWork.descriptions
-                            ]
-                          : project.description}
-                      </p>
-                      <p className="homepage-metadata mt-4 border-t border-border/50 pt-3 tracking-[0.1em] text-[#5f6660] uppercase">
-                        {metadata}
-                      </p>
-                    </div>
-
-                    {project.href.startsWith('/') ? (
-                      <Link
-                        to={project.href}
-                        className="utility-action mt-auto inline-flex text-secondary"
-                      >
-                        {isItalian ? italianHome.selectedWork.viewCaseStudy : 'VIEW CASE STUDY →'}
-                      </Link>
-                    ) : (
-                      <a href={project.href} className="utility-action mt-auto inline-flex text-secondary">
-                        {isItalian ? italianHome.selectedWork.viewCaseStudy : 'VIEW CASE STUDY →'}
-                      </a>
-                    )}
-                  </article>
-                )
-              })}
+            <div className="grid grid-cols-1 items-stretch gap-12 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
+              {featuredProjects.map((project, index) => (
+                <SelectedWorkCard
+                  key={project.slug}
+                  project={project}
+                  index={index}
+                  isItalian={isItalian}
+                  className={index === 3 ? 'hidden md:flex xl:hidden' : undefined}
+                />
+              ))}
+            </div>
+            <div className="mt-10">
+              <Link to="/projects" className="utility-action inline-flex text-secondary">
+                {viewAllProjectsLabel}
+              </Link>
             </div>
           </div>
         </section>

@@ -17,10 +17,11 @@ export const projectCards: ProjectCardData[] = [
   {
     slug: 'aurelia',
     title: 'AI-Powered Hospitality System',
+    cardTitle: 'AI-POWERED\nHOSPITALITY\nSYSTEM',
+    cardTitleWide: 'AI-POWERED\nHOSPITALITY SYSTEM',
     subtitle: 'AI · PRODUCT · OPERATIONS',
     description:
       'A connected hospitality ecosystem covering customer experience, AI-assisted ordering, restaurant operations and real-time kitchen workflows.',
-    featured: true,
     visualState: 'final',
     tags: ['AI Agent', 'Ordering', 'Payments', 'Kitchen Display', 'Automation'],
     metadata: [
@@ -32,6 +33,8 @@ export const projectCards: ProjectCardData[] = [
     ctaLabel: 'View Case Study',
     href: '/projects/aurelia',
     status: 'featured',
+    featuredOrder: 4,
+    listingOrder: 4,
     dominant: true,
     thumbnail: {
       src: customerExperienceHome,
@@ -42,10 +45,13 @@ export const projectCards: ProjectCardData[] = [
   {
     slug: 'lead-marketing-automation-system',
     title: 'Lead & Marketing Automation System',
+    cardTitle: 'LEAD & MARKETING\nAUTOMATION SYSTEM',
     subtitle: 'AUTOMATION · CRM · MARKETING',
     description:
       'A lead generation and nurturing system connecting content, email automation, webinar qualification, CRM progression and strategy-call booking.',
     featured: true,
+    featuredOrder: 1,
+    listingOrder: 1,
     visualState: 'final',
     tags: ['Lead capture', 'ActiveCampaign', 'Webinar workflows', 'Pipedrive'],
     metadata: [
@@ -65,12 +71,42 @@ export const projectCards: ProjectCardData[] = [
     },
   },
   {
+    slug: 'fuori-ora',
+    title: 'Brand & Campaign Development',
+    cardTitle: 'BRAND & CAMPAIGN\nDEVELOPMENT',
+    subtitle: 'BRAND · CAMPAIGN · CREATIVE DIRECTION',
+    description:
+      'A contemporary Franciacorta brand concept, brought to life through positioning, visual identity and an integrated launch campaign supported by generative AI.',
+    featured: true,
+    featuredOrder: 2,
+    listingOrder: 2,
+    visualState: 'final',
+    tags: ['Brand strategy', 'Creative direction', 'Generative AI', 'Integrated campaign'],
+    metadata: [
+      {
+        label: 'Focus',
+        value: 'BRAND STRATEGY · VISUAL IDENTITY · CAMPAIGN PRODUCTION',
+      },
+    ],
+    ctaLabel: 'View Case Study',
+    href: '/projects/fuori-ora',
+    status: 'featured',
+    thumbnail: {
+      src: placeholderThumb,
+      alt: 'FUORI ORA brand and campaign case study — visual assets coming in a later phase',
+      label: 'FUORI ORA',
+    },
+  },
+  {
     slug: 'ai-support-ticket-routing',
     title: 'AI Support & Workflow Routing',
+    cardTitle: 'AI SUPPORT &\nWORKFLOW ROUTING',
     subtitle: 'AI · CUSTOMER OPERATIONS · AUTOMATION',
     description:
       'An AI-assisted support system using Fin and a structured knowledge base to answer customer questions, route requests and connect qualified sales enquiries with the appropriate workflow.',
     featured: true,
+    featuredOrder: 3,
+    listingOrder: 3,
     visualState: 'final',
     tags: ['Intercom', 'AI support', 'Knowledge base', 'Routing / escalation'],
     metadata: [
@@ -90,23 +126,22 @@ export const projectCards: ProjectCardData[] = [
       label: 'AI support preview',
     },
   },
-  {
-    slug: 'case-study-4',
-    title: 'Additional Work',
-    subtitle: 'Case study in progress',
-    description:
-      'An expandable slot for another real-world product case study.',
-    tags: ['Case study in progress'],
-    ctaLabel: 'Case study in progress',
-    href: '#',
-    status: 'placeholder',
-    thumbnail: {
-      src: placeholderThumb,
-      alt: 'Placeholder for in-progress operations case study',
-      label: 'Placeholder',
-    },
-  },
 ]
+
+const FEATURED_HOMEPAGE_LIMIT = 4
+
+export function getFeaturedProjects(limit = FEATURED_HOMEPAGE_LIMIT): ProjectCardData[] {
+  return projectCards
+    .filter((project) => project.featured)
+    .sort((left, right) => (left.featuredOrder ?? 999) - (right.featuredOrder ?? 999))
+    .slice(0, limit)
+}
+
+export function getListedProjects(): ProjectCardData[] {
+  return projectCards
+    .filter((project) => project.status !== 'placeholder')
+    .sort((left, right) => (left.listingOrder ?? 999) - (right.listingOrder ?? 999))
+}
 
 export const aureliaCaseStudy: CaseStudyData = {
   slug: 'aurelia',

@@ -39,9 +39,17 @@ export type ProjectStatus = 'featured' | 'placeholder'
 export interface ProjectCardData {
   slug: string
   title: string
+  /** Multiline homepage card headline (uppercase editorial treatment). */
+  cardTitle: string
+  /** Optional wider-viewport headline (e.g. fewer line breaks from `lg` upward). */
+  cardTitleWide?: string
   subtitle: string
   description: string
   featured?: boolean
+  /** Lower numbers appear first among featured projects on the homepage. */
+  featuredOrder?: number
+  /** Lower numbers appear first on the /projects listing page. */
+  listingOrder?: number
   visualState?: 'final' | 'placeholder'
   tags: string[]
   metadata?: MetadataItem[]

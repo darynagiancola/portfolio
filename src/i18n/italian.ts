@@ -23,6 +23,8 @@ export const italianHome = {
         'Un sistema di lead generation e nurturing che collega contenuti, email automation, qualificazione tramite webinar, avanzamento nel CRM e prenotazione di strategy call.',
       'ai-support-ticket-routing':
         "Un sistema di supporto assistito dall'AI che utilizza Fin e una knowledge base strutturata per rispondere alle domande dei clienti, instradare le richieste e collegare le opportunità commerciali qualificate al workflow appropriato.",
+      'fuori-ora':
+        "Un concept di brand contemporaneo per un Franciacorta, sviluppato attraverso posizionamento, identità visiva e una campagna di lancio integrata con il supporto dell'AI generativa.",
     },
   },
   expertise: {
@@ -76,6 +78,259 @@ export const italianHome = {
     cta: 'PARLIAMONE →',
     location: 'Brescia, Italia',
     cv: 'VEDI IL CV →',
+  },
+} as const
+
+export const italianProjects = {
+  heading: 'Tutti i progetti',
+  intro:
+    'Case study e concept work su prodotti digitali, automazione, brand e sistemi operativi — inclusi i progetti non mostrati in homepage.',
+  backToHome: '← TORNA ALLA HOME',
+} as const
+
+/** Original Italian Instagram deliverable (includes campaign hashtags). */
+export const fuoriOraInstagramCaption = `"Passo solo per mezz'ora."
+
+Poi qualcuno apre una bottiglia.
+La conversazione prende un'altra piega.
+E il martedì smette di sembrare martedì.
+
+FUORI ORA.
+Non serve un'occasione.
+
+#FuoriOra #Franciacorta #NonServeUnOccasione`
+
+export const fuoriOraInstagramCaptionEnglish = `"I'll only stay for half an hour."
+
+Then someone opens a bottle.
+The conversation takes another turn.
+And Tuesday stops feeling like Tuesday.
+
+FUORI ORA.
+No occasion needed.`
+
+export const italianFuoriOra = {
+  backToProjects: '← TORNA A TUTTI I PROGETTI',
+  eyebrow: 'CASE STUDY / BRAND & CAMPAIGN DEVELOPMENT',
+  headline: 'FUORI ORA',
+  supportingLine: 'Un concept Franciacorta che celebra la spontaneità.',
+  intro: [
+    'Immaginate un produttore di Franciacorta contemporaneo pronto a lanciare un nuovo spumante per una generazione che non aspetta le occasioni speciali.',
+    'FUORI ORA esplora quell\'opportunità attraverso posizionamento di brand, identità visiva e campagna integrata—dando vita a un concept di prodotto immaginario con direzione creativa e produzione assistita dall\'AI.',
+  ],
+  disclosure:
+    'Concept indipendente per portfolio. Brand e prodotto immaginari; non commissionato da una cantina.',
+  editorialImageAlt:
+    'Bottiglia FUORI ORA Franciacorta Brut su una seduta color bordeaux, in un interno editoriale con luce naturale.',
+  productImageAlt:
+    'Bottiglia FUORI ORA su sfondo neutro caldo, con etichetta tipografica e dettaglio bordeaux.',
+  productCaption: '01 · Bottiglia ed etichetta',
+  brandIdentity: {
+    label: 'IDENTITÀ DI BRAND',
+    title: 'Celebrazione spontanea, fuori dal calendario',
+    concept:
+      'FUORI ORA propone un Franciacorta contemporaneo da aprire quando la giornata lo merita — non solo quando il calendario lo impone.',
+    tagline: 'Non serve un\'occasione.',
+    audienceLabel: 'Audience',
+    audience: 'Adulti urbani, 28–45 anni, attenti al design e alla qualità del prodotto.',
+    positioningLabel: 'Posizionamento',
+    positioning: 'Premium contemporaneo con un rapporto più leggero con le occasioni tradizionali.',
+    designDecisions: {
+      title: 'Design Decisions',
+      packagingLabel: '01 / PACKAGING — Bottiglia ed etichetta',
+      packagingCopy:
+        'Silhouette classica della bottiglia, capsule bordeaux opaca ed etichetta ivory con wordmark sans-serif bold. Progettata per chiarezza, riconoscibilità e un premium contemporaneo.',
+      artDirectionLabel: '02 / ART DIRECTION — Direzione visiva',
+      artDirectionCopy:
+        'Luce naturale, composizioni editoriali e spazio negativo intenzionale. La fotografia prodotto bilancia still life raffinato e momenti lifestyle spontanei.',
+    },
+    colorSystem: {
+      label: 'SISTEMA CROMATICO',
+      narrative:
+        'La palette bilancia rigore e calore: richiama la cultura del vino attraverso il bordeaux e i neutri caldi, senza ricorrere all’estetica convenzionale del vigneto. Charcoal e ivory strutturano un’identità editoriale attuale, pronta per packaging, digital e campagna.',
+      colors: [
+        {
+          name: 'Charcoal',
+          hex: '#292B29',
+          role: 'Struttura e sofisticazione contemporanea.',
+        },
+        {
+          name: 'Ivory',
+          hex: '#F3E9D9',
+          role: 'Calore e chiarezza.',
+        },
+        {
+          name: 'Burgundy',
+          hex: '#823D4F',
+          role: 'Eredità enologica e carattere distintivo.',
+        },
+        {
+          name: 'Warm Neutral',
+          hex: '#C4B5A4',
+          role: 'Materialità ed equilibrio visivo.',
+        },
+      ],
+    },
+  },
+  campaignExecution: {
+    label: 'CAMPAIGN EXECUTION',
+    heading: 'Il martedì ha altri piani.',
+    intro:
+      "La campagna di lancio traduce l'idea centrale del brand — che la celebrazione non richieda un'occasione speciale — in una narrativa quotidiana. Un martedì sera spontaneo diventa una serata memorabile, collegando momenti sociali al mondo FUORI ORA.",
+    carouselLabel: '01 / SOCIAL CAMPAIGN — INSTAGRAM CAROUSEL',
+    carouselSlideAlt: 'Slide del carousel Instagram FUORI ORA',
+    carouselPrevious: 'Slide precedente',
+    carouselNext: 'Slide successiva',
+    carouselIndicator: 'Slide {current} di {total}',
+    carouselMissing:
+      'Asset del carousel non ancora collegati. Aggiungere cinque JPG in src/assets/projects/fuori-ora/carousel/.',
+    captionHeading: 'Didascalia Instagram',
+    instagramCaption: fuoriOraInstagramCaption,
+    captionOriginalLabel: 'Didascalia originale (italiano)',
+    captionTranslationLabel: 'Traduzione in inglese',
+    approachHeading: 'Approccio creativo',
+    approachCopy:
+      'Il carousel traduce il martedì quotidiano in narrativa visiva: sequenza, ritmo e caption lavorano insieme per ancorare il brand a un gesto sociale spontaneo, non a un calendario di occasioni.',
+    filmLabel: '02 / CAMPAIGN FILM',
+    filmTitle: 'MARTEDÌ? STAPPALO.',
+    filmIntro:
+      "Un film breve che traduce l'identità di FUORI ORA in movimento: dettagli di prodotto, gesti spontanei e una costruzione audiovisiva pensata per dare ritmo alla campagna.",
+    filmHighlights: [
+      {
+        title: 'Linguaggio visivo',
+        description: 'Dettagli ravvicinati, luce controllata e richiami alla palette del brand.',
+      },
+      {
+        title: 'Movimento e ritmo',
+        description: 'Una sequenza costruita intorno alle bollicine, al brindisi e alla rivelazione del prodotto.',
+      },
+      {
+        title: 'Colonna sonora originale',
+        description: 'Musica creata appositamente per il film, per accompagnarne il ritmo e rafforzare l\'identità della campagna.',
+      },
+    ],
+  },
+  creativeConclusion: {
+    label: 'CREATIVE DIRECTION & EXECUTION',
+    heading: 'Un\'identità precisa. Ogni dettaglio sotto controllo.',
+    paragraphs: [
+      'FUORI ORA nasce da un concept preciso: un Franciacorta premium da vivere anche nella quotidianità, senza aspettare un\'occasione speciale.',
+      'Ho sviluppato il progetto partendo dal posizionamento e dal pubblico di riferimento, definendo un\'identità capace di distinguersi e parlare al proprio target. Da questa direzione strategica hanno preso forma il carattere del brand, il design della bottiglia, l\'identità visiva e il linguaggio della campagna.',
+      'Ogni contenuto segue una direzione precisa. Nel carosello, personaggi, ambienti e dettagli del prodotto mantengono continuità lungo la storia. Il video riprende l\'identità del brand attraverso pochi elementi essenziali, con una musica realizzata su misura per accompagnare il montaggio e trasmettere il mood della campagna.',
+      'Dalla definizione del concept alla produzione dei contenuti con AI generativa, ho curato le scelte creative e la coerenza del risultato, mantenendo il controllo sull\'identità del brand in ogni fase.',
+    ],
+  },
+  en: {
+    backToProjects: '← BACK TO ALL PROJECTS',
+    eyebrow: 'CASE STUDY / BRAND & CAMPAIGN DEVELOPMENT',
+    headline: 'FUORI ORA',
+    supportingLine: 'A Franciacorta concept built around spontaneous celebration.',
+    intro: [
+      'Imagine a contemporary Franciacorta producer preparing to launch a new sparkling wine for a generation that doesn\'t wait for special occasions.',
+      'FUORI ORA explores that opportunity through brand positioning, visual identity and an integrated campaign—bringing a fictional product concept to life through creative direction and AI-assisted production.',
+    ],
+    disclosure:
+      'Independent portfolio concept. Fictional brand and product; not commissioned by a winery.',
+    editorialImageAlt:
+      'FUORI ORA Franciacorta Brut bottle on a burgundy seat in an editorial interior with natural light.',
+    productImageAlt:
+      'FUORI ORA bottle on a warm neutral background with typographic label and burgundy detail.',
+    productCaption: '01 · Bottle & label',
+    brandIdentity: {
+      label: 'BRAND IDENTITY',
+      title: 'Spontaneous celebration, off the calendar',
+      concept:
+        'FUORI ORA presents a contemporary Franciacorta to open when the day calls for it — not only when the calendar does.',
+      tagline: 'Non serve un\'occasione.',
+      audienceLabel: 'Audience',
+      audience: 'Urban adults, 28–45, design-aware and quality-conscious.',
+      positioningLabel: 'Positioning',
+      positioning: 'Contemporary premium with a lighter relationship to traditional occasions.',
+      designDecisions: {
+        title: 'Design Decisions',
+        packagingLabel: '01 / PACKAGING — Bottle & label',
+        packagingCopy:
+          'Classic bottle silhouette, matte burgundy capsule and ivory label with a bold sans-serif wordmark. Designed for clarity, recognition and a contemporary premium feel.',
+        artDirectionLabel: '02 / ART DIRECTION — Visual direction',
+        artDirectionCopy:
+          'Natural light, editorial compositions and intentional negative space. Product photography balances refined stillness with spontaneous lifestyle moments.',
+      },
+      colorSystem: {
+        label: 'COLOR SYSTEM',
+        narrative:
+          'The palette balances rigour and warmth: it references wine culture through burgundy and warm neutrals without conventional vineyard imagery. Charcoal and ivory frame a contemporary editorial identity ready for packaging, digital and campaign.',
+        colors: [
+          {
+            name: 'Charcoal',
+            hex: '#292B29',
+            role: 'Structure and contemporary sophistication.',
+          },
+          {
+            name: 'Ivory',
+            hex: '#F3E9D9',
+            role: 'Warmth and clarity.',
+          },
+          {
+            name: 'Burgundy',
+            hex: '#823D4F',
+            role: 'Wine heritage and distinctive character.',
+          },
+          {
+            name: 'Warm Neutral',
+            hex: '#C4B5A4',
+            role: 'Materiality and visual balance.',
+          },
+        ],
+      },
+    },
+    campaignExecution: {
+      label: 'CAMPAIGN EXECUTION',
+      heading: 'Il martedì ha altri piani.',
+      intro:
+        "The launch campaign translates the brand's central idea — that celebration needs no special occasion — into an everyday narrative. A casual Tuesday visit becomes an unexpectedly memorable evening, connecting spontaneous social moments with FUORI ORA.",
+      carouselLabel: '01 / SOCIAL CAMPAIGN — INSTAGRAM CAROUSEL',
+      carouselSlideAlt: 'FUORI ORA Instagram carousel slide',
+      carouselPrevious: 'Previous slide',
+      carouselNext: 'Next slide',
+      carouselIndicator: 'Slide {current} of {total}',
+      carouselMissing:
+        'Carousel assets are not connected yet. Add five JPG files to src/assets/projects/fuori-ora/carousel/.',
+      captionHeading: 'Instagram caption',
+      instagramCaption: fuoriOraInstagramCaption,
+      captionOriginalLabel: 'Original caption (Italian)',
+      captionTranslationLabel: 'English translation',
+      approachHeading: 'Creative approach',
+      approachCopy:
+        'The carousel turns an ordinary Tuesday into visual narrative: sequence, pacing and caption work together to anchor the brand in spontaneous social ritual, not a calendar of occasions.',
+      filmLabel: '02 / CAMPAIGN FILM',
+      filmTitle: 'MARTEDÌ? STAPPALO.',
+      filmIntro:
+        "A short film that translates FUORI ORA's identity into motion—product detail, spontaneous gestures and an audiovisual build shaped to give the campaign its rhythm.",
+      filmHighlights: [
+        {
+          title: 'Visual language',
+          description: 'Close details, controlled light and callbacks to the brand palette.',
+        },
+        {
+          title: 'Movement and rhythm',
+          description: 'A sequence built around bubbles, the toast and the product reveal.',
+        },
+        {
+          title: 'Original soundtrack',
+          description: 'Music created specifically for the film to follow its pace and reinforce the campaign identity.',
+        },
+      ],
+    },
+    creativeConclusion: {
+      label: 'CREATIVE DIRECTION & EXECUTION',
+      heading: 'A precise identity. Every detail under control.',
+      paragraphs: [
+        'FUORI ORA began with a clear concept: a premium Franciacorta meant for everyday life, without waiting for a special occasion.',
+        'I developed the project from positioning and audience, shaping an identity that could stand apart and connect with its intended audience. That strategic direction informed the brand character, bottle design, visual identity and campaign language.',
+        'Every asset follows a defined direction. In the carousel, characters, settings and product details stay consistent across the story. The film carries the brand through a few essential elements, with music created specifically to match the video\'s rhythm and the campaign\'s mood.',
+        'From concept through to generative-AI production, I guided the creative choices and a consistent result, keeping the brand identity under control at every stage.',
+      ],
+    },
   },
 } as const
 
