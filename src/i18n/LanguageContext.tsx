@@ -32,7 +32,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     () => ({
       language,
       setLanguage,
-      cvHref: `${import.meta.env.BASE_URL}Daryna_Giancola_CV_AI_Automation_${language === 'it' ? 'IT' : 'EN'}.pdf`,
+      cvHref: `${import.meta.env.BASE_URL}Daryna_Giancola_CV_Marketing_Digital_Innovation_${language === 'it' ? 'IT' : 'EN'}.pdf`,
     }),
     [language],
   )
