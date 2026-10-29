@@ -199,7 +199,7 @@ export function HomePage() {
                   project={project}
                   index={index}
                   isItalian={isItalian}
-                  className={index === 3 ? 'hidden md:flex xl:hidden' : undefined}
+                  className={index === 3 ? 'max-md:hidden xl:hidden' : undefined}
                 />
               ))}
             </div>

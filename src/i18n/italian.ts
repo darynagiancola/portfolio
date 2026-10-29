@@ -142,7 +142,7 @@ export const italianFuoriOra = {
         'Silhouette classica della bottiglia, capsule bordeaux opaca ed etichetta ivory con wordmark sans-serif bold. Progettata per chiarezza, riconoscibilità e un premium contemporaneo.',
       artDirectionLabel: '02 / ART DIRECTION — Direzione visiva',
       artDirectionCopy:
-        'Luce naturale, composizioni editoriali e spazio negativo intenzionale. La fotografia prodotto bilancia still life raffinato e momenti lifestyle spontanei.',
+        'Luce naturale, composizioni editoriali e spazio negativo intenzionale. La fotografia di prodotto alterna composizioni raffinate e momenti lifestyle spontanei.',
     },
     colorSystem: {
       label: 'SISTEMA CROMATICO',
