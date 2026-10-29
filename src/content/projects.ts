@@ -32,6 +32,7 @@ export const projectCards: ProjectCardData[] = [
     ],
     ctaLabel: 'View Case Study',
     href: '/projects/aurelia',
+    featured: true,
     status: 'featured',
     featuredOrder: 4,
     listingOrder: 4,
